@@ -20,12 +20,12 @@ import { AuthGuard } from './guards/auth.guard';
 import { FooterComponent } from './components/footer/footer.component';
 
 const appRoutes: Routes =  [
-  {path:'', component: HomeComponent},
-  {path:'register', component: RegisterComponent},
-  {path:'login', component: LoginComponent},
-  {path:'dashboard', component: DashboardComponent, canActivate:[AuthGuard]},
-  {path:'profile', component: ProfileComponent, canActivate:[AuthGuard]}
-]
+  {path: '', component: HomeComponent},
+  {path: 'register', component: RegisterComponent},
+  {path: 'login', component: LoginComponent},
+  {path: 'dashboard', component: DashboardComponent, canActivate: [AuthGuard]},
+  {path: 'profile', component: ProfileComponent, canActivate: [AuthGuard]}
+];
 
 @NgModule({
   declarations: [
@@ -45,10 +45,10 @@ const appRoutes: Routes =  [
     RouterModule.forRoot(appRoutes),
     FlashMessagesModule.forRoot(),
     AgmCoreModule.forRoot({
-      apiKey: 'YOUR GOOGLE MAPS API KEY'
-      /* apiKey is required, unless you are a 
-      premium customer, in which case you can 
-      use clientId 
+      apiKey: 'AIzaSyDhoZamzj5fd26T7qbetCYKfSBBfQq0YEs'
+      /* apiKey is required, unless you are a
+      premium customer, in which case you can
+      use clientId
       */
     })
   ],

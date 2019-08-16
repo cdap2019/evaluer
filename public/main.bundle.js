@@ -83,19 +83,20 @@ var AppComponent = (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_forms__ = __webpack_require__("../../../forms/esm5/forms.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_http__ = __webpack_require__("../../../http/esm5/http.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_router__ = __webpack_require__("../../../router/esm5/router.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__app_component__ = __webpack_require__("../../../../../src/app/app.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__components_navbar_navbar_component__ = __webpack_require__("../../../../../src/app/components/navbar/navbar.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__components_login_login_component__ = __webpack_require__("../../../../../src/app/components/login/login.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__components_register_register_component__ = __webpack_require__("../../../../../src/app/components/register/register.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__components_home_home_component__ = __webpack_require__("../../../../../src/app/components/home/home.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__components_dashboard_dashboard_component__ = __webpack_require__("../../../../../src/app/components/dashboard/dashboard.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__components_profile_profile_component__ = __webpack_require__("../../../../../src/app/components/profile/profile.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__services_validate_service__ = __webpack_require__("../../../../../src/app/services/validate.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__services_auth_service__ = __webpack_require__("../../../../../src/app/services/auth.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14_angular2_flash_messages__ = __webpack_require__("../../../../angular2-flash-messages/module/index.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14_angular2_flash_messages___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_14_angular2_flash_messages__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__guards_auth_guard__ = __webpack_require__("../../../../../src/app/guards/auth.guard.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__components_footer_footer_component__ = __webpack_require__("../../../../../src/app/components/footer/footer.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__agm_core__ = __webpack_require__("../../../../@agm/core/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__app_component__ = __webpack_require__("../../../../../src/app/app.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__components_navbar_navbar_component__ = __webpack_require__("../../../../../src/app/components/navbar/navbar.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__components_login_login_component__ = __webpack_require__("../../../../../src/app/components/login/login.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__components_register_register_component__ = __webpack_require__("../../../../../src/app/components/register/register.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__components_home_home_component__ = __webpack_require__("../../../../../src/app/components/home/home.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__components_dashboard_dashboard_component__ = __webpack_require__("../../../../../src/app/components/dashboard/dashboard.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__components_profile_profile_component__ = __webpack_require__("../../../../../src/app/components/profile/profile.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__services_validate_service__ = __webpack_require__("../../../../../src/app/services/validate.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__services_auth_service__ = __webpack_require__("../../../../../src/app/services/auth.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15_angular2_flash_messages__ = __webpack_require__("../../../../angular2-flash-messages/module/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15_angular2_flash_messages___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_15_angular2_flash_messages__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__guards_auth_guard__ = __webpack_require__("../../../../../src/app/guards/auth.guard.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__components_footer_footer_component__ = __webpack_require__("../../../../../src/app/components/footer/footer.component.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -119,12 +120,13 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
+
 var appRoutes = [
-    { path: '', component: __WEBPACK_IMPORTED_MODULE_9__components_home_home_component__["a" /* HomeComponent */] },
-    { path: 'register', component: __WEBPACK_IMPORTED_MODULE_8__components_register_register_component__["a" /* RegisterComponent */] },
-    { path: 'login', component: __WEBPACK_IMPORTED_MODULE_7__components_login_login_component__["a" /* LoginComponent */] },
-    { path: 'dashboard', component: __WEBPACK_IMPORTED_MODULE_10__components_dashboard_dashboard_component__["a" /* DashboardComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_15__guards_auth_guard__["a" /* AuthGuard */]] },
-    { path: 'profile', component: __WEBPACK_IMPORTED_MODULE_11__components_profile_profile_component__["a" /* ProfileComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_15__guards_auth_guard__["a" /* AuthGuard */]] }
+    { path: '', component: __WEBPACK_IMPORTED_MODULE_10__components_home_home_component__["a" /* HomeComponent */] },
+    { path: 'register', component: __WEBPACK_IMPORTED_MODULE_9__components_register_register_component__["a" /* RegisterComponent */] },
+    { path: 'login', component: __WEBPACK_IMPORTED_MODULE_8__components_login_login_component__["a" /* LoginComponent */] },
+    { path: 'dashboard', component: __WEBPACK_IMPORTED_MODULE_11__components_dashboard_dashboard_component__["a" /* DashboardComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_16__guards_auth_guard__["a" /* AuthGuard */]] },
+    { path: 'profile', component: __WEBPACK_IMPORTED_MODULE_12__components_profile_profile_component__["a" /* ProfileComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_16__guards_auth_guard__["a" /* AuthGuard */]] }
 ];
 var AppModule = (function () {
     function AppModule() {
@@ -132,24 +134,31 @@ var AppModule = (function () {
     AppModule = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["NgModule"])({
             declarations: [
-                __WEBPACK_IMPORTED_MODULE_5__app_component__["a" /* AppComponent */],
-                __WEBPACK_IMPORTED_MODULE_6__components_navbar_navbar_component__["a" /* NavbarComponent */],
-                __WEBPACK_IMPORTED_MODULE_7__components_login_login_component__["a" /* LoginComponent */],
-                __WEBPACK_IMPORTED_MODULE_8__components_register_register_component__["a" /* RegisterComponent */],
-                __WEBPACK_IMPORTED_MODULE_9__components_home_home_component__["a" /* HomeComponent */],
-                __WEBPACK_IMPORTED_MODULE_10__components_dashboard_dashboard_component__["a" /* DashboardComponent */],
-                __WEBPACK_IMPORTED_MODULE_11__components_profile_profile_component__["a" /* ProfileComponent */],
-                __WEBPACK_IMPORTED_MODULE_16__components_footer_footer_component__["a" /* FooterComponent */]
+                __WEBPACK_IMPORTED_MODULE_6__app_component__["a" /* AppComponent */],
+                __WEBPACK_IMPORTED_MODULE_7__components_navbar_navbar_component__["a" /* NavbarComponent */],
+                __WEBPACK_IMPORTED_MODULE_8__components_login_login_component__["a" /* LoginComponent */],
+                __WEBPACK_IMPORTED_MODULE_9__components_register_register_component__["a" /* RegisterComponent */],
+                __WEBPACK_IMPORTED_MODULE_10__components_home_home_component__["a" /* HomeComponent */],
+                __WEBPACK_IMPORTED_MODULE_11__components_dashboard_dashboard_component__["a" /* DashboardComponent */],
+                __WEBPACK_IMPORTED_MODULE_12__components_profile_profile_component__["a" /* ProfileComponent */],
+                __WEBPACK_IMPORTED_MODULE_17__components_footer_footer_component__["a" /* FooterComponent */]
             ],
             imports: [
                 __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__["a" /* BrowserModule */],
                 __WEBPACK_IMPORTED_MODULE_2__angular_forms__["a" /* FormsModule */],
                 __WEBPACK_IMPORTED_MODULE_3__angular_http__["HttpModule"],
                 __WEBPACK_IMPORTED_MODULE_4__angular_router__["b" /* RouterModule */].forRoot(appRoutes),
-                __WEBPACK_IMPORTED_MODULE_14_angular2_flash_messages__["FlashMessagesModule"].forRoot()
+                __WEBPACK_IMPORTED_MODULE_15_angular2_flash_messages__["FlashMessagesModule"].forRoot(),
+                __WEBPACK_IMPORTED_MODULE_5__agm_core__["a" /* AgmCoreModule */].forRoot({
+                    apiKey: 'AIzaSyDhoZamzj5fd26T7qbetCYKfSBBfQq0YEs'
+                    /* apiKey is required, unless you are a
+                    premium customer, in which case you can
+                    use clientId
+                    */
+                })
             ],
-            providers: [__WEBPACK_IMPORTED_MODULE_12__services_validate_service__["a" /* ValidateService */], __WEBPACK_IMPORTED_MODULE_13__services_auth_service__["a" /* AuthService */], __WEBPACK_IMPORTED_MODULE_15__guards_auth_guard__["a" /* AuthGuard */]],
-            bootstrap: [__WEBPACK_IMPORTED_MODULE_5__app_component__["a" /* AppComponent */]]
+            providers: [__WEBPACK_IMPORTED_MODULE_13__services_validate_service__["a" /* ValidateService */], __WEBPACK_IMPORTED_MODULE_14__services_auth_service__["a" /* AuthService */], __WEBPACK_IMPORTED_MODULE_16__guards_auth_guard__["a" /* AuthGuard */]],
+            bootstrap: [__WEBPACK_IMPORTED_MODULE_6__app_component__["a" /* AppComponent */]]
         })
     ], AppModule);
     return AppModule;
@@ -167,7 +176,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, ".container{\r\n    padding:70px \r\n}", ""]);
+exports.push([module.i, ".container{\r\n    padding:70px \r\n}\r\nagm-map { height: 500px; /* height is required */ }", ""]);
 
 // exports
 
@@ -180,7 +189,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/components/dashboard/dashboard.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container\">\r\n    <div class=\"row\">\r\n        <div class=\"col\">\r\n            <h3 class=\"text-center\">Enter your land information here</h3>\r\n            <form action=\"\">\r\n                <div class=\"form-group\">\r\n                    <label for=\"email\">Extent:</label>\r\n                    <input type=\"text\" id=\"extent\" name=\"extent\" class=\"form-control\" placeholder=\"Enter Extent\">\r\n                </div>\r\n                <div class=\"form-group\">\r\n                    <label for=\"pwd\">View:</label>\r\n                    <input type=\"password\" id=\"view\" name=\"password-input\" class=\"form-control\" placeholder=\"\">\r\n                </div>\r\n                <div class=\"form-group\">\r\n                    <label class=\"col-md-3 col-form-label\" for=\"select1\">Waterfront</label>\r\n                    <select id=\"select1\" name=\"select1\" class=\"form-control\">\r\n                    <option value=\"0\">No</option>\r\n                    <option value=\"1\">Yes</option>\r\n                    </select>\r\n                </div>\r\n                <div class=\"form-group\">\r\n                    <label for=\"pwd\">Condition:</label>\r\n                    <input type=\"number\" id=\"condition\" name=\"condition\" class=\"form-control\" placeholder=\"\">\r\n                </div>\r\n                <div class=\"form-group\">\r\n                    <label for=\"pwd\">Condition:</label>\r\n                    <input type=\"number\" id=\"grade\" name=\"grade\" class=\"form-control\" placeholder=\"\">\r\n                </div>\r\n                <div class=\"form-group\">\r\n                    <label class=\"col-md-3 col-form-label\" for=\"textarea-input\">Zipcode</label>\r\n                    <input type=\"number\" id=\"zipcode\" name=\"zipcode\" class=\"form-control\" placeholder=\"\">\r\n                </div>\r\n                <div class=\"form-group\">\r\n                    <label class=\"col-md-3 col-form-label\" for=\"date-input\">Latitude</label>\r\n                    <input class=\"form-control\" id=\"lat\" type=\"text\" name=\"lat\" placeholder=\"\">\r\n                </div>\r\n                <div class=\"form-group\">\r\n                    <label class=\"col-md-3 col-form-label\" for=\"date-input\">Longtitude</label>\r\n                    <input class=\"form-control\" id=\"lon\" type=\"text\" name=\"lon\" placeholder=\"\">\r\n                </div>\r\n                <button type=\"submit\" class=\"btn btn-success\">Submit</button>\r\n                </form>\r\n        </div>\r\n        <div class=\"col\">\r\n            <div #googleMap style=\"width:300%;height:300px\"></div>\r\n        </div>\r\n    </div>\r\n</div>"
+module.exports = "<div class=\"container\">\r\n    <div class=\"row\">\r\n        <div class=\"col\">\r\n            <h3 class=\"text-center\">Enter your land information here</h3>\r\n            <form action=\"\">\r\n                <div class=\"form-group\">\r\n                    <label for=\"email\">Extent:</label>\r\n                    <input type=\"text\" id=\"extent\" name=\"extent\" class=\"form-control\" placeholder=\"Enter Extent\">\r\n                </div>\r\n                <div class=\"form-group\">\r\n                    <label for=\"pwd\">View:</label>\r\n                    <input type=\"password\" id=\"view\" name=\"password-input\" class=\"form-control\" placeholder=\"\">\r\n                </div>\r\n                <div class=\"form-group\">\r\n                    <label class=\"col-md-3 col-form-label\" for=\"select1\">Waterfront</label>\r\n                    <select id=\"select1\" name=\"select1\" class=\"form-control\">\r\n                    <option value=\"0\">No</option>\r\n                    <option value=\"1\">Yes</option>\r\n                    </select>\r\n                </div>\r\n                <div class=\"form-group\">\r\n                    <label for=\"pwd\">Condition:</label>\r\n                    <input type=\"number\" id=\"condition\" name=\"condition\" class=\"form-control\" placeholder=\"\">\r\n                </div>\r\n                <div class=\"form-group\">\r\n                    <label for=\"pwd\">Condition:</label>\r\n                    <input type=\"number\" id=\"grade\" name=\"grade\" class=\"form-control\" placeholder=\"\">\r\n                </div>\r\n                <div class=\"form-group\">\r\n                    <label class=\"col-md-3 col-form-label\" for=\"textarea-input\">Zipcode</label>\r\n                    <input type=\"number\" id=\"zipcode\" name=\"zipcode\" class=\"form-control\" placeholder=\"\">\r\n                </div>\r\n                <div class=\"form-group\">\r\n                    <label class=\"col-md-3 col-form-label\" for=\"date-input\">Latitude</label>\r\n                    <input class=\"form-control\" id=\"lat\" type=\"text\" name=\"lat\" placeholder=\"\">\r\n                </div>\r\n                <div class=\"form-group\">\r\n                    <label class=\"col-md-3 col-form-label\" for=\"date-input\">Longtitude</label>\r\n                    <input class=\"form-control\" id=\"lon\" type=\"text\" name=\"lon\" placeholder=\"\">\r\n                </div>\r\n                <button type=\"submit\" class=\"btn btn-success\">Submit</button>\r\n                </form>\r\n        </div>\r\n        <div class=\"col\">\r\n            <agm-map\r\n                [latitude]='lat'\r\n                [longitude]='lng'\r\n                [zoom]='10'\r\n                (mapClick)=\"addMarker($event.coords.lat, $event.coords.lng)\"\r\n            >\r\n            <agm-marker\r\n             \r\n                [latitude]=\"selectedLat\"\r\n                [longitude]=\"selectedLng\"\r\n                [markerDraggable]=\"true\"\r\n                (markerClick)=\"selectMarker($event)\"\r\n            >\r\n            </agm-marker>\r\n        </agm-map>\r\n        <p *ngIf=\"selectedMarker\">\r\n          Lat: {{ selectedMarker.lat }} Lng: {{ selectedMarker.lng }}\r\n        </p>\r\n\r\n        </div>\r\n    </div>\r\n</div>"
 
 /***/ }),
 
@@ -202,8 +211,16 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 var DashboardComponent = (function () {
     function DashboardComponent() {
+        this.lat = 6.9271;
+        this.lng = 79.8612;
+        this.markers = [];
     }
-    DashboardComponent.prototype.ngOnInit = function () {
+    DashboardComponent.prototype.ngOnInit = function () { };
+    DashboardComponent.prototype.addMarker = function (lat, lng) {
+        // this.markers.push({ lat, lng, alpha: 0.4 });
+        console.log(lat + '' + lng);
+        this.selectedLat = lat;
+        this.selectedLng = lng;
     };
     DashboardComponent = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
@@ -747,7 +764,7 @@ var AuthGuard = (function () {
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AuthService; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/esm5/core.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__("../../../http/esm5/http.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__ = __webpack_require__("../../../../rxjs/_esm5/add/operator/map.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__ = __webpack_require__("../../../../rxjs-compat/_esm5/add/operator/map.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_angular2_jwt__ = __webpack_require__("../../../../angular2-jwt/angular2-jwt.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_angular2_jwt___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_angular2_jwt__);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {

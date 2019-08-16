@@ -42,7 +42,20 @@
                 </form>
         </div>
         <div class="col">
-            <div #googleMap style="width:300%;height:300px"></div>
+            <agm-map
+                [latitude]='lat'
+                [longitude]='lng'
+                [zoom]='10'
+                (mapClick)="addMarker($event.coords.lat, $event.coords.lng)"
+            >
+            <agm-marker
+             
+                [latitude]="selectedLat"
+                [longitude]="selectedLng"
+                [markerDraggable]="true"
+            >
+            </agm-marker>
+        </agm-map>
         </div>
     </div>
 </div>
