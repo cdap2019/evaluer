@@ -3445,7 +3445,7 @@ var AgmTransitLayer = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__directives__ = __webpack_require__("../../../../@agm/core/directives.js");
 /* unused harmony namespace reexport */
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services__ = __webpack_require__("../../../../@agm/core/services.js");
-/* unused harmony namespace reexport */
+/* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "b", function() { return __WEBPACK_IMPORTED_MODULE_1__services__["a"]; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__core_module__ = __webpack_require__("../../../../@agm/core/core.module.js");
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return __WEBPACK_IMPORTED_MODULE_2__core_module__["a"]; });
 // main modules
@@ -3486,7 +3486,7 @@ var AgmTransitLayer = /** @class */ (function () {
 /* unused harmony reexport LAZY_MAPS_API_CONFIG */
 /* unused harmony reexport LazyMapsAPILoader */
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__services_maps_api_loader_maps_api_loader__ = __webpack_require__("../../../../@agm/core/services/maps-api-loader/maps-api-loader.js");
-/* unused harmony reexport MapsAPILoader */
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return __WEBPACK_IMPORTED_MODULE_10__services_maps_api_loader_maps_api_loader__["a"]; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__services_maps_api_loader_noop_maps_api_loader__ = __webpack_require__("../../../../@agm/core/services/maps-api-loader/noop-maps-api-loader.js");
 /* unused harmony reexport NoOpMapsAPILoader */
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__services_fit_bounds__ = __webpack_require__("../../../../@agm/core/services/fit-bounds.js");

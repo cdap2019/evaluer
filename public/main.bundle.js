@@ -150,7 +150,8 @@ var AppModule = (function () {
                 __WEBPACK_IMPORTED_MODULE_4__angular_router__["b" /* RouterModule */].forRoot(appRoutes),
                 __WEBPACK_IMPORTED_MODULE_15_angular2_flash_messages__["FlashMessagesModule"].forRoot(),
                 __WEBPACK_IMPORTED_MODULE_5__agm_core__["a" /* AgmCoreModule */].forRoot({
-                    apiKey: 'AIzaSyDhoZamzj5fd26T7qbetCYKfSBBfQq0YEs'
+                    apiKey: 'AIzaSyDhoZamzj5fd26T7qbetCYKfSBBfQq0YEs',
+                    libraries: ['places']
                     /* apiKey is required, unless you are a
                     premium customer, in which case you can
                     use clientId
@@ -189,7 +190,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/components/dashboard/dashboard.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container\">\r\n    <div class=\"row\">\r\n        <div class=\"col\">\r\n            <h3 class=\"text-center\">Enter your land information here</h3>\r\n            <form action=\"\">\r\n                <div class=\"form-group\">\r\n                    <label for=\"email\">Extent:</label>\r\n                    <input type=\"text\" id=\"extent\" name=\"extent\" class=\"form-control\" placeholder=\"Enter Extent\">\r\n                </div>\r\n                <div class=\"form-group\">\r\n                    <label for=\"pwd\">View:</label>\r\n                    <input type=\"password\" id=\"view\" name=\"password-input\" class=\"form-control\" placeholder=\"\">\r\n                </div>\r\n                <div class=\"form-group\">\r\n                    <label class=\"col-md-3 col-form-label\" for=\"select1\">Waterfront</label>\r\n                    <select id=\"select1\" name=\"select1\" class=\"form-control\">\r\n                    <option value=\"0\">No</option>\r\n                    <option value=\"1\">Yes</option>\r\n                    </select>\r\n                </div>\r\n                <div class=\"form-group\">\r\n                    <label for=\"pwd\">Condition:</label>\r\n                    <input type=\"number\" id=\"condition\" name=\"condition\" class=\"form-control\" placeholder=\"\">\r\n                </div>\r\n                <div class=\"form-group\">\r\n                    <label for=\"pwd\">Condition:</label>\r\n                    <input type=\"number\" id=\"grade\" name=\"grade\" class=\"form-control\" placeholder=\"\">\r\n                </div>\r\n                <div class=\"form-group\">\r\n                    <label class=\"col-md-3 col-form-label\" for=\"textarea-input\">Zipcode</label>\r\n                    <input type=\"number\" id=\"zipcode\" name=\"zipcode\" class=\"form-control\" placeholder=\"\">\r\n                </div>\r\n                <div class=\"form-group\">\r\n                    <label class=\"col-md-3 col-form-label\" for=\"date-input\">Latitude</label>\r\n                    <input class=\"form-control\" id=\"lat\" type=\"text\" name=\"lat\" placeholder=\"\">\r\n                </div>\r\n                <div class=\"form-group\">\r\n                    <label class=\"col-md-3 col-form-label\" for=\"date-input\">Longtitude</label>\r\n                    <input class=\"form-control\" id=\"lon\" type=\"text\" name=\"lon\" placeholder=\"\">\r\n                </div>\r\n                <button type=\"submit\" class=\"btn btn-success\">Submit</button>\r\n                </form>\r\n        </div>\r\n        <div class=\"col\">\r\n            <agm-map\r\n                [latitude]='lat'\r\n                [longitude]='lng'\r\n                [zoom]='10'\r\n                (mapClick)=\"addMarker($event.coords.lat, $event.coords.lng)\"\r\n            >\r\n            <agm-marker\r\n             \r\n                [latitude]=\"selectedLat\"\r\n                [longitude]=\"selectedLng\"\r\n                [markerDraggable]=\"true\"\r\n                (markerClick)=\"selectMarker($event)\"\r\n            >\r\n            </agm-marker>\r\n        </agm-map>\r\n        <p *ngIf=\"selectedMarker\">\r\n          Lat: {{ selectedMarker.lat }} Lng: {{ selectedMarker.lng }}\r\n        </p>\r\n\r\n        </div>\r\n    </div>\r\n</div>"
+module.exports = "<div class=\"container\">\r\n    <div class=\"row\">\r\n        <div class=\"col\">\r\n            <h3 class=\"text-center\">Enter your land information here</h3>\r\n            <form action=\"\">\r\n                <div class=\"form-group\">\r\n                    <label for=\"email\">Extent:</label>\r\n                    <input type=\"text\" id=\"extent\" name=\"extent\" class=\"form-control\" placeholder=\"Enter Extent\">\r\n                </div>\r\n                <div class=\"form-group\">\r\n                    <label for=\"pwd\">View:</label>\r\n                    <input type=\"password\" id=\"view\" name=\"password-input\" class=\"form-control\" placeholder=\"\">\r\n                </div>\r\n                <div class=\"form-group\">\r\n                    <label class=\"col-md-3 col-form-label\" for=\"select1\">Waterfront</label>\r\n                    <select id=\"select1\" name=\"select1\" class=\"form-control\">\r\n                    <option value=\"0\">No</option>\r\n                    <option value=\"1\">Yes</option>\r\n                    </select>\r\n                </div>\r\n                <div class=\"form-group\">\r\n                    <label for=\"pwd\">Condition:</label>\r\n                    <input type=\"number\" id=\"condition\" name=\"condition\" class=\"form-control\" placeholder=\"\">\r\n                </div>\r\n                <div class=\"form-group\">\r\n                    <label for=\"pwd\">Condition:</label>\r\n                    <input type=\"number\" id=\"grade\" name=\"grade\" class=\"form-control\" placeholder=\"\">\r\n                </div>\r\n                <div class=\"form-group\">\r\n                    <label class=\"col-md-3 col-form-label\" for=\"textarea-input\">Zipcode</label>\r\n                    <input type=\"number\" id=\"zipcode\" name=\"zipcode\" class=\"form-control\" placeholder=\"\">\r\n                </div>\r\n                <div class=\"form-group\">\r\n                    <label class=\"col-md-3 col-form-label\" for=\"date-input\">Latitude</label>\r\n                    <input class=\"form-control\" id=\"lat\" type=\"text\" name=\"lat\" placeholder=\"\">\r\n                </div>\r\n                <div class=\"form-group\">\r\n                    <label class=\"col-md-3 col-form-label\" for=\"date-input\">Longtitude</label>\r\n                    <input class=\"form-control\" id=\"lon\" type=\"text\" name=\"lon\" placeholder=\"\">\r\n                </div>\r\n                <button type=\"submit\" class=\"btn btn-success\">Submit</button>\r\n                </form>\r\n        </div>\r\n        <div class=\"col\">\r\n            <!-- <agm-map\r\n                [latitude]='lat'\r\n                [longitude]='lng'\r\n                [zoom]='10'\r\n                (mapClick)=\"addMarker($event.coords.lat, $event.coords.lng)\"\r\n            >\r\n            <agm-marker\r\n             \r\n                [latitude]=\"selectedLat\"\r\n                [longitude]=\"selectedLng\"\r\n                [markerDraggable]=\"true\"\r\n            >\r\n            </agm-marker>\r\n        </agm-map> -->\r\n        <div class=\"form-group\">\r\n            <label>Enter address</label>\r\n            <input type=\"text\" class=\"form-control\" (keydown.enter)=\"$event.preventDefault()\" placeholder=\"Search Nearest Location\" autocorrect=\"off\" autocapitalize=\"off\" spellcheck=\"off\" type=\"text\" #search>\r\n          </div>\r\n         \r\n          <agm-map [latitude]=\"latitude\" [longitude]=\"longitude\" [zoom]=\"zoom\">\r\n            <agm-marker [latitude]=\"latitude\" [longitude]=\"longitude\" [markerDraggable]=\"true\"\r\n              (dragEnd)=\"markerDragEnd($event)\"></agm-marker>\r\n          </agm-map>\r\n         \r\n          <h5>Address: {{address}}</h5>\r\n          <div>Latitude: {{latitude}}</div>\r\n          <div>Longitude: {{longitude}}</div>\r\n        </div>\r\n    </div>\r\n</div>"
 
 /***/ }),
 
@@ -199,6 +200,7 @@ module.exports = "<div class=\"container\">\r\n    <div class=\"row\">\r\n      
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return DashboardComponent; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/esm5/core.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__agm_core__ = __webpack_require__("../../../../@agm/core/index.js");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -209,26 +211,118 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 
+
 var DashboardComponent = (function () {
-    function DashboardComponent() {
-        this.lat = 6.9271;
-        this.lng = 79.8612;
-        this.markers = [];
+    function DashboardComponent(mapsAPILoader, ngZone) {
+        this.mapsAPILoader = mapsAPILoader;
+        this.ngZone = ngZone;
+        this.title = 'AGM project';
     }
-    DashboardComponent.prototype.ngOnInit = function () { };
-    DashboardComponent.prototype.addMarker = function (lat, lng) {
-        // this.markers.push({ lat, lng, alpha: 0.4 });
-        console.log(lat + '' + lng);
-        this.selectedLat = lat;
-        this.selectedLng = lng;
+    DashboardComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        //load Places Autocomplete
+        this.mapsAPILoader.load().then(function () {
+            _this.setCurrentLocation();
+            _this.geoCoder = new google.maps.Geocoder;
+            var autocomplete = new google.maps.places.Autocomplete(_this.searchElementRef.nativeElement, {
+                types: ["address"]
+            });
+            autocomplete.addListener("place_changed", function () {
+                _this.ngZone.run(function () {
+                    //get the place result
+                    var place = autocomplete.getPlace();
+                    //verify result
+                    if (place.geometry === undefined || place.geometry === null) {
+                        return;
+                    }
+                    //set latitude, longitude and zoom
+                    _this.latitude = place.geometry.location.lat();
+                    _this.longitude = place.geometry.location.lng();
+                    _this.zoom = 12;
+                });
+            });
+        });
     };
+    // Get Current Location Coordinates
+    DashboardComponent.prototype.setCurrentLocation = function () {
+        var _this = this;
+        if ('geolocation' in navigator) {
+            navigator.geolocation.getCurrentPosition(function (position) {
+                _this.latitude = position.coords.latitude;
+                _this.longitude = position.coords.longitude;
+                _this.zoom = 8;
+                _this.getAddress(_this.latitude, _this.longitude);
+            });
+        }
+    };
+    DashboardComponent.prototype.markerDragEnd = function ($event) {
+        console.log($event);
+        this.latitude = $event.coords.lat;
+        this.longitude = $event.coords.lng;
+        this.getAddress(this.latitude, this.longitude);
+    };
+    DashboardComponent.prototype.getAddress = function (latitude, longitude) {
+        var _this = this;
+        this.geoCoder.geocode({ 'location': { lat: latitude, lng: longitude } }, function (results, status) {
+            console.log(results);
+            console.log(status);
+            if (status === 'OK') {
+                if (results[0]) {
+                    _this.zoom = 12;
+                    _this.address = results[0].formatted_address;
+                }
+                else {
+                    window.alert('No results found');
+                }
+            }
+            else {
+                window.alert('Geocoder failed due to: ' + status);
+            }
+        });
+    };
+    __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["ViewChild"])('search'),
+        __metadata("design:type", __WEBPACK_IMPORTED_MODULE_0__angular_core__["ElementRef"])
+    ], DashboardComponent.prototype, "searchElementRef", void 0);
     DashboardComponent = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
             selector: 'app-dashboard',
             template: __webpack_require__("../../../../../src/app/components/dashboard/dashboard.component.html"),
             styles: [__webpack_require__("../../../../../src/app/components/dashboard/dashboard.component.css")]
-        }),
-        __metadata("design:paramtypes", [])
+        })
+        // export class DashboardComponent implements OnInit {
+        //   constructor() { }
+        //   ngOnInit() { }
+        //   lat = 6.9271;
+        //   lng = 79.8612;
+        //   selectedMarker;
+        //   selectedLat;
+        //   selectedLng;
+        //   markers = [
+        //     // { lat: 22.33159, lng: 105.63233, alpha: 1 },
+        //     // { lat: 7.92658, lng: -12.05228, alpha: 1 }
+        //   ];
+        //   addMarker(lat: number, lng: number) {
+        //     // this.markers.push({ lat, lng, alpha: 0.4 });
+        //     console.log(lat + '' + lng);
+        //     this.selectedLat = lat;
+        //     this.selectedLng = lng;
+        //   }
+        //   // max(coordType: 'lat' | 'lng'): number {
+        //   //   return Math.max(...this.markers.map(marker => marker[coordType]));
+        //   // }
+        //   // min(coordType: 'lat' | 'lng'): number {
+        //   //   return Math.min(...this.markers.map(marker => marker[coordType]));
+        //   // }
+        //   // selectMarker(event) {
+        //   //   this.selectedMarker = {
+        //   //     lat: event.latitude,
+        //   //     lng: event.longitude
+        //   //   };
+        //   // }
+        // }
+        ,
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__agm_core__["b" /* MapsAPILoader */], __WEBPACK_IMPORTED_MODULE_0__angular_core__["NgZone"]])
     ], DashboardComponent);
     return DashboardComponent;
 }());
@@ -319,7 +413,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/components/home/home.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<!--  <div class=\"jumbotron text-center\">\r\n  <h1>MEAN Authentication App1234</h1>\r\n  <p class=\"lead\">Welcome to our custom MEAN authentication application built from scratch </p>\r\n  <div>\r\n    <a class=\"btn btn-primary\" [routerLink]=\"['/register']\">Register</a> <a class=\"btn btn-dark\" [routerLink]=\"['/login']\">Login</a>\r\n  </div>\r\n</div> -->\r\n\r\n<!-- <div class=\"jumbotron\"> -->\r\n    <!-- <img src=\"/assets/landing.jpg\" width=\"100%\" /> -->\r\n<!-- </div>  -->\r\n<div class=\"home\"></div>\r\n<app-footer></app-footer>"
+module.exports = "<!--  <div class=\"jumbotron text-center\">\r\n  <h1>MEAN Authentication App1234</h1>\r\n  <p class=\"lead\">Welcome to our custom MEAN authentication application built from scratch </p>\r\n  <div>\r\n    <a class=\"btn btn-primary\" [routerLink]=\"['/register']\">Register</a> <a class=\"btn btn-dark\" [routerLink]=\"['/login']\">Login</a>\r\n  </div>\r\n</div> -->\r\n\r\n<!-- <div class=\"jumbotron\"> -->\r\n    <!-- <img src=\"/assets/landing.jpg\" width=\"100%\" /> -->\r\n<!-- </div>  -->\r\n<div class=\"home\">\r\n  <h1>Lightening fast <br>Valuation Provider</h1>\r\n</div>\r\n<app-footer></app-footer>"
 
 /***/ }),
 
