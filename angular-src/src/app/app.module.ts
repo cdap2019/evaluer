@@ -45,7 +45,8 @@ const appRoutes: Routes =  [
     RouterModule.forRoot(appRoutes),
     FlashMessagesModule.forRoot(),
     AgmCoreModule.forRoot({
-      apiKey: 'AIzaSyDhoZamzj5fd26T7qbetCYKfSBBfQq0YEs'
+      apiKey: 'AIzaSyDhoZamzj5fd26T7qbetCYKfSBBfQq0YEs',
+      libraries: ['places']
       /* apiKey is required, unless you are a
       premium customer, in which case you can
       use clientId
