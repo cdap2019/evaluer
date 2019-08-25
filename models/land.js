@@ -23,7 +23,7 @@ const LandSchema = mongoose.Schema ({
     required: true
   },
   district:{
-    type: Number,
+    type: String,
     required: true
   },
   address:{
