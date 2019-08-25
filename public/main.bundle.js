@@ -145,7 +145,8 @@ var AppModule = (function () {
             ],
             imports: [
                 __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__["a" /* BrowserModule */],
-                __WEBPACK_IMPORTED_MODULE_2__angular_forms__["a" /* FormsModule */],
+                __WEBPACK_IMPORTED_MODULE_2__angular_forms__["b" /* FormsModule */],
+                __WEBPACK_IMPORTED_MODULE_2__angular_forms__["c" /* ReactiveFormsModule */],
                 __WEBPACK_IMPORTED_MODULE_3__angular_http__["HttpModule"],
                 __WEBPACK_IMPORTED_MODULE_4__angular_router__["b" /* RouterModule */].forRoot(appRoutes),
                 __WEBPACK_IMPORTED_MODULE_15_angular2_flash_messages__["FlashMessagesModule"].forRoot(),
@@ -190,7 +191,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/components/dashboard/dashboard.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container\">\r\n    <h3 class=\"text-center\">Enter your land information</h3>\r\n    <form action=\"\" >\r\n        <div class=\"row\"> \r\n            <div class=\"col\">\r\n                <div class=\"form-group\">\r\n                    <label for=\"price\">Price:</label>\r\n                    <input type=\"number\" id=\"price\" name=\"price\" class=\"form-control\" placeholder=\"Price\">\r\n                </div>\r\n                <div class=\"form-group\">\r\n                    <label for=\"distance\">Distance to nearest bus route:</label>\r\n                    <input type=\"number\" id=\"distance\" name=\"distance\" class=\"form-control\" placeholder=\"Distance\">\r\n                </div>\r\n                <div class=\"form-group\">\r\n                    <label for=\"route\">Nearest bus route:</label>\r\n                    <input type=\"text\" id=\"route\" name=\"route\" class=\"form-control\" placeholder=\"Route\">\r\n                </div>\r\n                <div class=\"form-group\">\r\n                    <label for=\"aindex\">Accessbility index:</label>\r\n                    <input type=\"number\" id=\"aindex\" name=\"aindex\" class=\"form-control\" placeholder=\"Index\">\r\n                </div>\r\n                <div class=\"form-group\">\r\n                        <label for=\"province\">Province:</label>\r\n                        <input type=\"text\" id=\"province\" name=\"province\" class=\"form-control\" placeholder=\"Province\">\r\n                </div>\r\n                <div class=\"form-group\">\r\n                    <label for=\"district\">District:</label>\r\n                    <input type=\"text\" id=\"district\" name=\"district\" class=\"form-control\" placeholder=\"District\">\r\n                </div>\r\n                <button type=\"submit\" class=\"btn btn-success btn-block\">Submit</button>\r\n            </div>\r\n            <div class=\"col\"> \r\n                <div class=\"form-group\">\r\n                    <label for=\"address\">Address</label>\r\n                    <input type=\"text\" name=\"address\" class=\"form-control\" [(ngModel)]=\"address\" (keydown.enter)=\"$event.preventDefault()\" placeholder=\"Search Nearest Location\" autocorrect=\"off\" autocapitalize=\"off\" spellcheck=\"off\"  #search>\r\n                </div>\r\n                <agm-map [latitude]=\"latitude\" [longitude]=\"longitude\" [zoom]=\"zoom\">\r\n                    <agm-marker [latitude]=\"latitude\" [longitude]=\"longitude\" [markerDraggable]=\"true\"\r\n                    (dragEnd)=\"markerDragEnd($event)\"></agm-marker>\r\n                </agm-map>\r\n                <div class=\"form-group\">\r\n                    <label for=\"latitude\">Latitude:</label>\r\n                    <input type=\"number\" id=\"latitude\" name=\"latitude\" [(ngModel)]=\"latitude\" class=\"form-control\" placeholder=\"\">\r\n                </div>\r\n                <div class=\"form-group\">\r\n                    <label  for=\"longitude\">Longitude:</label>\r\n                    <input type=\"number\" id=\"longitude\" name=\"longitude\" class=\"form-control\" [(ngModel)]=\"longitude\"  placeholder=\"\">\r\n                </div>\r\n             \r\n            </div>\r\n        </div>    \r\n    </form>\r\n</div>\r\n"
+module.exports = "<div class=\"container\">\r\n    <h3 class=\"text-center\">Enter your land information</h3>\r\n    <form action=\"\" [formGroup]=\"angForm\" novalidate >\r\n        <div class=\"row\"> \r\n            <div class=\"col\">\r\n                <div class=\"form-group\">\r\n                    <label for=\"price\">Price:</label>\r\n                    <input type=\"number\" id=\"price\" name=\"price\" class=\"form-control\" placeholder=\"Price\" formControlName=\"price\" #price >\r\n                </div>\r\n                <div *ngIf=\"angForm.controls['price'].invalid && (angForm.controls['price'].dirty || angForm.controls['price'].touched)\" class=\"alert alert-danger\">\r\n                    <div *ngIf=\"angForm.controls['price'].errors.required\">\r\n                      Price is required.\r\n                    </div>\r\n                </div>\r\n                <div class=\"form-group\">\r\n                    <label for=\"distance\">Distance to nearest bus route:</label>\r\n                    <input type=\"number\" id=\"distance\" name=\"distance\" class=\"form-control\" placeholder=\"Distance\" formControlName=\"distance\" #distance>\r\n                </div>\r\n                <div *ngIf=\"angForm.controls['distance'].invalid && (angForm.controls['distance'].dirty || angForm.controls['distance'].touched)\" class=\"alert alert-danger\">\r\n                    <div *ngIf=\"angForm.controls['distance'].errors.required\">\r\n                      Distance is required.\r\n                    </div>\r\n                </div>\r\n                <div class=\"form-group\">\r\n                    <label for=\"route\">Nearest bus route:</label>\r\n                    <input type=\"text\" id=\"route\" name=\"route\" class=\"form-control\" placeholder=\"Route\" formControlName=\"route\" #route>\r\n                </div>\r\n                <div *ngIf=\"angForm.controls['route'].invalid && (angForm.controls['route'].dirty || angForm.controls['route'].touched)\" class=\"alert alert-danger\">\r\n                    <div *ngIf=\"angForm.controls['route'].errors.required\">\r\n                      Route is required.\r\n                    </div>\r\n                </div>\r\n                <div class=\"form-group\">\r\n                    <label for=\"aindex\">Accessbility index:</label>\r\n                    <input type=\"number\" id=\"aindex\" name=\"aindex\" class=\"form-control\" placeholder=\"Index\" formControlName=\"aindex\" #aindex>\r\n                </div>\r\n                <div *ngIf=\"angForm.controls['aindex'].invalid && (angForm.controls['aindex'].dirty || angForm.controls['aindex'].touched)\" class=\"alert alert-danger\">\r\n                    <div *ngIf=\"angForm.controls['aindex'].errors.required\">\r\n                      Index is required.\r\n                    </div>\r\n                </div>\r\n                <div class=\"form-group\">\r\n                        <label for=\"province\">Province:</label>\r\n                        <input type=\"text\" id=\"province\" name=\"province\" class=\"form-control\" placeholder=\"Province\" formControlName=\"province\" #province>\r\n                </div>\r\n                <div *ngIf=\"angForm.controls['province'].invalid && (angForm.controls['province'].dirty || angForm.controls['province'].touched)\" class=\"alert alert-danger\">\r\n                    <div *ngIf=\"angForm.controls['province'].errors.required\">\r\n                      Province is required.\r\n                    </div>\r\n                </div>\r\n                <div class=\"form-group\">\r\n                    <label for=\"district\">District:</label>\r\n                    <input type=\"text\" id=\"district\" name=\"district\" class=\"form-control\" placeholder=\"District\" formControlName=\"district\" #district>\r\n                </div>\r\n                <div *ngIf=\"angForm.controls['district'].invalid && (angForm.controls['district'].dirty || angForm.controls['district'].touched)\" class=\"alert alert-danger\">\r\n                    <div *ngIf=\"angForm.controls['district'].errors.required\">\r\n                        District is required.\r\n                    </div>\r\n                </div>\r\n                <button type=\"submit\" class=\"btn btn-success btn-block\" [disabled]=\"angForm.pristine || angForm.invalid\"  >Submit</button>\r\n            </div>\r\n            <div class=\"col\"> \r\n                <div class=\"form-group\">\r\n                    <label for=\"address\">Address</label>\r\n                    <input type=\"text\" name=\"address\" class=\"form-control\"   (keydown.enter)=\"$event.preventDefault()\" \r\n                    placeholder=\"Search Nearest Location\" autocorrect=\"off\" autocapitalize=\"off\" spellcheck=\"off\" formControlName=\"address\" #address>\r\n                </div>\r\n                <agm-map [latitude]=\"latitude\" [longitude]=\"longitude\" [zoom]=\"zoom\">\r\n                    <agm-marker [latitude]=\"latitude\" [longitude]=\"longitude\" [markerDraggable]=\"true\"\r\n                    (dragEnd)=\"markerDragEnd($event)\"></agm-marker>\r\n                </agm-map>\r\n                <div class=\"form-group\">\r\n                    <label for=\"lat\">Latitude:</label>\r\n                    <input type=\"number\" id=\"lat\" name=\"latitude\" [(ngModel)]=\"latitude\" class=\"form-control\" placeholder=\"\" formControlName=\"lat\" #lat>\r\n                </div>\r\n                <div *ngIf=\"angForm.controls['lat'].invalid && (angForm.controls['lat'].dirty || angForm.controls['lat'].touched)\" class=\"alert alert-danger\">\r\n                    <div *ngIf=\"angForm.controls['lat'].errors.required\">\r\n                        Latitude is required.\r\n                    </div>\r\n                </div>\r\n                <div class=\"form-group\">\r\n                    <label  for=\"lon\">Longitude:</label>\r\n                    <input type=\"number\" id=\"lon\" name=\"lon\" [(ngModel)]=\"longitude\" class=\"form-control\"  placeholder=\"\" formControlName=\"lon\" #lon>\r\n                </div>\r\n                <div *ngIf=\"angForm.controls['lon'].invalid && (angForm.controls['lon'].dirty || angForm.controls['lon'].touched)\" class=\"alert alert-danger\">\r\n                    <div *ngIf=\"angForm.controls['lon'].errors.required\">\r\n                        Longitude is required.\r\n                    </div>\r\n                </div>\r\n             \r\n            </div>\r\n        </div>    \r\n    </form>\r\n</div>\r\n"
 
 /***/ }),
 
@@ -201,6 +202,7 @@ module.exports = "<div class=\"container\">\r\n    <h3 class=\"text-center\">Ent
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return DashboardComponent; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/esm5/core.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__agm_core__ = __webpack_require__("../../../../@agm/core/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_forms__ = __webpack_require__("../../../forms/esm5/forms.js");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -212,11 +214,14 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 
 
+
 var DashboardComponent = (function () {
-    function DashboardComponent(mapsAPILoader, ngZone) {
+    function DashboardComponent(mapsAPILoader, ngZone, fb) {
         this.mapsAPILoader = mapsAPILoader;
         this.ngZone = ngZone;
+        this.fb = fb;
         this.title = 'AGM project';
+        this.createForm();
     }
     DashboardComponent.prototype.ngOnInit = function () {
         var _this = this;
@@ -280,8 +285,21 @@ var DashboardComponent = (function () {
             }
         });
     };
+    DashboardComponent.prototype.createForm = function () {
+        this.angForm = this.fb.group({
+            price: ['', __WEBPACK_IMPORTED_MODULE_2__angular_forms__["d" /* Validators */].required],
+            distance: ['', __WEBPACK_IMPORTED_MODULE_2__angular_forms__["d" /* Validators */].required],
+            route: ['', __WEBPACK_IMPORTED_MODULE_2__angular_forms__["d" /* Validators */].required],
+            aindex: ['', __WEBPACK_IMPORTED_MODULE_2__angular_forms__["d" /* Validators */].required],
+            province: ['', __WEBPACK_IMPORTED_MODULE_2__angular_forms__["d" /* Validators */].required],
+            district: ['', __WEBPACK_IMPORTED_MODULE_2__angular_forms__["d" /* Validators */].required],
+            address: ['', __WEBPACK_IMPORTED_MODULE_2__angular_forms__["d" /* Validators */].required],
+            lat: ['', __WEBPACK_IMPORTED_MODULE_2__angular_forms__["d" /* Validators */].required],
+            lon: ['', __WEBPACK_IMPORTED_MODULE_2__angular_forms__["d" /* Validators */].required]
+        });
+    };
     __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["ViewChild"])('search'),
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["ViewChild"])('address'),
         __metadata("design:type", __WEBPACK_IMPORTED_MODULE_0__angular_core__["ElementRef"])
     ], DashboardComponent.prototype, "searchElementRef", void 0);
     DashboardComponent = __decorate([
@@ -289,40 +307,8 @@ var DashboardComponent = (function () {
             selector: 'app-dashboard',
             template: __webpack_require__("../../../../../src/app/components/dashboard/dashboard.component.html"),
             styles: [__webpack_require__("../../../../../src/app/components/dashboard/dashboard.component.css")]
-        })
-        // export class DashboardComponent implements OnInit {
-        //   constructor() { }
-        //   ngOnInit() { }
-        //   lat = 6.9271;
-        //   lng = 79.8612;
-        //   selectedMarker;
-        //   selectedLat;
-        //   selectedLng;
-        //   markers = [
-        //     // { lat: 22.33159, lng: 105.63233, alpha: 1 },
-        //     // { lat: 7.92658, lng: -12.05228, alpha: 1 }
-        //   ];
-        //   addMarker(lat: number, lng: number) {
-        //     // this.markers.push({ lat, lng, alpha: 0.4 });
-        //     console.log(lat + '' + lng);
-        //     this.selectedLat = lat;
-        //     this.selectedLng = lng;
-        //   }
-        //   // max(coordType: 'lat' | 'lng'): number {
-        //   //   return Math.max(...this.markers.map(marker => marker[coordType]));
-        //   // }
-        //   // min(coordType: 'lat' | 'lng'): number {
-        //   //   return Math.min(...this.markers.map(marker => marker[coordType]));
-        //   // }
-        //   // selectMarker(event) {
-        //   //   this.selectedMarker = {
-        //   //     lat: event.latitude,
-        //   //     lng: event.longitude
-        //   //   };
-        //   // }
-        // }
-        ,
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__agm_core__["b" /* MapsAPILoader */], __WEBPACK_IMPORTED_MODULE_0__angular_core__["NgZone"]])
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__agm_core__["b" /* MapsAPILoader */], __WEBPACK_IMPORTED_MODULE_0__angular_core__["NgZone"], __WEBPACK_IMPORTED_MODULE_2__angular_forms__["a" /* FormBuilder */]])
     ], DashboardComponent);
     return DashboardComponent;
 }());

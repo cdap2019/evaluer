@@ -1,5 +1,6 @@
 import { Component, OnInit, ViewChild, ElementRef, NgZone  } from '@angular/core';
 import { MapsAPILoader, MouseEvent } from '@agm/core';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 declare var google;
 @Component({
   selector: 'app-dashboard',
@@ -16,9 +17,12 @@ export class DashboardComponent implements OnInit {
   address: string;
   private geoCoder;
  
-  @ViewChild('search')
+  @ViewChild('address')
   public searchElementRef: ElementRef;
-  constructor(private mapsAPILoader: MapsAPILoader,private ngZone: NgZone) { }
+  angForm: FormGroup;
+  constructor(private mapsAPILoader: MapsAPILoader,private ngZone: NgZone, private fb: FormBuilder) {
+    this.createForm();
+   }
 
   ngOnInit() { 
         //load Places Autocomplete
@@ -86,4 +90,18 @@ export class DashboardComponent implements OnInit {
       });
     }
 
+    createForm() {
+      this.angForm = this.fb.group({
+        price: ['', Validators.required ],
+        distance: ['', Validators.required ],
+        route: ['', Validators.required ],
+        aindex: ['', Validators.required ],
+        province: ['', Validators.required ],
+        district: ['', Validators.required ],
+        address: ['', Validators.required ],
+        lat: ['', Validators.required ],
+        lon: ['', Validators.required ]
+      });
+    }
+    
 }

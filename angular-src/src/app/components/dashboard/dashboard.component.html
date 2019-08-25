@@ -1,50 +1,91 @@
 <div class="container">
     <h3 class="text-center">Enter your land information</h3>
-    <form action="" >
+    <form action="" [formGroup]="angForm" novalidate >
         <div class="row"> 
             <div class="col">
                 <div class="form-group">
                     <label for="price">Price:</label>
-                    <input type="number" id="price" name="price" class="form-control" placeholder="Price">
+                    <input type="number" id="price" name="price" class="form-control" placeholder="Price" formControlName="price" #price >
+                </div>
+                <div *ngIf="angForm.controls['price'].invalid && (angForm.controls['price'].dirty || angForm.controls['price'].touched)" class="alert alert-danger">
+                    <div *ngIf="angForm.controls['price'].errors.required">
+                      Price is required.
+                    </div>
                 </div>
                 <div class="form-group">
                     <label for="distance">Distance to nearest bus route:</label>
-                    <input type="number" id="distance" name="distance" class="form-control" placeholder="Distance">
+                    <input type="number" id="distance" name="distance" class="form-control" placeholder="Distance" formControlName="distance" #distance>
+                </div>
+                <div *ngIf="angForm.controls['distance'].invalid && (angForm.controls['distance'].dirty || angForm.controls['distance'].touched)" class="alert alert-danger">
+                    <div *ngIf="angForm.controls['distance'].errors.required">
+                      Distance is required.
+                    </div>
                 </div>
                 <div class="form-group">
                     <label for="route">Nearest bus route:</label>
-                    <input type="text" id="route" name="route" class="form-control" placeholder="Route">
+                    <input type="text" id="route" name="route" class="form-control" placeholder="Route" formControlName="route" #route>
+                </div>
+                <div *ngIf="angForm.controls['route'].invalid && (angForm.controls['route'].dirty || angForm.controls['route'].touched)" class="alert alert-danger">
+                    <div *ngIf="angForm.controls['route'].errors.required">
+                      Route is required.
+                    </div>
                 </div>
                 <div class="form-group">
                     <label for="aindex">Accessbility index:</label>
-                    <input type="number" id="aindex" name="aindex" class="form-control" placeholder="Index">
+                    <input type="number" id="aindex" name="aindex" class="form-control" placeholder="Index" formControlName="aindex" #aindex>
+                </div>
+                <div *ngIf="angForm.controls['aindex'].invalid && (angForm.controls['aindex'].dirty || angForm.controls['aindex'].touched)" class="alert alert-danger">
+                    <div *ngIf="angForm.controls['aindex'].errors.required">
+                      Index is required.
+                    </div>
                 </div>
                 <div class="form-group">
                         <label for="province">Province:</label>
-                        <input type="text" id="province" name="province" class="form-control" placeholder="Province">
+                        <input type="text" id="province" name="province" class="form-control" placeholder="Province" formControlName="province" #province>
+                </div>
+                <div *ngIf="angForm.controls['province'].invalid && (angForm.controls['province'].dirty || angForm.controls['province'].touched)" class="alert alert-danger">
+                    <div *ngIf="angForm.controls['province'].errors.required">
+                      Province is required.
+                    </div>
                 </div>
                 <div class="form-group">
                     <label for="district">District:</label>
-                    <input type="text" id="district" name="district" class="form-control" placeholder="District">
+                    <input type="text" id="district" name="district" class="form-control" placeholder="District" formControlName="district" #district>
                 </div>
-                <button type="submit" class="btn btn-success btn-block">Submit</button>
+                <div *ngIf="angForm.controls['district'].invalid && (angForm.controls['district'].dirty || angForm.controls['district'].touched)" class="alert alert-danger">
+                    <div *ngIf="angForm.controls['district'].errors.required">
+                        District is required.
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-success btn-block" [disabled]="angForm.pristine || angForm.invalid"  >Submit</button>
             </div>
             <div class="col"> 
                 <div class="form-group">
                     <label for="address">Address</label>
-                    <input type="text" name="address" class="form-control" [(ngModel)]="address" (keydown.enter)="$event.preventDefault()" placeholder="Search Nearest Location" autocorrect="off" autocapitalize="off" spellcheck="off"  #search>
+                    <input type="text" name="address" class="form-control"   (keydown.enter)="$event.preventDefault()" 
+                    placeholder="Search Nearest Location" autocorrect="off" autocapitalize="off" spellcheck="off" formControlName="address" #address>
                 </div>
                 <agm-map [latitude]="latitude" [longitude]="longitude" [zoom]="zoom">
                     <agm-marker [latitude]="latitude" [longitude]="longitude" [markerDraggable]="true"
                     (dragEnd)="markerDragEnd($event)"></agm-marker>
                 </agm-map>
                 <div class="form-group">
-                    <label for="latitude">Latitude:</label>
-                    <input type="number" id="latitude" name="latitude" [(ngModel)]="latitude" class="form-control" placeholder="">
+                    <label for="lat">Latitude:</label>
+                    <input type="number" id="lat" name="latitude" [(ngModel)]="latitude" class="form-control" placeholder="" formControlName="lat" #lat>
+                </div>
+                <div *ngIf="angForm.controls['lat'].invalid && (angForm.controls['lat'].dirty || angForm.controls['lat'].touched)" class="alert alert-danger">
+                    <div *ngIf="angForm.controls['lat'].errors.required">
+                        Latitude is required.
+                    </div>
                 </div>
                 <div class="form-group">
-                    <label  for="longitude">Longitude:</label>
-                    <input type="number" id="longitude" name="longitude" class="form-control" [(ngModel)]="longitude"  placeholder="">
+                    <label  for="lon">Longitude:</label>
+                    <input type="number" id="lon" name="lon" [(ngModel)]="longitude" class="form-control"  placeholder="" formControlName="lon" #lon>
+                </div>
+                <div *ngIf="angForm.controls['lon'].invalid && (angForm.controls['lon'].dirty || angForm.controls['lon'].touched)" class="alert alert-danger">
+                    <div *ngIf="angForm.controls['lon'].errors.required">
+                        Longitude is required.
+                    </div>
                 </div>
              
             </div>
