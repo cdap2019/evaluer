@@ -16,6 +16,7 @@ export class DashboardComponent implements OnInit {
   longitude: number;
   zoom: number;
   address: string;
+  user = localStorage.getItem('user');
   private geoCoder;
  
   @ViewChild('address')
@@ -23,9 +24,11 @@ export class DashboardComponent implements OnInit {
   angForm: FormGroup;
   constructor(private mapsAPILoader: MapsAPILoader,private ngZone: NgZone, private fb: FormBuilder,private addLandService: AddLandService) {
     this.createForm();
+    const test = JSON.parse(this.user);
+    console.log(test.id);
    }
-
-  ngOnInit() { 
+ 
+  ngOnInit() {
         //load Places Autocomplete
         this.mapsAPILoader.load().then(() => {
           this.setCurrentLocation();
@@ -105,8 +108,9 @@ export class DashboardComponent implements OnInit {
       });
     }
     
+   
     addLandInfo(price, distance, route, aindex, province, district, address, lat, lon) {
-      console.log(price, distance, route, aindex, province, district, address, lat, lon);
+      
       this.addLandService.addLand(price, distance, route, aindex, province, district, address, lat, lon);
   }
 }

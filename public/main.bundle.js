@@ -229,7 +229,10 @@ var DashboardComponent = (function () {
         this.fb = fb;
         this.addLandService = addLandService;
         this.title = 'AGM project';
+        this.user = localStorage.getItem('user');
         this.createForm();
+        var test = JSON.parse(this.user);
+        console.log(test.id);
     }
     DashboardComponent.prototype.ngOnInit = function () {
         var _this = this;
@@ -307,7 +310,6 @@ var DashboardComponent = (function () {
         });
     };
     DashboardComponent.prototype.addLandInfo = function (price, distance, route, aindex, province, district, address, lat, lon) {
-        console.log(price, distance, route, aindex, province, district, address, lat, lon);
         this.addLandService.addLand(price, distance, route, aindex, province, district, address, lat, lon);
     };
     __decorate([
@@ -631,7 +633,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, "", ""]);
+exports.push([module.i, ".container{\r\n    padding:70px \r\n}", ""]);
 
 // exports
 
@@ -644,7 +646,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/components/profile/profile.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div *ngIf=\"user\">\r\n  <h2 class=\"page-header\">{{user.name}}</h2>\r\n  <ul class=\"list-group\">\r\n    <li class=\"list-group-item\">Username : {{user.username}}</li>\r\n    <li class=\"list-group-item\">Email : {{user.email}}</li>\r\n  </ul>\r\n</div>\r\n"
+module.exports = "<!-- <div *ngIf=\"user\">\r\n  <h2 class=\"page-header\">{{user.name}}</h2>\r\n  <ul class=\"list-group\">\r\n    <li class=\"list-group-item\">Username : {{user.username}}</li>\r\n    <li class=\"list-group-item\">Email : {{user.email}}</li>\r\n  </ul>\r\n</div> -->\r\n<div class=\"container\">\r\n  <div class=\"jumbotron\">\r\n      <table class=\"table table-hover\">\r\n          <thead>\r\n          <tr>\r\n              <td>Address</td>\r\n              <td>Price</td>\r\n              <td>Distance</td>\r\n              <td>Route</td>\r\n              <td>Province</td>\r\n              <td>District</td>\r\n              <td colspan=\"2\">Actions</td>\r\n          </tr>\r\n          </thead>\r\n        \r\n          <tbody>\r\n              <tr *ngFor=\"let land of lands\">\r\n                  <td>{{ land.address }}</td>\r\n                  <td>{{ land.price }}</td>\r\n                  <td>{{ land.distance }}</td>\r\n                  <td>{{ land.route }}</td>\r\n                  <td>{{ land.province }}</td>\r\n                  <td>{{ land.district }}</td>\r\n                  <td><a [routerLink]=\"\" class=\"btn btn-primary\">Edit</a></td>\r\n                  <td><a routerLink=\"\" class=\"btn btn-danger\">Delete</a></td>\r\n              </tr>\r\n          </tbody>\r\n        </table>\r\n  </div>\r\n</div>"
 
 /***/ }),
 
@@ -656,6 +658,7 @@ module.exports = "<div *ngIf=\"user\">\r\n  <h2 class=\"page-header\">{{user.nam
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/esm5/core.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_auth_service__ = __webpack_require__("../../../../../src/app/services/auth.service.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_router__ = __webpack_require__("../../../router/esm5/router.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_app_services_addLand_service__ = __webpack_require__("../../../../../src/app/services/addLand.service.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -668,10 +671,12 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+
 var ProfileComponent = (function () {
-    function ProfileComponent(authService, router) {
+    function ProfileComponent(authService, router, addLandService) {
         this.authService = authService;
         this.router = router;
+        this.addLandService = addLandService;
     }
     ProfileComponent.prototype.ngOnInit = function () {
         var _this = this;
@@ -681,6 +686,13 @@ var ProfileComponent = (function () {
             console.log(err);
             return false;
         });
+        this.getLands();
+    };
+    ProfileComponent.prototype.getLands = function () {
+        var _this = this;
+        this.addLandService.getLands().subscribe(function (res) {
+            _this.lands = res;
+        });
     };
     ProfileComponent = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
@@ -688,7 +700,7 @@ var ProfileComponent = (function () {
             template: __webpack_require__("../../../../../src/app/components/profile/profile.component.html"),
             styles: [__webpack_require__("../../../../../src/app/components/profile/profile.component.css")]
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__services_auth_service__["a" /* AuthService */], __WEBPACK_IMPORTED_MODULE_2__angular_router__["a" /* Router */]])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__services_auth_service__["a" /* AuthService */], __WEBPACK_IMPORTED_MODULE_2__angular_router__["a" /* Router */], __WEBPACK_IMPORTED_MODULE_3_app_services_addLand_service__["a" /* AddLandService */]])
     ], ProfileComponent);
     return ProfileComponent;
 }());
@@ -887,6 +899,10 @@ var AddLandService = (function () {
         };
         this.http.post(uri, obj)
             .subscribe(function (res) { return console.log(res); });
+    };
+    AddLandService.prototype.getLands = function () {
+        var uri = 'http://localhost:8080/lands';
+        return this.http.get(uri).map(function (res) { return res; });
     };
     AddLandService = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"])(),

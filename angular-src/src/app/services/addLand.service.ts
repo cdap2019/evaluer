@@ -23,4 +23,9 @@ export class AddLandService {
     this.http.post(uri,obj)
         .subscribe(res => console.log(res));
   }
+
+  getLands() {
+    const uri = 'http://localhost:8080/lands';
+    return this.http.get(uri).map(res =>res);
+  }
 }
