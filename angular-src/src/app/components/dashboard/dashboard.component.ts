@@ -1,6 +1,7 @@
 import { Component, OnInit, ViewChild, ElementRef, NgZone  } from '@angular/core';
 import { MapsAPILoader, MouseEvent } from '@agm/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { AddLandService } from 'app/services/addLand.service';
 declare var google;
 @Component({
   selector: 'app-dashboard',
@@ -20,7 +21,7 @@ export class DashboardComponent implements OnInit {
   @ViewChild('address')
   public searchElementRef: ElementRef;
   angForm: FormGroup;
-  constructor(private mapsAPILoader: MapsAPILoader,private ngZone: NgZone, private fb: FormBuilder) {
+  constructor(private mapsAPILoader: MapsAPILoader,private ngZone: NgZone, private fb: FormBuilder,private addLandService: AddLandService) {
     this.createForm();
    }
 
@@ -104,4 +105,8 @@ export class DashboardComponent implements OnInit {
       });
     }
     
+    addLandInfo(price, distance, route, aindex, province, district, address, lat, lon) {
+      console.log(price, distance, route, aindex, province, district, address, lat, lon);
+      this.addLandService.addLand(price, distance, route, aindex, province, district, address, lat, lon);
+  }
 }

@@ -19,6 +19,7 @@ import { FlashMessagesModule } from 'angular2-flash-messages';
 import { AuthGuard } from './guards/auth.guard';
 import { FooterComponent } from './components/footer/footer.component';
 import { HttpClientModule } from '@angular/common/http';
+import { AddLandService } from './services/addLand.service';
 
 const appRoutes: Routes =  [
   {path: '', component: HomeComponent},
@@ -56,7 +57,7 @@ const appRoutes: Routes =  [
       */
     })
   ],
-  providers: [ValidateService, AuthService, AuthGuard],
+  providers: [ValidateService, AuthService, AuthGuard,AddLandService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
