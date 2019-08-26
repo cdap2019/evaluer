@@ -309,6 +309,8 @@ var DashboardComponent = (function () {
             province: ['', __WEBPACK_IMPORTED_MODULE_2__angular_forms__["d" /* Validators */].required],
             district: ['', __WEBPACK_IMPORTED_MODULE_2__angular_forms__["d" /* Validators */].required],
             address: ['', __WEBPACK_IMPORTED_MODULE_2__angular_forms__["d" /* Validators */].required],
+            lat: ['', __WEBPACK_IMPORTED_MODULE_2__angular_forms__["d" /* Validators */].required],
+            lon: ['', __WEBPACK_IMPORTED_MODULE_2__angular_forms__["d" /* Validators */].required]
         });
     };
     DashboardComponent.prototype.addLandInfo = function (price, distance, route, aindex, province, district, address, lat, lon) {
@@ -422,7 +424,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/components/home/home.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<!--  <div class=\"jumbotron text-center\">\r\n  <h1>MEAN Authentication App1234</h1>\r\n  <p class=\"lead\">Welcome to our custom MEAN authentication application built from scratch </p>\r\n  <div>\r\n    <a class=\"btn btn-primary\" [routerLink]=\"['/register']\">Register</a> <a class=\"btn btn-dark\" [routerLink]=\"['/login']\">Login</a>\r\n  </div>\r\n</div> -->\r\n\r\n<!-- <div class=\"jumbotron\"> -->\r\n    <!-- <img src=\"/assets/landing.jpg\" width=\"100%\" /> -->\r\n<!-- </div>  -->\r\n<div class=\"home\">\r\n  <div class=\"row\">\r\n    <div class=\"col\">\r\n      <h1 style=\"font-size: 3.1875rem ; padding: 20px\">Lightening Fast <br>Valuation Provider</h1>\r\n    </div>\r\n    <div class=\"col\">\r\n      <img src=\"../../../assets/house.png\" alt=\"\" width=\"700px\" style=\"float:right;margin-top: 279px;\">\r\n    </div>\r\n  </div>\r\n</div>\r\n<app-footer></app-footer>"
+module.exports = "<!--  <div class=\"jumbotron text-center\">\r\n  <h1>MEAN Authentication App1234</h1>\r\n  <p class=\"lead\">Welcome to our custom MEAN authentication application built from scratch </p>\r\n  <div>\r\n    <a class=\"btn btn-primary\" [routerLink]=\"['/register']\">Register</a> <a class=\"btn btn-dark\" [routerLink]=\"['/login']\">Login</a>\r\n  </div>\r\n</div> -->\r\n\r\n<!-- <div class=\"jumbotron\"> -->\r\n    <!-- <img src=\"/assets/landing.jpg\" width=\"100%\" /> -->\r\n<!-- </div>  -->\r\n<div class=\"home\">\r\n  <div class=\"row\">\r\n    <div class=\"col\">\r\n    </div>\r\n    <div class=\"col\">\r\n        <h1 style=\"font-size: 3.1875rem ; padding: 20px ;color:#424036\">Lightening Fast Valuation<br>Provider</h1>\r\n        <div class=\"input-group\" style=\"width: 60% ; padding: 22px\">\r\n            <input type=\"text\" placeholder=\"Search for Location\" autocorrect=\"off\" autocapitalize=\"off\" spellcheck=\"off\" class=\"form-control\" #search>\r\n            <div class=\"input-group-append\">\r\n              <button class=\"btn btn-dark\">Find Me</button>\r\n            </div>\r\n          </div>\r\n      <img src=\"../../../assets/house.png\" alt=\"\" width=\"700px\" style=\"float:right;margin-top: 30px;\">\r\n    </div>\r\n  </div>\r\n</div>\r\n<app-footer></app-footer>"
 
 /***/ }),
 
@@ -431,7 +433,8 @@ module.exports = "<!--  <div class=\"jumbotron text-center\">\r\n  <h1>MEAN Auth
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return HomeComponent; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/esm5/core.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__agm_core__ = __webpack_require__("../../../../@agm/core/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__("../../../core/esm5/core.js");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -442,18 +445,43 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 
+
 var HomeComponent = (function () {
-    function HomeComponent() {
+    function HomeComponent(mapsAPILoader, ngZone) {
+        this.mapsAPILoader = mapsAPILoader;
+        this.ngZone = ngZone;
     }
     HomeComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        this.mapsAPILoader.load().then(function () {
+            // tslint:disable-next-line: max-line-length
+            var autocomplete = new google.maps.places.Autocomplete(_this.searchElement.nativeElement, { types: ["address"], componentRestrictions: { country: 'lk' } });
+            autocomplete.addListener("place_changed", function () {
+                _this.ngZone.run(function () {
+                    var place = autocomplete.getPlace();
+                    if (place.geometry === undefined || place.geometry === null) {
+                        return;
+                    }
+                    //set latitude, longitude and zoom
+                    _this.latitude = place.geometry.location.lat();
+                    _this.longitude = place.geometry.location.lng();
+                    console.log(_this.latitude);
+                    console.log(_this.longitude);
+                });
+            });
+        });
     };
+    __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["ViewChild"])('search'),
+        __metadata("design:type", __WEBPACK_IMPORTED_MODULE_1__angular_core__["ElementRef"])
+    ], HomeComponent.prototype, "searchElement", void 0);
     HomeComponent = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+        Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["Component"])({
             selector: 'app-home',
             template: __webpack_require__("../../../../../src/app/components/home/home.component.html"),
             styles: [__webpack_require__("../../../../../src/app/components/home/home.component.css")]
         }),
-        __metadata("design:paramtypes", [])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_0__agm_core__["b" /* MapsAPILoader */], __WEBPACK_IMPORTED_MODULE_1__angular_core__["NgZone"]])
     ], HomeComponent);
     return HomeComponent;
 }());
