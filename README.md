@@ -23,5 +23,5 @@ ng build
 To run app
 from the root folder
 ```sh
-$ nodemon 
+$ nodemon or npm start
 ```
