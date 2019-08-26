@@ -209,6 +209,7 @@ module.exports = "<div class=\"container\">\r\n    <h3 class=\"text-center\">Ent
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__agm_core__ = __webpack_require__("../../../../@agm/core/index.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_forms__ = __webpack_require__("../../../forms/esm5/forms.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_app_services_addLand_service__ = __webpack_require__("../../../../../src/app/services/addLand.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_router__ = __webpack_require__("../../../router/esm5/router.js");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -222,12 +223,14 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+
 var DashboardComponent = (function () {
-    function DashboardComponent(mapsAPILoader, ngZone, fb, addLandService) {
+    function DashboardComponent(mapsAPILoader, ngZone, fb, addLandService, router) {
         this.mapsAPILoader = mapsAPILoader;
         this.ngZone = ngZone;
         this.fb = fb;
         this.addLandService = addLandService;
+        this.router = router;
         this.title = 'AGM project';
         this.user = localStorage.getItem('user');
         this.userId = JSON.parse(this.user);
@@ -306,14 +309,13 @@ var DashboardComponent = (function () {
             province: ['', __WEBPACK_IMPORTED_MODULE_2__angular_forms__["d" /* Validators */].required],
             district: ['', __WEBPACK_IMPORTED_MODULE_2__angular_forms__["d" /* Validators */].required],
             address: ['', __WEBPACK_IMPORTED_MODULE_2__angular_forms__["d" /* Validators */].required],
-            lat: ['', __WEBPACK_IMPORTED_MODULE_2__angular_forms__["d" /* Validators */].required],
-            lon: ['', __WEBPACK_IMPORTED_MODULE_2__angular_forms__["d" /* Validators */].required]
         });
     };
     DashboardComponent.prototype.addLandInfo = function (price, distance, route, aindex, province, district, address, lat, lon) {
         var id = this.userId.id;
         console.log(id);
         this.addLandService.addLand(id, price, distance, route, aindex, province, district, address, lat, lon);
+        this.router.navigate(['/profile']);
     };
     __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["ViewChild"])('address'),
@@ -325,7 +327,11 @@ var DashboardComponent = (function () {
             template: __webpack_require__("../../../../../src/app/components/dashboard/dashboard.component.html"),
             styles: [__webpack_require__("../../../../../src/app/components/dashboard/dashboard.component.css")]
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__agm_core__["b" /* MapsAPILoader */], __WEBPACK_IMPORTED_MODULE_0__angular_core__["NgZone"], __WEBPACK_IMPORTED_MODULE_2__angular_forms__["a" /* FormBuilder */], __WEBPACK_IMPORTED_MODULE_3_app_services_addLand_service__["a" /* AddLandService */]])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__agm_core__["b" /* MapsAPILoader */],
+            __WEBPACK_IMPORTED_MODULE_0__angular_core__["NgZone"],
+            __WEBPACK_IMPORTED_MODULE_2__angular_forms__["a" /* FormBuilder */],
+            __WEBPACK_IMPORTED_MODULE_3_app_services_addLand_service__["a" /* AddLandService */],
+            __WEBPACK_IMPORTED_MODULE_4__angular_router__["a" /* Router */]])
     ], DashboardComponent);
     return DashboardComponent;
 }());

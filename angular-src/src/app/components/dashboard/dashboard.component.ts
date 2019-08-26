@@ -2,6 +2,7 @@ import { Component, OnInit, ViewChild, ElementRef, NgZone  } from '@angular/core
 import { MapsAPILoader, MouseEvent } from '@agm/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { AddLandService } from 'app/services/addLand.service';
+import { Router } from '@angular/router';
 declare var google;
 @Component({
   selector: 'app-dashboard',
@@ -23,7 +24,13 @@ export class DashboardComponent implements OnInit {
   @ViewChild('address')
   public searchElementRef: ElementRef;
   angForm: FormGroup;
-  constructor(private mapsAPILoader: MapsAPILoader,private ngZone: NgZone, private fb: FormBuilder,private addLandService: AddLandService) {
+  constructor(
+    private mapsAPILoader: MapsAPILoader,
+    private ngZone: NgZone, 
+    private fb: FormBuilder,
+    private addLandService: AddLandService,
+    private router: Router
+    ) {
     this.createForm();
     // var test = JSON.parse(this.user);
     // console.log(test.id);
@@ -114,5 +121,6 @@ export class DashboardComponent implements OnInit {
     const id = this.userId.id;
     console.log(id);
       this.addLandService.addLand(id ,price, distance, route, aindex, province, district, address, lat, lon);
+      this.router.navigate(['/profile']);
   }
 }
