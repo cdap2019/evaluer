@@ -19,6 +19,7 @@ router.get('/',(req,res,next)=>{
 // add lands
 router.post('/add', (req,res,next)=>{
     let land = new Land({
+        user:req.body.user,
         price:req.body.price,
         distance:req.body.distance,
         route:req.body.route,

@@ -6,9 +6,11 @@ export class AddLandService {
 
   constructor(private http: HttpClient) { }
 
-  addLand(price, distance, route, aindex, province, district, address, lat, lon) {
+  addLand(id,price, distance, route, aindex, province, district, address, lat, lon) {
+    console.log(id);
     const uri = 'http://localhost:8080/lands/add';
     const obj = {
+      user : id,
       price: price,
       distance: distance,
       route: route,

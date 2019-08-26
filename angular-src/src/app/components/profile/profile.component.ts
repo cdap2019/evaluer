@@ -10,7 +10,10 @@ import { AddLandService } from 'app/services/addLand.service';
 })
 export class ProfileComponent implements OnInit {
   user:Object;
-  lands:any;
+  lands:any=[];
+  temp:any;
+  userInfo = localStorage.getItem('user');
+  userId = JSON.parse(this.userInfo);
   constructor(private authService:AuthService, private router:Router,private addLandService: AddLandService) { }
 
   ngOnInit() {
@@ -27,7 +30,26 @@ export class ProfileComponent implements OnInit {
 
   getLands() {
     this.addLandService.getLands().subscribe(res => {
-      this.lands = res;
+
+      this.temp = res,
+      this.temp.forEach(land => {
+         if(this.userId.id == land.user)
+         {
+          this.lands.push(land);
+         }
+         else if( this.userId.id == '5d635ff9d73ff1632402ce23' )
+         {
+            this.lands = res;
+         }
+       })
+      // if(this.userId.id === res.user)
+      // {
+      //   this.lands = res;
+      //   console.log(res);
+      // }
+      // else{
+      //   console.log('No records')
+      // }
     });
   }
 }

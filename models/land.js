@@ -2,6 +2,10 @@ const mongoose = require('mongoose');
 
 // Land Schema
 const LandSchema = mongoose.Schema ({
+  user:{
+    type: String,
+    required: true
+  },
   price: {
     type: Number,
     required: true

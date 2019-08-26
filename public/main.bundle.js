@@ -230,9 +230,10 @@ var DashboardComponent = (function () {
         this.addLandService = addLandService;
         this.title = 'AGM project';
         this.user = localStorage.getItem('user');
+        this.userId = JSON.parse(this.user);
         this.createForm();
-        var test = JSON.parse(this.user);
-        console.log(test.id);
+        // var test = JSON.parse(this.user);
+        // console.log(test.id);
     }
     DashboardComponent.prototype.ngOnInit = function () {
         var _this = this;
@@ -310,7 +311,9 @@ var DashboardComponent = (function () {
         });
     };
     DashboardComponent.prototype.addLandInfo = function (price, distance, route, aindex, province, district, address, lat, lon) {
-        this.addLandService.addLand(price, distance, route, aindex, province, district, address, lat, lon);
+        var id = this.userId.id;
+        console.log(id);
+        this.addLandService.addLand(id, price, distance, route, aindex, province, district, address, lat, lon);
     };
     __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["ViewChild"])('address'),
@@ -677,6 +680,9 @@ var ProfileComponent = (function () {
         this.authService = authService;
         this.router = router;
         this.addLandService = addLandService;
+        this.lands = [];
+        this.userInfo = localStorage.getItem('user');
+        this.userId = JSON.parse(this.userInfo);
     }
     ProfileComponent.prototype.ngOnInit = function () {
         var _this = this;
@@ -691,7 +697,23 @@ var ProfileComponent = (function () {
     ProfileComponent.prototype.getLands = function () {
         var _this = this;
         this.addLandService.getLands().subscribe(function (res) {
-            _this.lands = res;
+            _this.temp = res,
+                _this.temp.forEach(function (land) {
+                    if (_this.userId.id == land.user) {
+                        _this.lands.push(land);
+                    }
+                    else if (_this.userId.id == '5d635ff9d73ff1632402ce23') {
+                        _this.lands = res;
+                    }
+                });
+            // if(this.userId.id === res.user)
+            // {
+            //   this.lands = res;
+            //   console.log(res);
+            // }
+            // else{
+            //   console.log('No records')
+            // }
         });
     };
     ProfileComponent = __decorate([
@@ -883,9 +905,11 @@ var AddLandService = (function () {
     function AddLandService(http) {
         this.http = http;
     }
-    AddLandService.prototype.addLand = function (price, distance, route, aindex, province, district, address, lat, lon) {
+    AddLandService.prototype.addLand = function (id, price, distance, route, aindex, province, district, address, lat, lon) {
+        console.log(id);
         var uri = 'http://localhost:8080/lands/add';
         var obj = {
+            user: id,
             price: price,
             distance: distance,
             route: route,
