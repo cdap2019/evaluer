@@ -1,5 +1,7 @@
 import { MapsAPILoader } from '@agm/core';
 import { Component, OnInit,ViewChild, ElementRef, NgZone } from '@angular/core';
+import { PredictionService } from 'app/services/prediction.service';
+import { Router } from '@angular/router';
 declare var google;
 
 @Component({
@@ -13,7 +15,8 @@ export class HomeComponent implements OnInit {
   longitude: number;
   @ViewChild('search') public searchElement: ElementRef;
 
-  constructor(private mapsAPILoader: MapsAPILoader, private ngZone: NgZone) {}
+  // tslint:disable-next-line:max-line-length
+  constructor(private router:Router,private mapsAPILoader: MapsAPILoader, private ngZone: NgZone,private predictionService: PredictionService) {}
 
   ngOnInit() {
     this.mapsAPILoader.load().then(
@@ -36,6 +39,16 @@ export class HomeComponent implements OnInit {
     });
     }
     );
+ }
+
+ goToPrediction(){
+  this.predictionService.getPrediction(this.latitude, this.longitude)
+  .subscribe(data => {
+    console.log('Succesfully Added Product details');
+    this.router.navigate(['/prediction']);
+  }, Error => {
+    console.log('failed while adding product details');
+  });
  }
 
 }

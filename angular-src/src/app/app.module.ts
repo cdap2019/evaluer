@@ -21,6 +21,7 @@ import { FooterComponent } from './components/footer/footer.component';
 import { HttpClientModule } from '@angular/common/http';
 import { AddLandService } from './services/addLand.service';
 import { PredictionComponent } from './components/prediction/prediction.component';
+import { PredictionService } from './services/prediction.service';
 
 const appRoutes: Routes =  [
   {path: '', component: HomeComponent},
@@ -60,7 +61,7 @@ const appRoutes: Routes =  [
       */
     })
   ],
-  providers: [ValidateService, AuthService, AuthGuard,AddLandService],
+  providers: [ValidateService, AuthService, AuthGuard,AddLandService,PredictionService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
