@@ -21,11 +21,13 @@ import { AuthGuard } from './guards/auth.guard';
 import { FooterComponent } from './components/footer/footer.component';
 import { HttpClientModule } from '@angular/common/http';
 import { AddLandService } from './services/addLand.service';
+import { PredictionComponent } from './components/prediction/prediction.component';
 
 const appRoutes: Routes =  [
   {path: '', component: HomeComponent},
   {path: 'register', component: RegisterComponent},
   {path: 'login', component: LoginComponent},
+  {path: 'prediction', component: PredictionComponent},
   {path: 'dashboard', component: DashboardComponent, canActivate: [AuthGuard]},
   {path: 'landprice', component: LandPriceComponent, canActivate: [AuthGuard]},
   {path: 'profile', component: ProfileComponent, canActivate: [AuthGuard]}
@@ -41,7 +43,8 @@ const appRoutes: Routes =  [
     DashboardComponent,
     LandPriceComponent,
     ProfileComponent,
-    FooterComponent
+    FooterComponent,
+    PredictionComponent
   ],
   imports: [
     BrowserModule,
