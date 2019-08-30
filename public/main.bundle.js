@@ -90,15 +90,16 @@ var AppComponent = (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__components_register_register_component__ = __webpack_require__("../../../../../src/app/components/register/register.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__components_home_home_component__ = __webpack_require__("../../../../../src/app/components/home/home.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__components_dashboard_dashboard_component__ = __webpack_require__("../../../../../src/app/components/dashboard/dashboard.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__components_profile_profile_component__ = __webpack_require__("../../../../../src/app/components/profile/profile.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__services_validate_service__ = __webpack_require__("../../../../../src/app/services/validate.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__services_auth_service__ = __webpack_require__("../../../../../src/app/services/auth.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15_angular2_flash_messages__ = __webpack_require__("../../../../angular2-flash-messages/module/index.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15_angular2_flash_messages___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_15_angular2_flash_messages__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__guards_auth_guard__ = __webpack_require__("../../../../../src/app/guards/auth.guard.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__components_footer_footer_component__ = __webpack_require__("../../../../../src/app/components/footer/footer.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__angular_common_http__ = __webpack_require__("../../../common/esm5/http.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__services_addLand_service__ = __webpack_require__("../../../../../src/app/services/addLand.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__components_land_price_land_price_component__ = __webpack_require__("../../../../../src/app/components/land-price/land-price.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__components_profile_profile_component__ = __webpack_require__("../../../../../src/app/components/profile/profile.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__services_validate_service__ = __webpack_require__("../../../../../src/app/services/validate.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__services_auth_service__ = __webpack_require__("../../../../../src/app/services/auth.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16_angular2_flash_messages__ = __webpack_require__("../../../../angular2-flash-messages/module/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16_angular2_flash_messages___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_16_angular2_flash_messages__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__guards_auth_guard__ = __webpack_require__("../../../../../src/app/guards/auth.guard.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__components_footer_footer_component__ = __webpack_require__("../../../../../src/app/components/footer/footer.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__angular_common_http__ = __webpack_require__("../../../common/esm5/http.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__services_addLand_service__ = __webpack_require__("../../../../../src/app/services/addLand.service.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -125,12 +126,14 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
+
 var appRoutes = [
     { path: '', component: __WEBPACK_IMPORTED_MODULE_10__components_home_home_component__["a" /* HomeComponent */] },
     { path: 'register', component: __WEBPACK_IMPORTED_MODULE_9__components_register_register_component__["a" /* RegisterComponent */] },
     { path: 'login', component: __WEBPACK_IMPORTED_MODULE_8__components_login_login_component__["a" /* LoginComponent */] },
-    { path: 'dashboard', component: __WEBPACK_IMPORTED_MODULE_11__components_dashboard_dashboard_component__["a" /* DashboardComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_16__guards_auth_guard__["a" /* AuthGuard */]] },
-    { path: 'profile', component: __WEBPACK_IMPORTED_MODULE_12__components_profile_profile_component__["a" /* ProfileComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_16__guards_auth_guard__["a" /* AuthGuard */]] }
+    { path: 'dashboard', component: __WEBPACK_IMPORTED_MODULE_11__components_dashboard_dashboard_component__["a" /* DashboardComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_17__guards_auth_guard__["a" /* AuthGuard */]] },
+    { path: 'landprice', component: __WEBPACK_IMPORTED_MODULE_12__components_land_price_land_price_component__["a" /* LandPriceComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_17__guards_auth_guard__["a" /* AuthGuard */]] },
+    { path: 'profile', component: __WEBPACK_IMPORTED_MODULE_13__components_profile_profile_component__["a" /* ProfileComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_17__guards_auth_guard__["a" /* AuthGuard */]] }
 ];
 var AppModule = (function () {
     function AppModule() {
@@ -144,17 +147,18 @@ var AppModule = (function () {
                 __WEBPACK_IMPORTED_MODULE_9__components_register_register_component__["a" /* RegisterComponent */],
                 __WEBPACK_IMPORTED_MODULE_10__components_home_home_component__["a" /* HomeComponent */],
                 __WEBPACK_IMPORTED_MODULE_11__components_dashboard_dashboard_component__["a" /* DashboardComponent */],
-                __WEBPACK_IMPORTED_MODULE_12__components_profile_profile_component__["a" /* ProfileComponent */],
-                __WEBPACK_IMPORTED_MODULE_17__components_footer_footer_component__["a" /* FooterComponent */]
+                __WEBPACK_IMPORTED_MODULE_12__components_land_price_land_price_component__["a" /* LandPriceComponent */],
+                __WEBPACK_IMPORTED_MODULE_13__components_profile_profile_component__["a" /* ProfileComponent */],
+                __WEBPACK_IMPORTED_MODULE_18__components_footer_footer_component__["a" /* FooterComponent */]
             ],
             imports: [
                 __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__["a" /* BrowserModule */],
                 __WEBPACK_IMPORTED_MODULE_2__angular_forms__["b" /* FormsModule */],
                 __WEBPACK_IMPORTED_MODULE_2__angular_forms__["c" /* ReactiveFormsModule */],
                 __WEBPACK_IMPORTED_MODULE_3__angular_http__["HttpModule"],
-                __WEBPACK_IMPORTED_MODULE_18__angular_common_http__["b" /* HttpClientModule */],
+                __WEBPACK_IMPORTED_MODULE_19__angular_common_http__["b" /* HttpClientModule */],
                 __WEBPACK_IMPORTED_MODULE_4__angular_router__["b" /* RouterModule */].forRoot(appRoutes),
-                __WEBPACK_IMPORTED_MODULE_15_angular2_flash_messages__["FlashMessagesModule"].forRoot(),
+                __WEBPACK_IMPORTED_MODULE_16_angular2_flash_messages__["FlashMessagesModule"].forRoot(),
                 __WEBPACK_IMPORTED_MODULE_5__agm_core__["a" /* AgmCoreModule */].forRoot({
                     apiKey: 'AIzaSyDhoZamzj5fd26T7qbetCYKfSBBfQq0YEs',
                     libraries: ['places']
@@ -164,7 +168,7 @@ var AppModule = (function () {
                     */
                 })
             ],
-            providers: [__WEBPACK_IMPORTED_MODULE_13__services_validate_service__["a" /* ValidateService */], __WEBPACK_IMPORTED_MODULE_14__services_auth_service__["a" /* AuthService */], __WEBPACK_IMPORTED_MODULE_16__guards_auth_guard__["a" /* AuthGuard */], __WEBPACK_IMPORTED_MODULE_19__services_addLand_service__["a" /* AddLandService */]],
+            providers: [__WEBPACK_IMPORTED_MODULE_14__services_validate_service__["a" /* ValidateService */], __WEBPACK_IMPORTED_MODULE_15__services_auth_service__["a" /* AuthService */], __WEBPACK_IMPORTED_MODULE_17__guards_auth_guard__["a" /* AuthGuard */], __WEBPACK_IMPORTED_MODULE_20__services_addLand_service__["a" /* AddLandService */]],
             bootstrap: [__WEBPACK_IMPORTED_MODULE_6__app_component__["a" /* AppComponent */]]
         })
     ], AppModule);
@@ -424,7 +428,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/components/home/home.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<!--  <div class=\"jumbotron text-center\">\r\n  <h1>MEAN Authentication App1234</h1>\r\n  <p class=\"lead\">Welcome to our custom MEAN authentication application built from scratch </p>\r\n  <div>\r\n    <a class=\"btn btn-primary\" [routerLink]=\"['/register']\">Register</a> <a class=\"btn btn-dark\" [routerLink]=\"['/login']\">Login</a>\r\n  </div>\r\n</div> -->\r\n\r\n<!-- <div class=\"jumbotron\"> -->\r\n    <!-- <img src=\"/assets/landing.jpg\" width=\"100%\" /> -->\r\n<!-- </div>  -->\r\n<div class=\"home\">\r\n  <div class=\"row\">\r\n    <div class=\"col\">\r\n    </div>\r\n    <div class=\"col\">\r\n        <h1>Lightening Fast Valuation<br>Provider</h1>\r\n        <div class=\"input-group search-box\">\r\n            <input type=\"text\" placeholder=\"Search for Location\" autocorrect=\"off\" autocapitalize=\"off\" spellcheck=\"off\" class=\"form-control\" #search>\r\n            <div class=\"input-group-append\">\r\n              <button class=\"btn btn-dark\"><i class=\"fa fa-search\"></i></button>\r\n            </div>\r\n          </div>\r\n      <img src=\"../../../assets/house.png\" alt=\"\">\r\n    </div>\r\n  </div>\r\n</div>\r\n<app-footer></app-footer>"
+module.exports = "<!--  <div class=\"jumbotron text-center\">\r\n  <h1>MEAN Authentication App1234</h1>\r\n  <p class=\"lead\">Welcome to our custom MEAN authentication application built from scratch </p>\r\n  <div>\r\n    <a class=\"btn btn-primary\" [routerLink]=\"['/register']\">Register</a> <a class=\"btn btn-dark\" [routerLink]=\"['/login']\">Login</a>\r\n  </div>\r\n</div> -->\r\n\r\n<!-- <div class=\"jumbotron\"> -->\r\n    <!-- <img src=\"/assets/landing.jpg\" width=\"100%\" /> -->\r\n<!-- </div>  -->\r\n<div class=\"home\">\r\n  <div class=\"row\">\r\n    <div class=\"col\">\r\n    </div>\r\n    <div class=\"col\">\r\n        <h1>Lightning Fast Valuation<br>Provider</h1>\r\n        <div class=\"input-group search-box\">\r\n            <input type=\"text\" placeholder=\"Search for Location\" autocorrect=\"off\" autocapitalize=\"off\" spellcheck=\"off\" class=\"form-control\" #search>\r\n            <div class=\"input-group-append\">\r\n              <button class=\"btn btn-dark\"><i class=\"fa fa-search\"></i></button>\r\n            </div>\r\n          </div>\r\n      <img src=\"../../../assets/house.png\" alt=\"\">\r\n    </div>\r\n  </div>\r\n</div>\r\n<app-footer></app-footer>"
 
 /***/ }),
 
@@ -484,6 +488,257 @@ var HomeComponent = (function () {
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_0__agm_core__["b" /* MapsAPILoader */], __WEBPACK_IMPORTED_MODULE_1__angular_core__["NgZone"]])
     ], HomeComponent);
     return HomeComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "../../../../../src/app/components/land-price/land-price.component.css":
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, "#map {\r\n  height: 400px;\r\n  width: 100%;\r\n}\r\n#about {\r\n  margin-top: 5%;\r\n}\r\n.home{\r\n  background: url(\"/assets/landing.jpg\");\r\n  background-repeat: no-repeat;\r\n  background-position: center center;\r\n  background-attachment: fixed;\r\n  background-size: cover;\r\n  height: 100%;\r\n}", ""]);
+
+// exports
+
+
+/*** EXPORTS FROM exports-loader ***/
+module.exports = module.exports.toString();
+
+/***/ }),
+
+/***/ "../../../../../src/app/components/land-price/land-price.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"home\">\n<div id=\"about\"></div>\n<div class=\"container\" >\n  <div class=\"row\" >\n    <div class=\"col-md-9\">\n      <input id=\"pac-input\" class=\"controls\" type=\"text\" placeholder=\"Location\"\n             style=\"width: 80%;margin-bottom: 1%; margin-right: 2%;\" >\n      <input type=\"button\" value=\"Locate\">\n      <div id=\"map\" #mapRed></div>\n    </div >\n\n    <div class=\"col-md-3\" >\n      <br><br>\n      <input type=\"button\" class=\"btn btn-primary\" value=\" Price(RS)\" style=\"width: 150px;\" (click)=\"send_current_position()\"><br>\n      <div class=\"martop10\"></div>\n      <input type=\"text\" [(ngModel)]=\"prices.current_price\" ><br>\n\n      <div class=\"martop10\"></div>\n      <input type=\"button\" class=\"btn btn-primary\" value=\"Future Price(RS)\" (click)=\"send_data()\" style=\"width: 150px;\"><br>\n      <div class=\"martop10\"></div>\n      <input type=\"text\" [(ngModel)]=\"prices.future_price\" >\n    \n      <div class=\"martop10 row\">\n        <div class=\"col-sm-5\"><label for=\"\">School(%)</label></div>\n        <div class=\"col-sm-7\"><input type=\"text\" [(ngModel)]=\"prices.school_percent\" ></div>\n      </div>\n      <div class=\"martop10 row\">\n        <div class=\"col-sm-5\"><label for=\"\">Hospital(%)</label></div>\n        <div class=\"col-sm-7\"><input type=\"text\" [(ngModel)]=\"prices.hospital_percent\" ></div>\n      </div>\n      <div class=\"martop10 row\">\n        <div class=\"col-sm-5\"><label for=\"\">Supermarket(%)</label></div>\n        <div class=\"col-sm-7\"><input type=\"text\" [(ngModel)]=\"prices.supermarket_percent\" ></div>\n      </div>\n      <div class=\"martop10 row\">\n        <div class=\"col-sm-5\"><label for=\"\">Road(%)</label></div>\n        <div class=\"col-sm-7\"><input type=\"text\" [(ngModel)]=\"prices.road_percent\" ></div>\n      </div>\n      <div class=\"martop10 row\">\n        <div class=\"col-sm-5\"><label for=\"\">Apartment(%)</label></div>\n        <div class=\"col-sm-7\"><input type=\"text\" [(ngModel)]=\"prices.apartment_percent\" ></div>\n      </div>\n    </div>\n   </div>\n</div>\n</div>\n \n\n\n\n<!--<input type=\"button\" value=\"Locate\">-->\n\n\n\n"
+
+/***/ }),
+
+/***/ "../../../../../src/app/components/land-price/land-price.component.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return LandPriceComponent; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/esm5/core.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_common_http__ = __webpack_require__("../../../common/esm5/http.js");
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+var httpOptions = {
+    headers: new __WEBPACK_IMPORTED_MODULE_1__angular_common_http__["c" /* HttpHeaders */]({ 'Content-Type': 'application/json',
+        'Authorization': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZDVhMmYzNTU2M2UyMjBhOTQ5YjBmOTIiLCJlbWFpbCI6ImoxYW4uaG9uZ0B5YW5kZXguY29tIiwibmFtZSI6ImJyYXMiLCJleHAiOjE1NjY4MzI4OTIsImlhdCI6MTU2NjIyODA5Mn0.DfPAVVsaNCV3urx35HQdWIeXTV4ybe3lVQl4E_aA37M'
+    })
+};
+function test(pl) {
+    LandPriceComponent.credentials.lat = pl.geometry.location.lat();
+    LandPriceComponent.credentials.lng = pl.geometry.location.lng();
+}
+function future(av, nu) {
+    LandPriceComponent.credentials.av_list.push(av);
+    LandPriceComponent.credentials.nu_list.push(nu);
+    console.log(LandPriceComponent.credentials.av_list);
+    console.log(LandPriceComponent.credentials.nu_list);
+}
+var LandPriceComponent = (function () {
+    function LandPriceComponent(http) {
+        this.http = http;
+        this.prices = {
+            current_price: '',
+            future_price: 'Predict...',
+            school_percent: 'Percent of School',
+            hospital_percent: 'Percent of Hospital',
+            supermarket_percent: 'Percent of Supermarket',
+            road_percent: 'Percent of Road',
+            apartment_percent: 'Percent of Apartment',
+        };
+    }
+    LandPriceComponent_1 = LandPriceComponent;
+    LandPriceComponent.prototype.handleError = function (error) {
+        console.error('Something has gone wrong', error);
+        return Promise.reject(error.message || error);
+    };
+    LandPriceComponent.prototype.ngOnInit = function () {
+        this.initAutocomplete();
+    };
+    LandPriceComponent.prototype.initAutocomplete = function () {
+        var map = new google.maps.Map(this.mapRed.nativeElement, {
+            center: { lat: 6.9271, lng: 79.8621 },
+            zoom: 14,
+            mapTypeId: 'roadmap'
+        });
+        var input = document.getElementById('pac-input');
+        var searchBox = new google.maps.places.SearchBox(input);
+        map.addListener('bounds_changed', function () {
+            searchBox.setBounds(map.getBounds());
+        });
+        var markers = [];
+        searchBox.addListener('places_changed', function () {
+            LandPriceComponent_1.credentials.av_list = [];
+            LandPriceComponent_1.credentials.nu_list = [];
+            var places = searchBox.getPlaces();
+            markers = [];
+            var bounds = new google.maps.LatLngBounds();
+            for (var i = 0; i < places.length; i++) {
+                var place = places[i];
+                var icon = {
+                    url: place.icon,
+                    size: new google.maps.Size(71, 71),
+                    origin: new google.maps.Point(0, 0),
+                    anchor: new google.maps.Point(17, 34),
+                    scaledSize: new google.maps.Size(25, 25)
+                };
+                markers.push(new google.maps.Marker({
+                    map: map,
+                    icon: icon,
+                    title: place.name,
+                    position: place.geometry.location
+                }));
+                if (place.geometry.viewport) {
+                    bounds.union(place.geometry.viewport);
+                }
+                else {
+                    bounds.union(place.geometry.location);
+                }
+                var service = new google.maps.places.PlacesService(map);
+                var building = ['school', 'hospital', 'supermarket', 'road', 'apartment'];
+                test(place);
+                for (var i = 0; i < building.length; i++) {
+                    service.nearbySearch({ location: place.geometry.location, radius: 1000, type: building[i] }, function (results, status) {
+                        // alert(results.length)
+                        if (results.length == 0) {
+                            future(0, 0);
+                        }
+                        else {
+                            if (status !== 'OK')
+                                return;
+                            // alert(results[0].geometry.location.lat());
+                            var rad = function (x) {
+                                return x * Math.PI / 180;
+                            };
+                            // let number: number = 0;
+                            var total_distance = 0;
+                            var average_distance = 0;
+                            var build_number = 0;
+                            // let passed: array = [];
+                            var passed = [];
+                            var filterDistance = function (p) {
+                                var R = 6378137; // Earth’s mean radius in meter
+                                var dLat = rad(p.geometry.location.lat() - place.geometry.location.lat());
+                                var dLong = rad(p.geometry.location.lng() - place.geometry.location.lng());
+                                var a = Math.sin(dLat / 2) * Math.sin(dLat / 2) +
+                                    Math.cos(rad(place.geometry.location.lat())) * Math.cos(rad(p.geometry.location.lat())) *
+                                        Math.sin(dLong / 2) * Math.sin(dLong / 2);
+                                var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+                                var d = R * c;
+                                return d; // returns the distance in meter
+                            };
+                            // alert(results.length);
+                            for (var j = 0; j < results.length; j++) {
+                                if (filterDistance(results[j]) < 1000) {
+                                    total_distance += filterDistance(results[j]);
+                                    build_number += 1;
+                                    passed.push(results[j]);
+                                }
+                            }
+                            if (build_number !== 0) {
+                                average_distance = total_distance / build_number;
+                                // alert(average_distance);alert(build_number);
+                                future(average_distance, build_number);
+                            }
+                            else {
+                                average_distance = 0;
+                                future(average_distance, build_number);
+                            }
+                            for (var i = 0; i < passed.length; i++) {
+                                var image = {
+                                    url: passed[i].icon,
+                                    size: new google.maps.Size(71, 71),
+                                    origin: new google.maps.Point(0, 0),
+                                    anchor: new google.maps.Point(17, 34),
+                                    scaledSize: new google.maps.Size(25, 25)
+                                };
+                                var marker = new google.maps.Marker({
+                                    map: map,
+                                    icon: image,
+                                    title: passed[i].name,
+                                    position: passed[i].geometry.location
+                                });
+                                bounds.extend(passed[i].geometry.location);
+                            }
+                            map.fitBounds(bounds);
+                            map.setZoom(15);
+                        }
+                    });
+                }
+            }
+        });
+        // alert(json);
+    };
+    LandPriceComponent.prototype.send_current_position = function (json) {
+        var _this = this;
+        // alert(LandPriceComponent.credentials.lat);
+        var data = {
+            lat: '',
+            lng: ''
+        };
+        data.lat = LandPriceComponent_1.credentials.lat;
+        // alert(data.lat);
+        data.lng = LandPriceComponent_1.credentials.lng;
+        // alert(data.lng);
+        return this.http.post('users/send_current', data, httpOptions).subscribe(function (current_price) { console.log(current_price), _this.prices.current_price = parseInt(current_price[0]).toString(); });
+    };
+    LandPriceComponent.prototype.send_data = function () {
+        var _this = this;
+        // alert('OK');
+        var data = {
+            av: [],
+            nu: [],
+            current: ''
+        };
+        data.av = LandPriceComponent_1.credentials.av_list;
+        // alert(data.av[4]);
+        data.nu = LandPriceComponent_1.credentials.nu_list;
+        data.current = this.prices.current_price;
+        return this.http.post('users/send_future', data, httpOptions).subscribe(function (future_price) {
+            console.log(future_price), _this.prices.future_price = parseInt(future_price[5]).toString(), _this.prices.school_percent = (future_price[0] * 100).toString().slice(0, 5),
+                _this.prices.hospital_percent = (future_price[1] * 100).toString().slice(0, 5), _this.prices.supermarket_percent = (future_price[2] * 100).toString().slice(0, 5), _this.prices.road_percent = (future_price[3] * 100).toString().slice(0, 5),
+                _this.prices.apartment_percent = (future_price[4] * 100).toString().slice(0, 5);
+        });
+    };
+    LandPriceComponent.credentials = {
+        lat: '',
+        lng: '',
+        av_list: new Array(),
+        nu_list: new Array()
+    };
+    __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["ViewChild"])("mapRed"),
+        __metadata("design:type", __WEBPACK_IMPORTED_MODULE_0__angular_core__["ElementRef"])
+    ], LandPriceComponent.prototype, "mapRed", void 0);
+    LandPriceComponent = LandPriceComponent_1 = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+            selector: 'app-land-price',
+            template: __webpack_require__("../../../../../src/app/components/land-price/land-price.component.html"),
+            styles: [__webpack_require__("../../../../../src/app/components/land-price/land-price.component.css")]
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__angular_common_http__["a" /* HttpClient */]])
+    ], LandPriceComponent);
+    return LandPriceComponent;
+    var LandPriceComponent_1;
 }());
 
 
@@ -602,7 +857,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/components/navbar/navbar.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<nav class=\"navbar navbar-expand-md navbar-dark bg-dark fixed-top\">\r\n      <a class=\"navbar-brand\" href=\"#\">Evaluer</a>\r\n      <button class=\"navbar-toggler\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarsExampleDefault\" aria-controls=\"navbarsExampleDefault\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">\r\n        <span class=\"navbar-toggler-icon\"></span>\r\n      </button>\r\n\r\n      <div class=\"collapse navbar-collapse\" id=\"navbarsExampleDefault\">\r\n        <ul class=\"navbar-nav mr-auto\">\r\n          <li class=\"nav-item\" [routerLinkActive]=\"['active']\" [routerLinkActiveOptions] = \"{exact:true}\">\r\n            <a class=\"nav-link\" [routerLink]=\"['/']\">Home <span></span></a>\r\n          </li>\r\n        </ul>\r\n        <ul class=\"navbar-nav ml-auto\">\r\n          <li class=\"nav-item\" *ngIf=\"authService.loggedIn()\" [routerLinkActive]=\"['active']\" [routerLinkActiveOptions] = \"{exact:true}\">\r\n            <a class=\"nav-link\" [routerLink]=\"['/dashboard']\">Dashboard </a>\r\n          </li>\r\n          <li class=\"nav-item\" *ngIf=\"authService.loggedIn()\" [routerLinkActive]=\"['active']\" [routerLinkActiveOptions] = \"{exact:true}\">\r\n            <a class=\"nav-link\" [routerLink]=\"['/profile']\">Profile </a>\r\n          </li>\r\n          <li class=\"nav-item\" *ngIf=\"!authService.loggedIn()\" [routerLinkActive]=\"['active']\" [routerLinkActiveOptions] = \"{exact:true}\">\r\n            <a class=\"nav-link\" [routerLink]=\"['/login']\">Login </a>\r\n          </li>\r\n          <li class=\"nav-item\" *ngIf=\"!authService.loggedIn()\" [routerLinkActive]=\"['active']\" [routerLinkActiveOptions] = \"{exact:true}\">\r\n            <a class=\"nav-link\" [routerLink]=\"['/register']\">Register</a>\r\n          </li>\r\n          <li class=\"nav-item\" *ngIf=\"authService.loggedIn()\"><a class=\"nav-link\" (click)=\"onLogoutClick()\" href=\"#\">Logout</a>\r\n          </li>\r\n        </ul>\r\n      </div>\r\n    </nav>\r\n"
+module.exports = "<nav class=\"navbar navbar-expand-md navbar-dark bg-dark fixed-top\">\r\n      <a class=\"navbar-brand\" href=\"#\">Evaluer</a>\r\n      <button class=\"navbar-toggler\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarsExampleDefault\" aria-controls=\"navbarsExampleDefault\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">\r\n        <span class=\"navbar-toggler-icon\"></span>\r\n      </button>\r\n\r\n      <div class=\"collapse navbar-collapse\" id=\"navbarsExampleDefault\">\r\n        <ul class=\"navbar-nav mr-auto\">\r\n          <li class=\"nav-item\" [routerLinkActive]=\"['active']\" [routerLinkActiveOptions] = \"{exact:true}\">\r\n            <a class=\"nav-link\" [routerLink]=\"['/']\">Home <span></span></a>\r\n          </li>\r\n        </ul>\r\n        <ul class=\"navbar-nav ml-auto\">\r\n          <li class=\"nav-item\" *ngIf=\"authService.loggedIn()\" [routerLinkActive]=\"['active']\" [routerLinkActiveOptions] = \"{exact:true}\">\r\n            <a class=\"nav-link\" [routerLink]=\"['/dashboard']\">Dashboard </a>\r\n          </li>\r\n          <li class=\"nav-item\" *ngIf=\"authService.loggedIn()\" [routerLinkActive]=\"['active']\" [routerLinkActiveOptions] = \"{exact:true}\">\r\n            <a class=\"nav-link\" [routerLink]=\"['/landprice']\">Land-Price </a>\r\n          </li>\r\n          <li class=\"nav-item\" *ngIf=\"authService.loggedIn()\" [routerLinkActive]=\"['active']\" [routerLinkActiveOptions] = \"{exact:true}\">\r\n            <a class=\"nav-link\" [routerLink]=\"['/profile']\">Profile </a>\r\n          </li>\r\n          <li class=\"nav-item\" *ngIf=\"!authService.loggedIn()\" [routerLinkActive]=\"['active']\" [routerLinkActiveOptions] = \"{exact:true}\">\r\n            <a class=\"nav-link\" [routerLink]=\"['/login']\">Login </a>\r\n          </li>\r\n          <li class=\"nav-item\" *ngIf=\"!authService.loggedIn()\" [routerLinkActive]=\"['active']\" [routerLinkActiveOptions] = \"{exact:true}\">\r\n            <a class=\"nav-link\" [routerLink]=\"['/register']\">Register</a>\r\n          </li>\r\n          <li class=\"nav-item\" *ngIf=\"authService.loggedIn()\"><a class=\"nav-link\" (click)=\"onLogoutClick()\" href=\"#\">Logout</a>\r\n          </li>\r\n        </ul>\r\n      </div>\r\n    </nav>\r\n"
 
 /***/ }),
 

@@ -1,0 +1,54 @@
+<div class="home">
+<div id="about"></div>
+<div class="container" >
+  <div class="row" >
+    <div class="col-md-9">
+      <input id="pac-input" class="controls" type="text" placeholder="Location"
+             style="width: 80%;margin-bottom: 1%; margin-right: 2%;" >
+      <input type="button" value="Locate">
+      <div id="map" #mapRed></div>
+    </div >
+
+    <div class="col-md-3" >
+      <br><br>
+      <input type="button" class="btn btn-primary" value=" Price(RS)" style="width: 150px;" (click)="send_current_position()"><br>
+      <div class="martop10"></div>
+      <input type="text" [(ngModel)]="prices.current_price" ><br>
+
+      <div class="martop10"></div>
+      <input type="button" class="btn btn-primary" value="Future Price(RS)" (click)="send_data()" style="width: 150px;"><br>
+      <div class="martop10"></div>
+      <input type="text" [(ngModel)]="prices.future_price" >
+    
+      <div class="martop10 row">
+        <div class="col-sm-5"><label for="">School(%)</label></div>
+        <div class="col-sm-7"><input type="text" [(ngModel)]="prices.school_percent" ></div>
+      </div>
+      <div class="martop10 row">
+        <div class="col-sm-5"><label for="">Hospital(%)</label></div>
+        <div class="col-sm-7"><input type="text" [(ngModel)]="prices.hospital_percent" ></div>
+      </div>
+      <div class="martop10 row">
+        <div class="col-sm-5"><label for="">Supermarket(%)</label></div>
+        <div class="col-sm-7"><input type="text" [(ngModel)]="prices.supermarket_percent" ></div>
+      </div>
+      <div class="martop10 row">
+        <div class="col-sm-5"><label for="">Road(%)</label></div>
+        <div class="col-sm-7"><input type="text" [(ngModel)]="prices.road_percent" ></div>
+      </div>
+      <div class="martop10 row">
+        <div class="col-sm-5"><label for="">Apartment(%)</label></div>
+        <div class="col-sm-7"><input type="text" [(ngModel)]="prices.apartment_percent" ></div>
+      </div>
+    </div>
+   </div>
+</div>
+</div>
+ 
+
+
+
+<!--<input type="button" value="Locate">-->
+
+
+

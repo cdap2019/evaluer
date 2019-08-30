@@ -62,4 +62,51 @@ router.get('/profile', passport.authenticate('jwt', {session:false}), (req, res,
   res.json({user: req.user});
 });
 
+// Current Price
+router.post('/send_current', (req, res) => {
+
+  var PythonShell = require('python-shell');
+
+  var options = {
+      mode: 'text',
+      pythonPath: 'python',
+      pythonOptions: ['-W ignore'],
+      scriptPath: '.',
+      args: [req.body.lat, req.body.lng]
+  };
+  PythonShell.PythonShell.run('current_price.py', options, function (err, results) {
+      if (err)
+          throw err;
+      // Results is an array consisting of messages collected during execution
+
+      console.log('results: %j', results);
+      res.status(200).json(results);
+  });
+
+});
+
+router.post('/send_future', (req, res) => {
+  // console.log(req.body.av[0]);
+  // res.status(200).json('success');
+  var PythonShell = require('python-shell');
+
+  var options = {
+      mode: 'text',
+      pythonPath: 'python',
+      pythonOptions: ['-W ignore'],
+      scriptPath: '.',
+      args: [req.body.nu[0], req.body.av[0], req.body.nu[1], req.body.av[1], req.body.nu[2],req.body.av[2],
+      req.body.nu[3],req.body.av[3],req.body.nu[4],req.body.av[4],req.body.current]
+  };
+  PythonShell.PythonShell.run('future_price.py', options, function (err, results) {
+      if (err)
+          throw err;
+      // Results is an array consisting of messages collected during execution
+
+      console.log('results: %j', results);
+      res.status(200).json(results);
+  });
+
+});
+
 module.exports = router;
