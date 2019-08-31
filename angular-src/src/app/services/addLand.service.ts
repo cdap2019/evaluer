@@ -30,4 +30,14 @@ export class AddLandService {
     const uri = 'http://localhost:8080/lands';
     return this.http.get(uri).map(res =>res);
   }
+
+ getCurrentPrice(lat,lng)
+ {
+  const data = {
+    lat: lat,
+    lng: lng,
+  };
+  return this.http.post('users/send_current', data).subscribe((current_price)=>
+  alert(current_price));
+ }
 }

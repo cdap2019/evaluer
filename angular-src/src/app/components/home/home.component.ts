@@ -1,5 +1,6 @@
 import { MapsAPILoader } from '@agm/core';
 import { Component, OnInit,ViewChild, ElementRef, NgZone } from '@angular/core';
+import { AddLandService } from 'app/services/addLand.service';
 declare var google;
 
 @Component({
@@ -13,7 +14,7 @@ export class HomeComponent implements OnInit {
   longitude: number;
   @ViewChild('search') public searchElement: ElementRef;
 
-  constructor(private mapsAPILoader: MapsAPILoader, private ngZone: NgZone) {}
+  constructor(private addLandService:AddLandService ,private mapsAPILoader: MapsAPILoader, private ngZone: NgZone) {}
 
   ngOnInit() {
     this.mapsAPILoader.load().then(
@@ -37,5 +38,11 @@ export class HomeComponent implements OnInit {
     }
     );
  }
+
+ predictPrice()
+ {
+  this.addLandService.getCurrentPrice(this.latitude, this.longitude);
+ }
+
 
 }
