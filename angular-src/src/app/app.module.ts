@@ -23,6 +23,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { AddLandService } from './services/addLand.service';
 import { PredictionComponent } from './components/prediction/prediction.component';
 import { RatingModule } from 'ng-starrating';
+import { NgxSpinnerModule } from "ngx-spinner";
 
 const appRoutes: Routes =  [
   {path: '', component: HomeComponent},
@@ -52,6 +53,7 @@ const appRoutes: Routes =  [
     FormsModule,
     ReactiveFormsModule,
     HttpModule,
+    NgxSpinnerModule,
     RatingModule,
     HttpClientModule,
     RouterModule.forRoot(appRoutes),

@@ -102,12 +102,15 @@ var AppComponent = (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__services_addLand_service__ = __webpack_require__("../../../../../src/app/services/addLand.service.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__components_prediction_prediction_component__ = __webpack_require__("../../../../../src/app/components/prediction/prediction.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_22_ng_starrating__ = __webpack_require__("../../../../ng-starrating/fesm5/ng-starrating.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_23_ngx_spinner__ = __webpack_require__("../../../../ngx-spinner/ngx-spinner.umd.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_23_ngx_spinner___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_23_ngx_spinner__);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+
 
 
 
@@ -162,6 +165,7 @@ var AppModule = (function () {
                 __WEBPACK_IMPORTED_MODULE_2__angular_forms__["b" /* FormsModule */],
                 __WEBPACK_IMPORTED_MODULE_2__angular_forms__["c" /* ReactiveFormsModule */],
                 __WEBPACK_IMPORTED_MODULE_3__angular_http__["HttpModule"],
+                __WEBPACK_IMPORTED_MODULE_23_ngx_spinner__["NgxSpinnerModule"],
                 __WEBPACK_IMPORTED_MODULE_22_ng_starrating__["a" /* RatingModule */],
                 __WEBPACK_IMPORTED_MODULE_19__angular_common_http__["b" /* HttpClientModule */],
                 __WEBPACK_IMPORTED_MODULE_4__angular_router__["c" /* RouterModule */].forRoot(appRoutes),
@@ -422,7 +426,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, ".home{\r\n    background: url(\"/assets/landing.jpg\");\r\n    background-repeat: no-repeat;\r\n    background-position: center center;\r\n    background-attachment: fixed;\r\n    background-size: cover;\r\n}\r\n\r\n.input-group{\r\n    width: 60% ;\r\n    padding: 22px;\r\n}\r\nimg{\r\n    width:700px;\r\n    float:right;\r\n    margin-bottom:-81px;\r\n}\r\nh1{\r\n    font-size: 3.1875rem ;\r\n    padding: 20px ;\r\n    color:#424036;\r\n}\r\n@media(max-width: 768px){\r\n    img{\r\n        width: 220px;\r\n        /* margin-bottom: -26px; */\r\n     \r\n     }\r\n\r\n     .input-group{\r\n         width: 100%;\r\n     }\r\n     h1{\r\n        font-size:  2.1875rem ;\r\n    }\r\n    \r\n  }", ""]);
+exports.push([module.i, ".home{\r\n    background: url(\"/assets/landing.jpg\");\r\n    background-repeat: no-repeat;\r\n    background-position: center center;\r\n    background-attachment: fixed;\r\n    background-size: cover;\r\n}\r\n\r\n.input-group{\r\n    width: 60% ;\r\n    padding: 22px;\r\n}\r\nimg{\r\n    width:700px;\r\n    float:right;\r\n    margin-bottom:-81px;\r\n}\r\nh1{\r\n    font-size: 3.1875rem ;\r\n    padding: 20px ;\r\n    color:#424036;\r\n}\r\n.loading{\r\n    color: white;\r\n    padding-top: 50px;\r\n  }\r\n@media(max-width: 768px){\r\n    img{\r\n        width: 220px;\r\n        /* margin-bottom: -26px; */\r\n     \r\n     }\r\n\r\n     .input-group{\r\n         width: 100%;\r\n     }\r\n     h1{\r\n        font-size:  2.1875rem ;\r\n    }\r\n    \r\n  }", ""]);
 
 // exports
 
@@ -435,7 +439,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/components/home/home.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<!--  <div class=\"jumbotron text-center\">\r\n  <h1>MEAN Authentication App1234</h1>\r\n  <p class=\"lead\">Welcome to our custom MEAN authentication application built from scratch </p>\r\n  <div>\r\n    <a class=\"btn btn-primary\" [routerLink]=\"['/register']\">Register</a> <a class=\"btn btn-dark\" [routerLink]=\"['/login']\">Login</a>\r\n  </div>\r\n</div> -->\r\n\r\n<!-- <div class=\"jumbotron\"> -->\r\n    <!-- <img src=\"/assets/landing.jpg\" width=\"100%\" /> -->\r\n<!-- </div>  -->\r\n<div class=\"home\">\r\n  <div class=\"row\">\r\n    <div class=\"col\">\r\n    </div>\r\n    <div class=\"col\">\r\n        <h1>Lightning Fast Valuation<br>Provider</h1>\r\n        <div class=\"input-group search-box\">\r\n            <input type=\"text\" placeholder=\"Search for Location\" autocorrect=\"off\" autocapitalize=\"off\" spellcheck=\"off\" class=\"form-control\" #search>\r\n            <div class=\"input-group-append\">\r\n              <button (click)=\"predictPrice()\" class=\"btn btn-dark\"><i class=\"fa fa-search\"></i></button>\r\n            </div>\r\n          </div>\r\n      <img src=\"../../../assets/house.png\" alt=\"\">\r\n    </div>\r\n  </div>\r\n</div>\r\n<app-footer></app-footer>"
+module.exports = "<!--  <div class=\"jumbotron text-center\">\r\n  <h1>MEAN Authentication App1234</h1>\r\n  <p class=\"lead\">Welcome to our custom MEAN authentication application built from scratch </p>\r\n  <div>\r\n    <a class=\"btn btn-primary\" [routerLink]=\"['/register']\">Register</a> <a class=\"btn btn-dark\" [routerLink]=\"['/login']\">Login</a>\r\n  </div>\r\n</div> -->\r\n\r\n<!-- <div class=\"jumbotron\"> -->\r\n    <!-- <img src=\"/assets/landing.jpg\" width=\"100%\" /> -->\r\n<!-- </div>  -->\r\n\r\n<div class=\"home\">\r\n  <div class=\"row\">\r\n    <div class=\"col\">\r\n    </div>\r\n    <div class=\"col\">\r\n        <ngx-spinner  type=\"ball-clip-rotate-multiple\" size=\"medium\">\r\n          <p class=\"loading\">Loading...</p>\r\n        </ngx-spinner>\r\n        <h1>Lightning Fast Valuation<br>Provider</h1>\r\n        <div class=\"input-group search-box\">\r\n            <input type=\"text\" placeholder=\"Search for Location\" autocorrect=\"off\" autocapitalize=\"off\" spellcheck=\"off\" class=\"form-control\" #search>\r\n            <div class=\"input-group-append\">\r\n              <button (click)=\"predictPrice()\" class=\"btn btn-dark\"><i class=\"fa fa-search\"></i></button>\r\n            </div>\r\n          </div>\r\n      <img src=\"../../../assets/house.png\" alt=\"\">\r\n    \r\n    </div>\r\n  </div>\r\n</div>\r\n<app-footer></app-footer>\r\n"
 
 /***/ }),
 
@@ -448,6 +452,8 @@ module.exports = "<!--  <div class=\"jumbotron text-center\">\r\n  <h1>MEAN Auth
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__("../../../core/esm5/core.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_app_services_addLand_service__ = __webpack_require__("../../../../../src/app/services/addLand.service.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_router__ = __webpack_require__("../../../router/esm5/router.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_ngx_spinner__ = __webpack_require__("../../../../ngx-spinner/ngx-spinner.umd.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_ngx_spinner___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_ngx_spinner__);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -461,8 +467,11 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+
 var HomeComponent = (function () {
-    function HomeComponent(router, addLandService, mapsAPILoader, ngZone) {
+    // tslint:disable-next-line:max-line-length
+    function HomeComponent(spinner, router, addLandService, mapsAPILoader, ngZone) {
+        this.spinner = spinner;
         this.router = router;
         this.addLandService = addLandService;
         this.mapsAPILoader = mapsAPILoader;
@@ -490,11 +499,14 @@ var HomeComponent = (function () {
     };
     HomeComponent.prototype.predictPrice = function () {
         var _this = this;
+        this.spinner.show();
         // this.addLandService.getCurrentPrice(this.latitude, this.longitude);
         this.addLandService.getCurrentPrice(this.latitude, this.longitude).subscribe(function (data) {
             console.log(data[0]); // Data which is returned by call
-            // this.router.navigate(['/prediction', data[0]]);
-            _this.router.navigate(['./', 'prediction'], { queryParams: { page: data[0] }, skipLocationChange: true });
+            setTimeout(function () {
+                _this.spinner.hide();
+                _this.router.navigate(['./', 'prediction'], { queryParams: { page: data[0] }, skipLocationChange: true });
+            }, 5000);
         }, function (error) {
             console.log(error); // Error if any
         });
@@ -509,7 +521,7 @@ var HomeComponent = (function () {
             template: __webpack_require__("../../../../../src/app/components/home/home.component.html"),
             styles: [__webpack_require__("../../../../../src/app/components/home/home.component.css")]
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_3__angular_router__["b" /* Router */], __WEBPACK_IMPORTED_MODULE_2_app_services_addLand_service__["a" /* AddLandService */], __WEBPACK_IMPORTED_MODULE_0__agm_core__["b" /* MapsAPILoader */], __WEBPACK_IMPORTED_MODULE_1__angular_core__["NgZone"]])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_4_ngx_spinner__["NgxSpinnerService"], __WEBPACK_IMPORTED_MODULE_3__angular_router__["b" /* Router */], __WEBPACK_IMPORTED_MODULE_2_app_services_addLand_service__["a" /* AddLandService */], __WEBPACK_IMPORTED_MODULE_0__agm_core__["b" /* MapsAPILoader */], __WEBPACK_IMPORTED_MODULE_1__angular_core__["NgZone"]])
     ], HomeComponent);
     return HomeComponent;
 }());
