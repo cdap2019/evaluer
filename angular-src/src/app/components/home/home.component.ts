@@ -41,7 +41,15 @@ export class HomeComponent implements OnInit {
 
  predictPrice()
  {
-  this.addLandService.getCurrentPrice(this.latitude, this.longitude);
+  // this.addLandService.getCurrentPrice(this.latitude, this.longitude);
+  this.addLandService.getCurrentPrice(this.latitude, this.longitude).subscribe(
+    data => { console.log(data[0]); // Data which is returned by call
+    },
+    error => { console.log(error); // Error if any
+    },
+    // ()=> // Here call is completed. If you wish to do something 
+    // after call is completed(since this is an asynchronous call), this is the right place to do. ex: call another function
+  );
  }
 
 

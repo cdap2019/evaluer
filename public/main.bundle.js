@@ -483,7 +483,12 @@ var HomeComponent = (function () {
         });
     };
     HomeComponent.prototype.predictPrice = function () {
-        this.addLandService.getCurrentPrice(this.latitude, this.longitude);
+        // this.addLandService.getCurrentPrice(this.latitude, this.longitude);
+        this.addLandService.getCurrentPrice(this.latitude, this.longitude).subscribe(function (data) {
+            console.log(data[0]); // Data which is returned by call
+        }, function (error) {
+            console.log(error); // Error if any
+        });
     };
     __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["ViewChild"])('search'),
@@ -1253,6 +1258,7 @@ var AuthGuard = (function () {
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AddLandService; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/esm5/core.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_common_http__ = __webpack_require__("../../../common/esm5/http.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_http__ = __webpack_require__("../../../http/esm5/http.js");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1264,9 +1270,11 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 
 
+
 var AddLandService = (function () {
     function AddLandService(http) {
         this.http = http;
+        this.requestOptions = new __WEBPACK_IMPORTED_MODULE_2__angular_http__["RequestOptions"]();
     }
     AddLandService.prototype.addLand = function (id, price, distance, route, aindex, province, district, address, lat, lon) {
         console.log(id);
@@ -1296,9 +1304,10 @@ var AddLandService = (function () {
             lat: lat,
             lng: lng,
         };
-        return this.http.post('users/send_current', data).subscribe(function (current_price) {
-            return alert(current_price);
-        });
+        // return this.http.post('users/send_current', data).subscribe((current_price)=>
+        // alert(current_price));
+        return this.http.post('users/send_current', data);
+        // .map((response: Response) => response.json());
     };
     AddLandService = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"])(),

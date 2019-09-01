@@ -1,9 +1,11 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { RequestOptions, Response } from '@angular/http';
 
 @Injectable()
 export class AddLandService {
 
+  requestOptions = new RequestOptions();
   constructor(private http: HttpClient) { }
 
   addLand(id,price, distance, route, aindex, province, district, address, lat, lon) {
@@ -37,7 +39,10 @@ export class AddLandService {
     lat: lat,
     lng: lng,
   };
-  return this.http.post('users/send_current', data).subscribe((current_price)=>
-  alert(current_price));
+  // return this.http.post('users/send_current', data).subscribe((current_price)=>
+  // alert(current_price));
+
+      return this.http.post('users/send_current',data);
+      // .map((response: Response) => response.json());
  }
 }
