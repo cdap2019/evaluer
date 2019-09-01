@@ -101,12 +101,14 @@ var AppComponent = (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__angular_common_http__ = __webpack_require__("../../../common/esm5/http.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__services_addLand_service__ = __webpack_require__("../../../../../src/app/services/addLand.service.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__components_prediction_prediction_component__ = __webpack_require__("../../../../../src/app/components/prediction/prediction.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_22_ng_starrating__ = __webpack_require__("../../../../ng-starrating/fesm5/ng-starrating.js");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+
 
 
 
@@ -160,6 +162,7 @@ var AppModule = (function () {
                 __WEBPACK_IMPORTED_MODULE_2__angular_forms__["b" /* FormsModule */],
                 __WEBPACK_IMPORTED_MODULE_2__angular_forms__["c" /* ReactiveFormsModule */],
                 __WEBPACK_IMPORTED_MODULE_3__angular_http__["HttpModule"],
+                __WEBPACK_IMPORTED_MODULE_22_ng_starrating__["a" /* RatingModule */],
                 __WEBPACK_IMPORTED_MODULE_19__angular_common_http__["b" /* HttpClientModule */],
                 __WEBPACK_IMPORTED_MODULE_4__angular_router__["c" /* RouterModule */].forRoot(appRoutes),
                 __WEBPACK_IMPORTED_MODULE_16_angular2_flash_messages__["FlashMessagesModule"].forRoot(),
@@ -959,7 +962,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/components/prediction/prediction.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container\">\r\n    <div class=\"jumbotron\">\r\n        <h6>Price</h6>\r\n        <p>{{price | currency:\"LKR\": 'symbol' : '6.2-2'}}</p>\r\n    </div>\r\n</div>"
+module.exports = "<div class=\"container\">\r\n    <div class=\"jumbotron\">\r\n        <div class=\"row\">\r\n            <div class=\"col\">\r\n                <h6>Price</h6>\r\n                <p>{{price | currency:\"LKR\": 'symbol' : '6.2-2'}}</p>\r\n            </div>\r\n            <div class=\"col\">\r\n              <h5>Contribution</h5>\r\n              <ul *ngFor=\"let valuer of valuers\">\r\n                <li>{{valuer.name}}</li>\r\n                <star-rating value=\"5\" checkedcolor=\"red\" uncheckedcolor=\"black\" size=\"30px\" readonly=\"false\" (rate)=\"onRate($event)\"></star-rating>\r\n              </ul>\r\n            </div>\r\n        </div>\r\n    </div>\r\n</div>"
 
 /***/ }),
 
@@ -985,9 +988,27 @@ var PredictionComponent = (function () {
     function PredictionComponent(route, router) {
         this.route = route;
         this.router = router;
+        // tslint:disable-next-line:member-ordering
+        this.valuers = [
+            {
+                id: 1,
+                name: 'Valuer 1'
+            },
+            {
+                id: 2,
+                name: 'Valuer 2'
+            },
+            {
+                id: 3,
+                name: 'Valuer 3'
+            },
+        ];
     }
     PredictionComponent.prototype.ngOnInit = function () {
         this.price = this.route.snapshot.queryParamMap.get('page');
+    };
+    PredictionComponent.prototype.onRate = function ($event) {
+        alert("Old Value:" + $event.oldValue + ", \n      New Value: " + $event.newValue + ", \n      Checked Color: " + $event.starRating.checkedcolor + ", \n      Unchecked Color: " + $event.starRating.uncheckedcolor);
     };
     PredictionComponent = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({

@@ -1,6 +1,17 @@
 <div class="container">
     <div class="jumbotron">
-        <h6>Price</h6>
-        <p>{{price | currency:"LKR": 'symbol' : '6.2-2'}}</p>
+        <div class="row">
+            <div class="col">
+                <h6>Price</h6>
+                <p>{{price | currency:"LKR": 'symbol' : '6.2-2'}}</p>
+            </div>
+            <div class="col">
+              <h5>Contribution</h5>
+              <ul *ngFor="let valuer of valuers">
+                <li>{{valuer.name}}</li>
+                <star-rating value="5" checkedcolor="red" uncheckedcolor="black" size="30px" readonly="false" (rate)="onRate($event)"></star-rating>
+              </ul>
+            </div>
+        </div>
     </div>
 </div>

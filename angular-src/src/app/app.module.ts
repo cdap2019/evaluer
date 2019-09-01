@@ -22,6 +22,7 @@ import { FooterComponent } from './components/footer/footer.component';
 import { HttpClientModule } from '@angular/common/http';
 import { AddLandService } from './services/addLand.service';
 import { PredictionComponent } from './components/prediction/prediction.component';
+import { RatingModule } from 'ng-starrating';
 
 const appRoutes: Routes =  [
   {path: '', component: HomeComponent},
@@ -51,6 +52,7 @@ const appRoutes: Routes =  [
     FormsModule,
     ReactiveFormsModule,
     HttpModule,
+    RatingModule,
     HttpClientModule,
     RouterModule.forRoot(appRoutes),
     FlashMessagesModule.forRoot(),
