@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 
 
 @Component({
@@ -9,9 +9,11 @@ import { Router } from '@angular/router';
 })
 export class PredictionComponent implements OnInit {
 
-  constructor(private router:Router) { }
+  price: any;
+  constructor(private route: ActivatedRoute ,private router:Router) { }
 
   ngOnInit() {
+    this.price = this.route.snapshot.queryParamMap.get('page');
   }
 
 

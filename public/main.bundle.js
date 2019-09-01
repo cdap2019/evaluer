@@ -161,7 +161,7 @@ var AppModule = (function () {
                 __WEBPACK_IMPORTED_MODULE_2__angular_forms__["c" /* ReactiveFormsModule */],
                 __WEBPACK_IMPORTED_MODULE_3__angular_http__["HttpModule"],
                 __WEBPACK_IMPORTED_MODULE_19__angular_common_http__["b" /* HttpClientModule */],
-                __WEBPACK_IMPORTED_MODULE_4__angular_router__["b" /* RouterModule */].forRoot(appRoutes),
+                __WEBPACK_IMPORTED_MODULE_4__angular_router__["c" /* RouterModule */].forRoot(appRoutes),
                 __WEBPACK_IMPORTED_MODULE_16_angular2_flash_messages__["FlashMessagesModule"].forRoot(),
                 __WEBPACK_IMPORTED_MODULE_5__agm_core__["a" /* AgmCoreModule */].forRoot({
                     apiKey: 'AIzaSyDhoZamzj5fd26T7qbetCYKfSBBfQq0YEs',
@@ -341,7 +341,7 @@ var DashboardComponent = (function () {
             __WEBPACK_IMPORTED_MODULE_0__angular_core__["NgZone"],
             __WEBPACK_IMPORTED_MODULE_2__angular_forms__["a" /* FormBuilder */],
             __WEBPACK_IMPORTED_MODULE_3_app_services_addLand_service__["a" /* AddLandService */],
-            __WEBPACK_IMPORTED_MODULE_4__angular_router__["a" /* Router */]])
+            __WEBPACK_IMPORTED_MODULE_4__angular_router__["b" /* Router */]])
     ], DashboardComponent);
     return DashboardComponent;
 }());
@@ -444,6 +444,7 @@ module.exports = "<!--  <div class=\"jumbotron text-center\">\r\n  <h1>MEAN Auth
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__agm_core__ = __webpack_require__("../../../../@agm/core/index.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__("../../../core/esm5/core.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_app_services_addLand_service__ = __webpack_require__("../../../../../src/app/services/addLand.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_router__ = __webpack_require__("../../../router/esm5/router.js");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -456,8 +457,10 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+
 var HomeComponent = (function () {
-    function HomeComponent(addLandService, mapsAPILoader, ngZone) {
+    function HomeComponent(router, addLandService, mapsAPILoader, ngZone) {
+        this.router = router;
         this.addLandService = addLandService;
         this.mapsAPILoader = mapsAPILoader;
         this.ngZone = ngZone;
@@ -483,9 +486,12 @@ var HomeComponent = (function () {
         });
     };
     HomeComponent.prototype.predictPrice = function () {
+        var _this = this;
         // this.addLandService.getCurrentPrice(this.latitude, this.longitude);
         this.addLandService.getCurrentPrice(this.latitude, this.longitude).subscribe(function (data) {
             console.log(data[0]); // Data which is returned by call
+            // this.router.navigate(['/prediction', data[0]]);
+            _this.router.navigate(['/prediction'], { queryParams: { page: data[0] }, skipLocationChange: true });
         }, function (error) {
             console.log(error); // Error if any
         });
@@ -500,7 +506,7 @@ var HomeComponent = (function () {
             template: __webpack_require__("../../../../../src/app/components/home/home.component.html"),
             styles: [__webpack_require__("../../../../../src/app/components/home/home.component.css")]
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_2_app_services_addLand_service__["a" /* AddLandService */], __WEBPACK_IMPORTED_MODULE_0__agm_core__["b" /* MapsAPILoader */], __WEBPACK_IMPORTED_MODULE_1__angular_core__["NgZone"]])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_3__angular_router__["b" /* Router */], __WEBPACK_IMPORTED_MODULE_2_app_services_addLand_service__["a" /* AddLandService */], __WEBPACK_IMPORTED_MODULE_0__agm_core__["b" /* MapsAPILoader */], __WEBPACK_IMPORTED_MODULE_1__angular_core__["NgZone"]])
     ], HomeComponent);
     return HomeComponent;
 }());
@@ -841,7 +847,7 @@ var LoginComponent = (function () {
             styles: [__webpack_require__("../../../../../src/app/components/login/login.component.css")]
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__services_auth_service__["a" /* AuthService */],
-            __WEBPACK_IMPORTED_MODULE_2__angular_router__["a" /* Router */],
+            __WEBPACK_IMPORTED_MODULE_2__angular_router__["b" /* Router */],
             __WEBPACK_IMPORTED_MODULE_3_angular2_flash_messages__["FlashMessagesService"]])
     ], LoginComponent);
     return LoginComponent;
@@ -922,7 +928,7 @@ var NavbarComponent = (function () {
             styles: [__webpack_require__("../../../../../src/app/components/navbar/navbar.component.css")]
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__services_auth_service__["a" /* AuthService */],
-            __WEBPACK_IMPORTED_MODULE_2__angular_router__["a" /* Router */],
+            __WEBPACK_IMPORTED_MODULE_2__angular_router__["b" /* Router */],
             __WEBPACK_IMPORTED_MODULE_3_angular2_flash_messages__["FlashMessagesService"]])
     ], NavbarComponent);
     return NavbarComponent;
@@ -953,7 +959,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/components/prediction/prediction.component.html":
 /***/ (function(module, exports) {
 
-module.exports = ""
+module.exports = "<div class=\"container\">\r\n    <div class=\"jumbotron\">\r\n        <h6>Price</h6>\r\n        <p>{{price | currency:\"LKR\"}}</p>\r\n    </div>\r\n</div>"
 
 /***/ }),
 
@@ -976,10 +982,12 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 var PredictionComponent = (function () {
-    function PredictionComponent(router) {
+    function PredictionComponent(route, router) {
+        this.route = route;
         this.router = router;
     }
     PredictionComponent.prototype.ngOnInit = function () {
+        this.price = this.route.snapshot.queryParamMap.get('page');
     };
     PredictionComponent = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
@@ -987,7 +995,7 @@ var PredictionComponent = (function () {
             template: __webpack_require__("../../../../../src/app/components/prediction/prediction.component.html"),
             styles: [__webpack_require__("../../../../../src/app/components/prediction/prediction.component.css")]
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__angular_router__["a" /* Router */]])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__angular_router__["a" /* ActivatedRoute */], __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* Router */]])
     ], PredictionComponent);
     return PredictionComponent;
 }());
@@ -1090,7 +1098,7 @@ var ProfileComponent = (function () {
             template: __webpack_require__("../../../../../src/app/components/profile/profile.component.html"),
             styles: [__webpack_require__("../../../../../src/app/components/profile/profile.component.css")]
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__services_auth_service__["a" /* AuthService */], __WEBPACK_IMPORTED_MODULE_2__angular_router__["a" /* Router */], __WEBPACK_IMPORTED_MODULE_3_app_services_addLand_service__["a" /* AddLandService */]])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__services_auth_service__["a" /* AuthService */], __WEBPACK_IMPORTED_MODULE_2__angular_router__["b" /* Router */], __WEBPACK_IMPORTED_MODULE_3_app_services_addLand_service__["a" /* AddLandService */]])
     ], ProfileComponent);
     return ProfileComponent;
 }());
@@ -1196,7 +1204,7 @@ var RegisterComponent = (function () {
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__services_validate_service__["a" /* ValidateService */],
             __WEBPACK_IMPORTED_MODULE_2__services_auth_service__["a" /* AuthService */],
-            __WEBPACK_IMPORTED_MODULE_4__angular_router__["a" /* Router */],
+            __WEBPACK_IMPORTED_MODULE_4__angular_router__["b" /* Router */],
             __WEBPACK_IMPORTED_MODULE_3_angular2_flash_messages__["FlashMessagesService"]])
     ], RegisterComponent);
     return RegisterComponent;
@@ -1242,7 +1250,7 @@ var AuthGuard = (function () {
     };
     AuthGuard = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"])(),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_2__services_auth_service__["a" /* AuthService */], __WEBPACK_IMPORTED_MODULE_1__angular_router__["a" /* Router */]])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_2__services_auth_service__["a" /* AuthService */], __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* Router */]])
     ], AuthGuard);
     return AuthGuard;
 }());
