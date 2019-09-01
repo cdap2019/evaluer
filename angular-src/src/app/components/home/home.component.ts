@@ -46,7 +46,7 @@ export class HomeComponent implements OnInit {
   this.addLandService.getCurrentPrice(this.latitude, this.longitude).subscribe(
     data => { console.log(data[0]); // Data which is returned by call
       // this.router.navigate(['/prediction', data[0]]);
-      this.router.navigate(['/prediction'],{ queryParams: { page: data[0] }, skipLocationChange: true });
+      this.router.navigate(['./','prediction'],{ queryParams: { page: data[0] }, skipLocationChange: true });
     },
     error => { console.log(error); // Error if any
     },

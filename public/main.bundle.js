@@ -491,7 +491,7 @@ var HomeComponent = (function () {
         this.addLandService.getCurrentPrice(this.latitude, this.longitude).subscribe(function (data) {
             console.log(data[0]); // Data which is returned by call
             // this.router.navigate(['/prediction', data[0]]);
-            _this.router.navigate(['/prediction'], { queryParams: { page: data[0] }, skipLocationChange: true });
+            _this.router.navigate(['./', 'prediction'], { queryParams: { page: data[0] }, skipLocationChange: true });
         }, function (error) {
             console.log(error); // Error if any
         });
@@ -946,7 +946,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, "", ""]);
+exports.push([module.i, ".container{\r\n    padding:70px \r\n}", ""]);
 
 // exports
 
@@ -959,7 +959,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/components/prediction/prediction.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container\">\r\n    <div class=\"jumbotron\">\r\n        <h6>Price</h6>\r\n        <p>{{price | currency:\"LKR\"}}</p>\r\n    </div>\r\n</div>"
+module.exports = "<div class=\"container\">\r\n    <div class=\"jumbotron\">\r\n        <h6>Price</h6>\r\n        <p>{{price | currency:\"LKR\": 'symbol' : '6.2-2'}}</p>\r\n    </div>\r\n</div>"
 
 /***/ }),
 
