@@ -100,6 +100,7 @@ var AppComponent = (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__components_footer_footer_component__ = __webpack_require__("../../../../../src/app/components/footer/footer.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__angular_common_http__ = __webpack_require__("../../../common/esm5/http.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__services_addLand_service__ = __webpack_require__("../../../../../src/app/services/addLand.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__components_prediction_prediction_component__ = __webpack_require__("../../../../../src/app/components/prediction/prediction.component.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -127,10 +128,12 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
+
 var appRoutes = [
     { path: '', component: __WEBPACK_IMPORTED_MODULE_10__components_home_home_component__["a" /* HomeComponent */] },
     { path: 'register', component: __WEBPACK_IMPORTED_MODULE_9__components_register_register_component__["a" /* RegisterComponent */] },
     { path: 'login', component: __WEBPACK_IMPORTED_MODULE_8__components_login_login_component__["a" /* LoginComponent */] },
+    { path: 'prediction', component: __WEBPACK_IMPORTED_MODULE_21__components_prediction_prediction_component__["a" /* PredictionComponent */] },
     { path: 'dashboard', component: __WEBPACK_IMPORTED_MODULE_11__components_dashboard_dashboard_component__["a" /* DashboardComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_17__guards_auth_guard__["a" /* AuthGuard */]] },
     { path: 'landprice', component: __WEBPACK_IMPORTED_MODULE_12__components_land_price_land_price_component__["a" /* LandPriceComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_17__guards_auth_guard__["a" /* AuthGuard */]] },
     { path: 'profile', component: __WEBPACK_IMPORTED_MODULE_13__components_profile_profile_component__["a" /* ProfileComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_17__guards_auth_guard__["a" /* AuthGuard */]] }
@@ -149,7 +152,8 @@ var AppModule = (function () {
                 __WEBPACK_IMPORTED_MODULE_11__components_dashboard_dashboard_component__["a" /* DashboardComponent */],
                 __WEBPACK_IMPORTED_MODULE_12__components_land_price_land_price_component__["a" /* LandPriceComponent */],
                 __WEBPACK_IMPORTED_MODULE_13__components_profile_profile_component__["a" /* ProfileComponent */],
-                __WEBPACK_IMPORTED_MODULE_18__components_footer_footer_component__["a" /* FooterComponent */]
+                __WEBPACK_IMPORTED_MODULE_18__components_footer_footer_component__["a" /* FooterComponent */],
+                __WEBPACK_IMPORTED_MODULE_21__components_prediction_prediction_component__["a" /* PredictionComponent */]
             ],
             imports: [
                 __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__["a" /* BrowserModule */],
@@ -515,7 +519,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/components/land-price/land-price.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"home\">\n<div id=\"about\"></div>\n<div class=\"container\" >\n  <div class=\"row\" >\n    <div class=\"col-md-9\">\n      <input id=\"pac-input\" class=\"controls\" type=\"text\" placeholder=\"Location\"\n             style=\"width: 80%;margin-bottom: 1%; margin-right: 2%;\" >\n      <input type=\"button\" value=\"Locate\">\n      <div id=\"map\" #mapRed></div>\n    </div >\n\n    <div class=\"col-md-3\" >\n      <br><br>\n      <input type=\"button\" class=\"btn btn-primary\" value=\" Price(RS)\" style=\"width: 150px;\" (click)=\"send_current_position()\"><br>\n      <div class=\"martop10\"></div>\n      <input type=\"text\" [(ngModel)]=\"prices.current_price\" ><br>\n\n      <div class=\"martop10\"></div>\n      <input type=\"button\" class=\"btn btn-primary\" value=\"Future Price(RS)\" (click)=\"send_data()\" style=\"width: 150px;\"><br>\n      <div class=\"martop10\"></div>\n      <input type=\"text\" [(ngModel)]=\"prices.future_price\" >\n    \n      <div class=\"martop10 row\">\n        <div class=\"col-sm-5\"><label for=\"\">School(%)</label></div>\n        <div class=\"col-sm-7\"><input type=\"text\" [(ngModel)]=\"prices.school_percent\" ></div>\n      </div>\n      <div class=\"martop10 row\">\n        <div class=\"col-sm-5\"><label for=\"\">Hospital(%)</label></div>\n        <div class=\"col-sm-7\"><input type=\"text\" [(ngModel)]=\"prices.hospital_percent\" ></div>\n      </div>\n      <div class=\"martop10 row\">\n        <div class=\"col-sm-5\"><label for=\"\">Supermarket(%)</label></div>\n        <div class=\"col-sm-7\"><input type=\"text\" [(ngModel)]=\"prices.supermarket_percent\" ></div>\n      </div>\n      <div class=\"martop10 row\">\n        <div class=\"col-sm-5\"><label for=\"\">Road(%)</label></div>\n        <div class=\"col-sm-7\"><input type=\"text\" [(ngModel)]=\"prices.road_percent\" ></div>\n      </div>\n      <div class=\"martop10 row\">\n        <div class=\"col-sm-5\"><label for=\"\">Apartment(%)</label></div>\n        <div class=\"col-sm-7\"><input type=\"text\" [(ngModel)]=\"prices.apartment_percent\" ></div>\n      </div>\n    </div>\n   </div>\n</div>\n</div>\n \n\n\n\n<!--<input type=\"button\" value=\"Locate\">-->\n\n\n\n"
+module.exports = "<div class=\"home\">\r\n<div id=\"about\"></div>\r\n<div class=\"container\" >\r\n  <div class=\"row\" >\r\n    <div class=\"col-md-9\">\r\n      <input id=\"pac-input\" class=\"controls\" type=\"text\" placeholder=\"Location\"\r\n             style=\"width: 80%;margin-bottom: 1%; margin-right: 2%;\" >\r\n      <input type=\"button\" value=\"Locate\">\r\n      <div id=\"map\" #mapRed></div>\r\n    </div >\r\n\r\n    <div class=\"col-md-3\" >\r\n      <br><br>\r\n      <input type=\"button\" class=\"btn btn-primary\" value=\" Price(RS)\" style=\"width: 150px;\" (click)=\"send_current_position()\"><br>\r\n      <div class=\"martop10\"></div>\r\n      <input type=\"text\" [(ngModel)]=\"prices.current_price\" ><br>\r\n\r\n      <div class=\"martop10\"></div>\r\n      <input type=\"button\" class=\"btn btn-primary\" value=\"Future Price(RS)\" (click)=\"send_data()\" style=\"width: 150px;\"><br>\r\n      <div class=\"martop10\"></div>\r\n      <input type=\"text\" [(ngModel)]=\"prices.future_price\" >\r\n    \r\n      <div class=\"martop10 row\">\r\n        <div class=\"col-sm-5\"><label for=\"\">School(%)</label></div>\r\n        <div class=\"col-sm-7\"><input type=\"text\" [(ngModel)]=\"prices.school_percent\" ></div>\r\n      </div>\r\n      <div class=\"martop10 row\">\r\n        <div class=\"col-sm-5\"><label for=\"\">Hospital(%)</label></div>\r\n        <div class=\"col-sm-7\"><input type=\"text\" [(ngModel)]=\"prices.hospital_percent\" ></div>\r\n      </div>\r\n      <div class=\"martop10 row\">\r\n        <div class=\"col-sm-5\"><label for=\"\">Supermarket(%)</label></div>\r\n        <div class=\"col-sm-7\"><input type=\"text\" [(ngModel)]=\"prices.supermarket_percent\" ></div>\r\n      </div>\r\n      <div class=\"martop10 row\">\r\n        <div class=\"col-sm-5\"><label for=\"\">Road(%)</label></div>\r\n        <div class=\"col-sm-7\"><input type=\"text\" [(ngModel)]=\"prices.road_percent\" ></div>\r\n      </div>\r\n      <div class=\"martop10 row\">\r\n        <div class=\"col-sm-5\"><label for=\"\">Apartment(%)</label></div>\r\n        <div class=\"col-sm-7\"><input type=\"text\" [(ngModel)]=\"prices.apartment_percent\" ></div>\r\n      </div>\r\n    </div>\r\n   </div>\r\n</div>\r\n</div>\r\n \r\n\r\n\r\n\r\n<!--<input type=\"button\" value=\"Locate\">-->\r\n\r\n\r\n\r\n"
 
 /***/ }),
 
@@ -911,6 +915,70 @@ var NavbarComponent = (function () {
             __WEBPACK_IMPORTED_MODULE_3_angular2_flash_messages__["FlashMessagesService"]])
     ], NavbarComponent);
     return NavbarComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "../../../../../src/app/components/prediction/prediction.component.css":
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, "", ""]);
+
+// exports
+
+
+/*** EXPORTS FROM exports-loader ***/
+module.exports = module.exports.toString();
+
+/***/ }),
+
+/***/ "../../../../../src/app/components/prediction/prediction.component.html":
+/***/ (function(module, exports) {
+
+module.exports = ""
+
+/***/ }),
+
+/***/ "../../../../../src/app/components/prediction/prediction.component.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return PredictionComponent; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/esm5/core.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__("../../../router/esm5/router.js");
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+var PredictionComponent = (function () {
+    function PredictionComponent(router) {
+        this.router = router;
+    }
+    PredictionComponent.prototype.ngOnInit = function () {
+    };
+    PredictionComponent = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+            selector: 'app-prediction',
+            template: __webpack_require__("../../../../../src/app/components/prediction/prediction.component.html"),
+            styles: [__webpack_require__("../../../../../src/app/components/prediction/prediction.component.css")]
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__angular_router__["a" /* Router */]])
+    ], PredictionComponent);
+    return PredictionComponent;
 }());
 
 
