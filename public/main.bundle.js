@@ -92,18 +92,19 @@ var AppComponent = (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__components_dashboard_dashboard_component__ = __webpack_require__("../../../../../src/app/components/dashboard/dashboard.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__components_land_price_land_price_component__ = __webpack_require__("../../../../../src/app/components/land-price/land-price.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__components_profile_profile_component__ = __webpack_require__("../../../../../src/app/components/profile/profile.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__services_validate_service__ = __webpack_require__("../../../../../src/app/services/validate.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__services_auth_service__ = __webpack_require__("../../../../../src/app/services/auth.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16_angular2_flash_messages__ = __webpack_require__("../../../../angular2-flash-messages/module/index.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16_angular2_flash_messages___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_16_angular2_flash_messages__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__guards_auth_guard__ = __webpack_require__("../../../../../src/app/guards/auth.guard.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__components_footer_footer_component__ = __webpack_require__("../../../../../src/app/components/footer/footer.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__angular_common_http__ = __webpack_require__("../../../common/esm5/http.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__services_addLand_service__ = __webpack_require__("../../../../../src/app/services/addLand.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__components_prediction_prediction_component__ = __webpack_require__("../../../../../src/app/components/prediction/prediction.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_22_ng_starrating__ = __webpack_require__("../../../../ng-starrating/fesm5/ng-starrating.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_23_ngx_spinner__ = __webpack_require__("../../../../ngx-spinner/ngx-spinner.umd.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_23_ngx_spinner___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_23_ngx_spinner__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__components_futureprediction_futureprediction_component__ = __webpack_require__("../../../../../src/app/components/futureprediction/futureprediction.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__services_validate_service__ = __webpack_require__("../../../../../src/app/services/validate.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__services_auth_service__ = __webpack_require__("../../../../../src/app/services/auth.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17_angular2_flash_messages__ = __webpack_require__("../../../../angular2-flash-messages/module/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17_angular2_flash_messages___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_17_angular2_flash_messages__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__guards_auth_guard__ = __webpack_require__("../../../../../src/app/guards/auth.guard.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__components_footer_footer_component__ = __webpack_require__("../../../../../src/app/components/footer/footer.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__angular_common_http__ = __webpack_require__("../../../common/esm5/http.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__services_addLand_service__ = __webpack_require__("../../../../../src/app/services/addLand.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_22__components_prediction_prediction_component__ = __webpack_require__("../../../../../src/app/components/prediction/prediction.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_23_ng_starrating__ = __webpack_require__("../../../../ng-starrating/fesm5/ng-starrating.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_24_ngx_spinner__ = __webpack_require__("../../../../ngx-spinner/ngx-spinner.umd.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_24_ngx_spinner___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_24_ngx_spinner__);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -134,14 +135,16 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
+
 var appRoutes = [
     { path: '', component: __WEBPACK_IMPORTED_MODULE_10__components_home_home_component__["a" /* HomeComponent */] },
     { path: 'register', component: __WEBPACK_IMPORTED_MODULE_9__components_register_register_component__["a" /* RegisterComponent */] },
     { path: 'login', component: __WEBPACK_IMPORTED_MODULE_8__components_login_login_component__["a" /* LoginComponent */] },
-    { path: 'prediction', component: __WEBPACK_IMPORTED_MODULE_21__components_prediction_prediction_component__["a" /* PredictionComponent */] },
-    { path: 'dashboard', component: __WEBPACK_IMPORTED_MODULE_11__components_dashboard_dashboard_component__["a" /* DashboardComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_17__guards_auth_guard__["a" /* AuthGuard */]] },
-    { path: 'landprice', component: __WEBPACK_IMPORTED_MODULE_12__components_land_price_land_price_component__["a" /* LandPriceComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_17__guards_auth_guard__["a" /* AuthGuard */]] },
-    { path: 'profile', component: __WEBPACK_IMPORTED_MODULE_13__components_profile_profile_component__["a" /* ProfileComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_17__guards_auth_guard__["a" /* AuthGuard */]] }
+    { path: 'prediction', component: __WEBPACK_IMPORTED_MODULE_22__components_prediction_prediction_component__["a" /* PredictionComponent */] },
+    { path: 'dashboard', component: __WEBPACK_IMPORTED_MODULE_11__components_dashboard_dashboard_component__["a" /* DashboardComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_18__guards_auth_guard__["a" /* AuthGuard */]] },
+    { path: 'landprice', component: __WEBPACK_IMPORTED_MODULE_12__components_land_price_land_price_component__["a" /* LandPriceComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_18__guards_auth_guard__["a" /* AuthGuard */]] },
+    { path: 'profile', component: __WEBPACK_IMPORTED_MODULE_13__components_profile_profile_component__["a" /* ProfileComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_18__guards_auth_guard__["a" /* AuthGuard */]] },
+    { path: 'futureprediction', component: __WEBPACK_IMPORTED_MODULE_14__components_futureprediction_futureprediction_component__["a" /* FuturePrediction */], canActivate: [__WEBPACK_IMPORTED_MODULE_18__guards_auth_guard__["a" /* AuthGuard */]] }
 ];
 var AppModule = (function () {
     function AppModule() {
@@ -157,19 +160,20 @@ var AppModule = (function () {
                 __WEBPACK_IMPORTED_MODULE_11__components_dashboard_dashboard_component__["a" /* DashboardComponent */],
                 __WEBPACK_IMPORTED_MODULE_12__components_land_price_land_price_component__["a" /* LandPriceComponent */],
                 __WEBPACK_IMPORTED_MODULE_13__components_profile_profile_component__["a" /* ProfileComponent */],
-                __WEBPACK_IMPORTED_MODULE_18__components_footer_footer_component__["a" /* FooterComponent */],
-                __WEBPACK_IMPORTED_MODULE_21__components_prediction_prediction_component__["a" /* PredictionComponent */]
+                __WEBPACK_IMPORTED_MODULE_19__components_footer_footer_component__["a" /* FooterComponent */],
+                __WEBPACK_IMPORTED_MODULE_22__components_prediction_prediction_component__["a" /* PredictionComponent */],
+                __WEBPACK_IMPORTED_MODULE_14__components_futureprediction_futureprediction_component__["a" /* FuturePrediction */]
             ],
             imports: [
                 __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__["a" /* BrowserModule */],
                 __WEBPACK_IMPORTED_MODULE_2__angular_forms__["b" /* FormsModule */],
                 __WEBPACK_IMPORTED_MODULE_2__angular_forms__["c" /* ReactiveFormsModule */],
                 __WEBPACK_IMPORTED_MODULE_3__angular_http__["HttpModule"],
-                __WEBPACK_IMPORTED_MODULE_23_ngx_spinner__["NgxSpinnerModule"],
-                __WEBPACK_IMPORTED_MODULE_22_ng_starrating__["a" /* RatingModule */],
-                __WEBPACK_IMPORTED_MODULE_19__angular_common_http__["b" /* HttpClientModule */],
+                __WEBPACK_IMPORTED_MODULE_24_ngx_spinner__["NgxSpinnerModule"],
+                __WEBPACK_IMPORTED_MODULE_23_ng_starrating__["a" /* RatingModule */],
+                __WEBPACK_IMPORTED_MODULE_20__angular_common_http__["b" /* HttpClientModule */],
                 __WEBPACK_IMPORTED_MODULE_4__angular_router__["c" /* RouterModule */].forRoot(appRoutes),
-                __WEBPACK_IMPORTED_MODULE_16_angular2_flash_messages__["FlashMessagesModule"].forRoot(),
+                __WEBPACK_IMPORTED_MODULE_17_angular2_flash_messages__["FlashMessagesModule"].forRoot(),
                 __WEBPACK_IMPORTED_MODULE_5__agm_core__["a" /* AgmCoreModule */].forRoot({
                     apiKey: 'AIzaSyDhoZamzj5fd26T7qbetCYKfSBBfQq0YEs',
                     libraries: ['places']
@@ -179,7 +183,7 @@ var AppModule = (function () {
                     */
                 })
             ],
-            providers: [__WEBPACK_IMPORTED_MODULE_14__services_validate_service__["a" /* ValidateService */], __WEBPACK_IMPORTED_MODULE_15__services_auth_service__["a" /* AuthService */], __WEBPACK_IMPORTED_MODULE_17__guards_auth_guard__["a" /* AuthGuard */], __WEBPACK_IMPORTED_MODULE_20__services_addLand_service__["a" /* AddLandService */]],
+            providers: [__WEBPACK_IMPORTED_MODULE_15__services_validate_service__["a" /* ValidateService */], __WEBPACK_IMPORTED_MODULE_16__services_auth_service__["a" /* AuthService */], __WEBPACK_IMPORTED_MODULE_18__guards_auth_guard__["a" /* AuthGuard */], __WEBPACK_IMPORTED_MODULE_21__services_addLand_service__["a" /* AddLandService */]],
             bootstrap: [__WEBPACK_IMPORTED_MODULE_6__app_component__["a" /* AppComponent */]]
         })
     ], AppModule);
@@ -412,6 +416,168 @@ var FooterComponent = (function () {
         __metadata("design:paramtypes", [])
     ], FooterComponent);
     return FooterComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "../../../../../src/app/components/futureprediction/futureprediction.component.css":
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, ".container{\r\n    padding:70px \r\n}\r\nagm-map { height: 300px; /* height is required */ }", ""]);
+
+// exports
+
+
+/*** EXPORTS FROM exports-loader ***/
+module.exports = module.exports.toString();
+
+/***/ }),
+
+/***/ "../../../../../src/app/components/futureprediction/futureprediction.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"container\">\r\n    <h3 class=\"text-center\">Enter your Requirement</h3>\r\n    <form [formGroup]=\"angForm\" novalidate >\r\n        <div class=\"row\"> \r\n            <div class=\"col\">\r\n                <div class=\"form-group\">\r\n                    <label for=\"HospitalDistance\">HospitalDistance</label>\r\n                    <input type=\"number\"  class=\"form-control\" placeholder=\"HospitalDistance\" formControlName=\"HospitalDistance\" #HospitalDistance >\r\n                </div>\r\n                <div *ngIf=\"angForm.controls['HospitalDistance'].invalid && (angForm.controls['HospitalDistance'].dirty || angForm.controls['HospitalDistance'].touched)\" class=\"alert alert-danger\">\r\n                    <div *ngIf=\"angForm.controls['price'].errors.required\">\r\n                            HospitalDistance is required.\r\n                    </div>\r\n                </div>\r\n                <div class=\"form-group\">\r\n                    <label for=\"SchoolDistance\">SchoolDistance:</label>\r\n                    <input type=\"number\"  class=\"form-control\" placeholder=\"SchoolDistance\" formControlName=\"SchoolDistance\" #SchoolDistance>\r\n                </div>\r\n                <div *ngIf=\"angForm.controls['SchoolDistance'].invalid && (angForm.controls['SchoolDistance'].dirty || angForm.controls['SchoolDistance'].touched)\" class=\"alert alert-danger\">\r\n                    <div *ngIf=\"angForm.controls['SchoolDistance'].errors.required\">\r\n                      Distance is required.\r\n                    </div>\r\n                </div>\r\n                <div class=\"form-group\">\r\n                    <label for=\"DistToTown\">DistToTown</label>\r\n                    <input type=\"number\"  class=\"form-control\" placeholder=\"DistToTown\" formControlName=\"DistToTown\" #DistToTown>\r\n                </div>\r\n                <div *ngIf=\"angForm.controls['DistToTown'].invalid && (angForm.controls['DistToTown'].dirty || angForm.controls['DistToTown'].touched)\" class=\"alert alert-danger\">\r\n                    <div *ngIf=\"angForm.controls['DistToTown'].errors.required\">\r\n                        DistToTown is required.\r\n                    </div>\r\n                </div>\r\n                <div class=\"form-group\">\r\n                    <label for=\"Populationindex\">Population index</label>\r\n                    <input type=\"number\"  class=\"form-control\" placeholder=\"Index\" formControlName=\"Populationindex\" #Populationindex>\r\n                </div>\r\n                <div *ngIf=\"angForm.controls['Populationindex'].invalid && (angForm.controls['Populationindex'].dirty || angForm.controls['Populationindex'].touched)\" class=\"alert alert-danger\">\r\n                    <div *ngIf=\"angForm.controls['Populationindex'].errors.required\">\r\n                        Populationindex is required.\r\n                    </div>\r\n                </div>\r\n                <div class=\"form-group\">\r\n                        <label for=\"Bank\">Bank</label>\r\n                        <input type=\"number\" class=\"form-control\" placeholder=\"Bank\" formControlName=\"Bank\" #Bank>\r\n                </div>\r\n                <div *ngIf=\"angForm.controls['Bank'].invalid && (angForm.controls['Bank'].dirty || angForm.controls['Bank'].touched)\" class=\"alert alert-danger\">\r\n                    <div *ngIf=\"angForm.controls['Bank'].errors.required\">\r\n                            Bank is required.\r\n                    </div>\r\n                </div>\r\n                <div class=\"form-group\">\r\n                    <label for=\"ZipCode\">ZipCode:</label>\r\n                    <input type=\"number\"  class=\"form-control\" placeholder=\"ZipCode\" formControlName=\"ZipCode\" #ZipCode>\r\n                </div>\r\n                <div *ngIf=\"angForm.controls['ZipCode'].invalid && (angForm.controls['ZipCode'].dirty || angForm.controls['ZipCode'].touched)\" class=\"alert alert-danger\">\r\n                    <div *ngIf=\"angForm.controls['ZipCode'].errors.required\">\r\n                            ZipCode is required.\r\n                    </div>\r\n               </div>\r\n               <div class=\"form-group\">\r\n                    <label for=\"IsFloodedArea\">IsFloodedArea</label>\r\n                    <input type=\"number\"  class=\"form-control\" placeholder=\"IsFloodedArea\" formControlName=\"IsFloodedArea\" #IsFloodedArea>\r\n                </div>\r\n                <div *ngIf=\"angForm.controls['IsFloodedArea'].invalid && (angForm.controls['IsFloodedArea'].dirty || angForm.controls['IsFloodedArea'].touched)\" class=\"alert alert-danger\">\r\n                    <div *ngIf=\"angForm.controls['IsFloodedAreaIsFloodedArea'].errors.required\">\r\n                        IsFloodedAreais required.\r\n                    </div>\r\n                </div>\r\n            \r\n                <button  id=\"myButton\" class=\"float-left submit-button\" >Prediction</button>\r\n              \r\n                             <!-- <button  (click)=\"addLandInfo(HospitalDistance.value, SchoolDistance.value, Populationindex.value, Bank.value, ZipCode.value, DistToTown.value, address.value, IsFloodedArea.value,lat.value, lon.value)\" class=\"btn btn-success btn-block\" [disabled]=\"angForm.pristine || angForm.invalid\"  >predict</button>-->\r\n            </div>\r\n             \r\n            \r\n            <div class=\"col\"> \r\n                <div class=\"form-group\">\r\n                    <label for=\"search Location\">search Location</label>\r\n                    <input type=\"text\"  class=\"form-control\" (keydown.enter)=\"$event.preventDefault()\" \r\n                    placeholder=\"search Location\" autocorrect=\"off\" autocapitalize=\"off\" spellcheck=\"off\" formControlName=\"address\" #address>\r\n                </div>\r\n                <agm-map [latitude]=\"latitude\" [longitude]=\"longitude\" [zoom]=\"zoom\">\r\n                    <agm-marker [latitude]=\"latitude\" [longitude]=\"longitude\" [markerDraggable]=\"true\"\r\n                    (dragEnd)=\"markerDragEnd($event)\"></agm-marker>\r\n                </agm-map>\r\n                <div class=\"form-group\">\r\n                    <label for=\"lat\">Latitude:</label>\r\n                    <input type=\"number\" class=\"form-control\" [value]=\"latitude\" placeholder=\"\" formControlName=\"lat\" #lat>\r\n                </div>\r\n                <div *ngIf=\"angForm.controls['lat'].invalid && (angForm.controls['lat'].dirty || angForm.controls['lat'].touched)\" class=\"alert alert-danger\">\r\n                    <div *ngIf=\"angForm.controls['lat'].errors.required\">\r\n                        Latitude is required.\r\n                    </div>\r\n                </div>\r\n                <div class=\"form-group\">\r\n                    <label  for=\"lon\">Longitude:</label>\r\n                    <input type=\"number\" class=\"form-control\"  [value]=\"longitude\"  placeholder=\"\" formControlName=\"lon\" #lon>\r\n                </div>\r\n                <div *ngIf=\"angForm.controls['lon'].invalid && (angForm.controls['lon'].dirty || angForm.controls['lon'].touched)\" class=\"alert alert-danger\">\r\n                    <div *ngIf=\"angForm.controls['lon'].errors.required\">\r\n                        Longitude is required.\r\n                    </div>\r\n                </div>\r\n             \r\n            </div>\r\n        </div>    \r\n    </form>\r\n</div>"
+
+/***/ }),
+
+/***/ "../../../../../src/app/components/futureprediction/futureprediction.component.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return FuturePrediction; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/esm5/core.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__agm_core__ = __webpack_require__("../../../../@agm/core/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_forms__ = __webpack_require__("../../../forms/esm5/forms.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_app_services_addLand_service__ = __webpack_require__("../../../../../src/app/services/addLand.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_router__ = __webpack_require__("../../../router/esm5/router.js");
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+
+var FuturePrediction = (function () {
+    function FuturePrediction(mapsAPILoader, ngZone, fb, addLandService, router) {
+        this.mapsAPILoader = mapsAPILoader;
+        this.ngZone = ngZone;
+        this.fb = fb;
+        this.addLandService = addLandService;
+        this.router = router;
+        this.title = 'AGM project';
+        this.user = localStorage.getItem('user');
+        this.userId = JSON.parse(this.user);
+        this.createForm();
+        // var test = JSON.parse(this.user);
+        // console.log(test.id);
+    }
+    FuturePrediction.prototype.ngOnInit = function () {
+        var _this = this;
+        //load Places Autocomplete
+        this.mapsAPILoader.load().then(function () {
+            _this.setCurrentLocation();
+            _this.geoCoder = new google.maps.Geocoder;
+            var autocomplete = new google.maps.places.Autocomplete(_this.searchElementRef.nativeElement, {
+                types: ["address"], componentRestrictions: { country: 'lk' }
+            });
+            autocomplete.addListener("place_changed", function () {
+                _this.ngZone.run(function () {
+                    //get the place result
+                    var place = autocomplete.getPlace();
+                    //verify result
+                    if (place.geometry === undefined || place.geometry === null) {
+                        return;
+                    }
+                    //set latitude, longitude and zoom
+                    _this.latitude = place.geometry.location.lat();
+                    _this.longitude = place.geometry.location.lng();
+                    _this.zoom = 12;
+                });
+            });
+        });
+    };
+    // Get Current Location Coordinates
+    FuturePrediction.prototype.setCurrentLocation = function () {
+        var _this = this;
+        if ('geolocation' in navigator) {
+            navigator.geolocation.getCurrentPosition(function (position) {
+                _this.latitude = position.coords.latitude;
+                _this.longitude = position.coords.longitude;
+                _this.zoom = 8;
+                _this.getAddress(_this.latitude, _this.longitude);
+            });
+        }
+    };
+    FuturePrediction.prototype.markerDragEnd = function ($event) {
+        console.log($event);
+        this.latitude = $event.coords.lat;
+        this.longitude = $event.coords.lng;
+        this.getAddress(this.latitude, this.longitude);
+    };
+    FuturePrediction.prototype.getAddress = function (latitude, longitude) {
+        var _this = this;
+        this.geoCoder.geocode({ 'location': { lat: latitude, lng: longitude } }, function (results, status) {
+            console.log(results);
+            console.log(status);
+            if (status === 'OK') {
+                if (results[0]) {
+                    _this.zoom = 12;
+                    _this.address = results[0].formatted_address;
+                }
+                else {
+                    window.alert('No results found');
+                }
+            }
+            else {
+                window.alert('Geocoder failed due to: ' + status);
+            }
+        });
+    };
+    FuturePrediction.prototype.createForm = function () {
+        this.angForm = this.fb.group({
+            HospitalDistance: ['', __WEBPACK_IMPORTED_MODULE_2__angular_forms__["d" /* Validators */].required],
+            SchoolDistance: ['', __WEBPACK_IMPORTED_MODULE_2__angular_forms__["d" /* Validators */].required],
+            DistToTown: ['', __WEBPACK_IMPORTED_MODULE_2__angular_forms__["d" /* Validators */].required],
+            Populationindex: ['', __WEBPACK_IMPORTED_MODULE_2__angular_forms__["d" /* Validators */].required],
+            Bank: ['', __WEBPACK_IMPORTED_MODULE_2__angular_forms__["d" /* Validators */].required],
+            ZipCode: ['', __WEBPACK_IMPORTED_MODULE_2__angular_forms__["d" /* Validators */].required],
+            IsFloodedArea: ['', __WEBPACK_IMPORTED_MODULE_2__angular_forms__["d" /* Validators */].required],
+            address: ['', __WEBPACK_IMPORTED_MODULE_2__angular_forms__["d" /* Validators */].required],
+            lat: ['', __WEBPACK_IMPORTED_MODULE_2__angular_forms__["d" /* Validators */].required],
+            lon: ['', __WEBPACK_IMPORTED_MODULE_2__angular_forms__["d" /* Validators */].required]
+        });
+    };
+    __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["ViewChild"])('address'),
+        __metadata("design:type", __WEBPACK_IMPORTED_MODULE_0__angular_core__["ElementRef"])
+    ], FuturePrediction.prototype, "searchElementRef", void 0);
+    FuturePrediction = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+            selector: 'app-futureprediction',
+            template: __webpack_require__("../../../../../src/app/components/futureprediction/futureprediction.component.html"),
+            styles: [__webpack_require__("../../../../../src/app/components/futureprediction/futureprediction.component.css")]
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__agm_core__["b" /* MapsAPILoader */],
+            __WEBPACK_IMPORTED_MODULE_0__angular_core__["NgZone"],
+            __WEBPACK_IMPORTED_MODULE_2__angular_forms__["a" /* FormBuilder */],
+            __WEBPACK_IMPORTED_MODULE_3_app_services_addLand_service__["a" /* AddLandService */],
+            __WEBPACK_IMPORTED_MODULE_4__angular_router__["b" /* Router */]])
+    ], FuturePrediction);
+    return FuturePrediction;
 }());
 
 
@@ -893,7 +1059,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/components/navbar/navbar.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<nav class=\"navbar navbar-expand-md navbar-dark bg-dark fixed-top\">\r\n      <a class=\"navbar-brand\" href=\"#\">Evaluer</a>\r\n      <button class=\"navbar-toggler\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarsExampleDefault\" aria-controls=\"navbarsExampleDefault\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">\r\n        <span class=\"navbar-toggler-icon\"></span>\r\n      </button>\r\n\r\n      <div class=\"collapse navbar-collapse\" id=\"navbarsExampleDefault\">\r\n        <ul class=\"navbar-nav mr-auto\">\r\n          <li class=\"nav-item\" [routerLinkActive]=\"['active']\" [routerLinkActiveOptions] = \"{exact:true}\">\r\n            <a class=\"nav-link\" [routerLink]=\"['/']\">Home <span></span></a>\r\n          </li>\r\n        </ul>\r\n        <ul class=\"navbar-nav ml-auto\">\r\n          <li class=\"nav-item\" *ngIf=\"authService.loggedIn()\" [routerLinkActive]=\"['active']\" [routerLinkActiveOptions] = \"{exact:true}\">\r\n            <a class=\"nav-link\" [routerLink]=\"['/dashboard']\">Dashboard </a>\r\n          </li>\r\n          <li class=\"nav-item\" *ngIf=\"authService.loggedIn()\" [routerLinkActive]=\"['active']\" [routerLinkActiveOptions] = \"{exact:true}\">\r\n            <a class=\"nav-link\" [routerLink]=\"['/landprice']\">Land-Price </a>\r\n          </li>\r\n          <li class=\"nav-item\" *ngIf=\"authService.loggedIn()\" [routerLinkActive]=\"['active']\" [routerLinkActiveOptions] = \"{exact:true}\">\r\n            <a class=\"nav-link\" [routerLink]=\"['/profile']\">Profile </a>\r\n          </li>\r\n          <li class=\"nav-item\" *ngIf=\"!authService.loggedIn()\" [routerLinkActive]=\"['active']\" [routerLinkActiveOptions] = \"{exact:true}\">\r\n            <a class=\"nav-link\" [routerLink]=\"['/login']\">Login </a>\r\n          </li>\r\n          <li class=\"nav-item\" *ngIf=\"!authService.loggedIn()\" [routerLinkActive]=\"['active']\" [routerLinkActiveOptions] = \"{exact:true}\">\r\n            <a class=\"nav-link\" [routerLink]=\"['/register']\">Register</a>\r\n          </li>\r\n          <li class=\"nav-item\" *ngIf=\"authService.loggedIn()\"><a class=\"nav-link\" (click)=\"onLogoutClick()\" href=\"#\">Logout</a>\r\n          </li>\r\n        </ul>\r\n      </div>\r\n    </nav>\r\n"
+module.exports = "<nav class=\"navbar navbar-expand-md navbar-dark bg-dark fixed-top\">\r\n      <a class=\"navbar-brand\" href=\"#\">Evaluer</a>\r\n      <button class=\"navbar-toggler\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarsExampleDefault\" aria-controls=\"navbarsExampleDefault\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">\r\n        <span class=\"navbar-toggler-icon\"></span>\r\n      </button>\r\n\r\n      <div class=\"collapse navbar-collapse\" id=\"navbarsExampleDefault\">\r\n        <ul class=\"navbar-nav mr-auto\">\r\n          <li class=\"nav-item\" [routerLinkActive]=\"['active']\" [routerLinkActiveOptions] = \"{exact:true}\">\r\n            <a class=\"nav-link\" [routerLink]=\"['/']\">Home <span></span></a>\r\n          </li>\r\n        </ul>\r\n        <ul class=\"navbar-nav ml-auto\">\r\n          <li class=\"nav-item\" *ngIf=\"authService.loggedIn()\" [routerLinkActive]=\"['active']\" [routerLinkActiveOptions] = \"{exact:true}\">\r\n            <a class=\"nav-link\" [routerLink]=\"['/dashboard']\">Dashboard </a>\r\n          </li>\r\n          <li class=\"nav-item\" *ngIf=\"authService.loggedIn()\" [routerLinkActive]=\"['active']\" [routerLinkActiveOptions] = \"{exact:true}\">\r\n            <a class=\"nav-link\" [routerLink]=\"['/landprice']\">Land-Price </a>\r\n          </li>\r\n          <li class=\"nav-item\" *ngIf=\"authService.loggedIn()\" [routerLinkActive]=\"['active']\" [routerLinkActiveOptions] = \"{exact:true}\">\r\n            <a class=\"nav-link\" [routerLink]=\"['/profile']\">Profile </a>\r\n          </li>\r\n          <li class=\"nav-item\" *ngIf=\"!authService.loggedIn()\" [routerLinkActive]=\"['active']\" [routerLinkActiveOptions] = \"{exact:true}\">\r\n            <a class=\"nav-link\" [routerLink]=\"['/login']\">Login </a>\r\n          </li>\r\n          <li class=\"nav-item\" *ngIf=\"!authService.loggedIn()\" [routerLinkActive]=\"['active']\" [routerLinkActiveOptions] = \"{exact:true}\">\r\n            <a class=\"nav-link\" [routerLink]=\"['/register']\">Register</a>\r\n          </li>\r\n            <li class=\"nav-item\" *ngIf=\"authService.loggedIn()\" [routerLinkActive]=\"['active']\" [routerLinkActiveOptions] = \"{exact:true}\">\r\n              <a class=\"nav-link\" [routerLink]=\"['/futureprediction']\">Futureprediction</a>\r\n            </li>\r\n          \r\n          <li class=\"nav-item\" *ngIf=\"authService.loggedIn()\"><a class=\"nav-link\" (click)=\"onLogoutClick()\" href=\"#\">Logout</a>\r\n          </li>\r\n        </ul>\r\n      </div>\r\n    </nav>\r\n"
 
 /***/ }),
 

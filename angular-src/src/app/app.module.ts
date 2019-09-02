@@ -13,6 +13,8 @@ import { HomeComponent } from './components/home/home.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { LandPriceComponent } from './components/land-price/land-price.component';
 import { ProfileComponent } from './components/profile/profile.component';
+import {FuturePrediction} from './components/futureprediction/futureprediction.component';
+
 
 import { ValidateService } from './services/validate.service';
 import { AuthService } from './services/auth.service';
@@ -32,7 +34,9 @@ const appRoutes: Routes =  [
   {path: 'prediction', component: PredictionComponent},
   {path: 'dashboard', component: DashboardComponent, canActivate: [AuthGuard]},
   {path: 'landprice', component: LandPriceComponent, canActivate: [AuthGuard]},
-  {path: 'profile', component: ProfileComponent, canActivate: [AuthGuard]}
+  {path: 'profile', component: ProfileComponent, canActivate: [AuthGuard]},
+  {path: 'futureprediction', component: FuturePrediction, canActivate: [AuthGuard]}
+
 ];
 
 @NgModule({
@@ -46,7 +50,8 @@ const appRoutes: Routes =  [
     LandPriceComponent,
     ProfileComponent,
     FooterComponent,
-    PredictionComponent
+    PredictionComponent,
+    FuturePrediction
   ],
   imports: [
     BrowserModule,

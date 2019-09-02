@@ -1,0 +1,108 @@
+<div class="container">
+    <h3 class="text-center">Enter your Requirement</h3>
+    <form [formGroup]="angForm" novalidate >
+        <div class="row"> 
+            <div class="col">
+                <div class="form-group">
+                    <label for="HospitalDistance">HospitalDistance</label>
+                    <input type="number"  class="form-control" placeholder="HospitalDistance" formControlName="HospitalDistance" #HospitalDistance >
+                </div>
+                <div *ngIf="angForm.controls['HospitalDistance'].invalid && (angForm.controls['HospitalDistance'].dirty || angForm.controls['HospitalDistance'].touched)" class="alert alert-danger">
+                    <div *ngIf="angForm.controls['price'].errors.required">
+                            HospitalDistance is required.
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="SchoolDistance">SchoolDistance:</label>
+                    <input type="number"  class="form-control" placeholder="SchoolDistance" formControlName="SchoolDistance" #SchoolDistance>
+                </div>
+                <div *ngIf="angForm.controls['SchoolDistance'].invalid && (angForm.controls['SchoolDistance'].dirty || angForm.controls['SchoolDistance'].touched)" class="alert alert-danger">
+                    <div *ngIf="angForm.controls['SchoolDistance'].errors.required">
+                      Distance is required.
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="DistToTown">DistToTown</label>
+                    <input type="number"  class="form-control" placeholder="DistToTown" formControlName="DistToTown" #DistToTown>
+                </div>
+                <div *ngIf="angForm.controls['DistToTown'].invalid && (angForm.controls['DistToTown'].dirty || angForm.controls['DistToTown'].touched)" class="alert alert-danger">
+                    <div *ngIf="angForm.controls['DistToTown'].errors.required">
+                        DistToTown is required.
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="Populationindex">Population index</label>
+                    <input type="number"  class="form-control" placeholder="Index" formControlName="Populationindex" #Populationindex>
+                </div>
+                <div *ngIf="angForm.controls['Populationindex'].invalid && (angForm.controls['Populationindex'].dirty || angForm.controls['Populationindex'].touched)" class="alert alert-danger">
+                    <div *ngIf="angForm.controls['Populationindex'].errors.required">
+                        Populationindex is required.
+                    </div>
+                </div>
+                <div class="form-group">
+                        <label for="Bank">Bank</label>
+                        <input type="number" class="form-control" placeholder="Bank" formControlName="Bank" #Bank>
+                </div>
+                <div *ngIf="angForm.controls['Bank'].invalid && (angForm.controls['Bank'].dirty || angForm.controls['Bank'].touched)" class="alert alert-danger">
+                    <div *ngIf="angForm.controls['Bank'].errors.required">
+                            Bank is required.
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="ZipCode">ZipCode:</label>
+                    <input type="number"  class="form-control" placeholder="ZipCode" formControlName="ZipCode" #ZipCode>
+                </div>
+                <div *ngIf="angForm.controls['ZipCode'].invalid && (angForm.controls['ZipCode'].dirty || angForm.controls['ZipCode'].touched)" class="alert alert-danger">
+                    <div *ngIf="angForm.controls['ZipCode'].errors.required">
+                            ZipCode is required.
+                    </div>
+               </div>
+               <div class="form-group">
+                    <label for="IsFloodedArea">IsFloodedArea</label>
+                    <input type="number"  class="form-control" placeholder="IsFloodedArea" formControlName="IsFloodedArea" #IsFloodedArea>
+                </div>
+                <div *ngIf="angForm.controls['IsFloodedArea'].invalid && (angForm.controls['IsFloodedArea'].dirty || angForm.controls['IsFloodedArea'].touched)" class="alert alert-danger">
+                    <div *ngIf="angForm.controls['IsFloodedAreaIsFloodedArea'].errors.required">
+                        IsFloodedAreais required.
+                    </div>
+                </div>
+            
+                <button  id="myButton" class="float-left submit-button" >Prediction</button>
+              
+                             <!-- <button  (click)="addLandInfo(HospitalDistance.value, SchoolDistance.value, Populationindex.value, Bank.value, ZipCode.value, DistToTown.value, address.value, IsFloodedArea.value,lat.value, lon.value)" class="btn btn-success btn-block" [disabled]="angForm.pristine || angForm.invalid"  >predict</button>-->
+            </div>
+             
+            
+            <div class="col"> 
+                <div class="form-group">
+                    <label for="search Location">search Location</label>
+                    <input type="text"  class="form-control" (keydown.enter)="$event.preventDefault()" 
+                    placeholder="search Location" autocorrect="off" autocapitalize="off" spellcheck="off" formControlName="address" #address>
+                </div>
+                <agm-map [latitude]="latitude" [longitude]="longitude" [zoom]="zoom">
+                    <agm-marker [latitude]="latitude" [longitude]="longitude" [markerDraggable]="true"
+                    (dragEnd)="markerDragEnd($event)"></agm-marker>
+                </agm-map>
+                <div class="form-group">
+                    <label for="lat">Latitude:</label>
+                    <input type="number" class="form-control" [value]="latitude" placeholder="" formControlName="lat" #lat>
+                </div>
+                <div *ngIf="angForm.controls['lat'].invalid && (angForm.controls['lat'].dirty || angForm.controls['lat'].touched)" class="alert alert-danger">
+                    <div *ngIf="angForm.controls['lat'].errors.required">
+                        Latitude is required.
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label  for="lon">Longitude:</label>
+                    <input type="number" class="form-control"  [value]="longitude"  placeholder="" formControlName="lon" #lon>
+                </div>
+                <div *ngIf="angForm.controls['lon'].invalid && (angForm.controls['lon'].dirty || angForm.controls['lon'].touched)" class="alert alert-danger">
+                    <div *ngIf="angForm.controls['lon'].errors.required">
+                        Longitude is required.
+                    </div>
+                </div>
+             
+            </div>
+        </div>    
+    </form>
+</div>
