@@ -1018,6 +1018,7 @@ var PredictionComponent = (function () {
     }
     PredictionComponent.prototype.ngOnInit = function () {
         this.price = this.route.snapshot.queryParamMap.get('page');
+        this.price = this.price - 6000000;
     };
     PredictionComponent.prototype.onRate = function ($event) {
         alert("Old Value:" + $event.oldValue + ", \n      New Value: " + $event.newValue + ", \n      Checked Color: " + $event.starRating.checkedcolor + ", \n      Unchecked Color: " + $event.starRating.uncheckedcolor);

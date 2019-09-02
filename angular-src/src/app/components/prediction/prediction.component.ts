@@ -11,10 +11,12 @@ import { StarRatingComponent } from 'ng-starrating';
 export class PredictionComponent implements OnInit {
 
   price: any;
+  optimzed:any = 6000000;
   constructor(private route: ActivatedRoute ,private router:Router) { }
 
   ngOnInit() {
     this.price = this.route.snapshot.queryParamMap.get('page');
+    this.price = this.price - this.optimzed ;
   }
 
   onRate($event:{oldValue:number, newValue:number, starRating:StarRatingComponent}) {
@@ -39,4 +41,5 @@ export class PredictionComponent implements OnInit {
       name: 'Valuer 3'
     },
   ]
+
 }
