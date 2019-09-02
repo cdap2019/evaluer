@@ -45,4 +45,17 @@ export class AddLandService {
       return this.http.post('users/send_current',data);
       // .map((response: Response) => response.json());
  }
+
+ getPriceFromDb(address)
+ {
+  // const data = {
+  //   lat: lat,
+  //   lng: lng,
+  // };
+  // return this.http.post('users/send_current', data).subscribe((current_price)=>
+  // alert(current_price));
+
+      return this.http.post('users/send_current',data);
+      // .map((response: Response) => response.json());
+ }
 }
