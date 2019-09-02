@@ -1,5 +1,8 @@
 import { MapsAPILoader } from '@agm/core';
 import { Component, OnInit,ViewChild, ElementRef, NgZone } from '@angular/core';
+import { AddLandService } from 'app/services/addLand.service';
+import { Router } from '@angular/router';
+import { NgxSpinnerService } from 'ngx-spinner';
 declare var google;
 
 @Component({
@@ -11,9 +14,11 @@ export class HomeComponent implements OnInit {
 
   latitude: number;
   longitude: number;
+  address:any;
   @ViewChild('search') public searchElement: ElementRef;
 
-  constructor(private mapsAPILoader: MapsAPILoader, private ngZone: NgZone) {}
+  // tslint:disable-next-line:max-line-length
+  constructor(private spinner: NgxSpinnerService,private router: Router,private addLandService:AddLandService ,private mapsAPILoader: MapsAPILoader, private ngZone: NgZone) {}
 
   ngOnInit() {
     this.mapsAPILoader.load().then(
@@ -24,6 +29,7 @@ export class HomeComponent implements OnInit {
     autocomplete.addListener("place_changed", () => {
       this.ngZone.run(() => {
       let place: google.maps.places.PlaceResult = autocomplete.getPlace();
+        this.address = autocomplete.getPlace().address_components[0].long_name;
         if(place.geometry === undefined || place.geometry === null ){
           return;
         }
@@ -37,5 +43,26 @@ export class HomeComponent implements OnInit {
     }
     );
  }
+
+ predictPrice()
+ {
+  this.spinner.show();
+  // this.addLandService.getCurrentPrice(this.latitude, this.longitude);
+  this.addLandService.getCurrentPrice(this.latitude, this.longitude).subscribe(
+    data => { console.log(data[0]); // Data which is returned by call
+      setTimeout(() => {
+        this.spinner.hide();
+        this.router.navigate(['./','prediction'],{ queryParams: { page: data[0],page1:this.address }, skipLocationChange: true });
+      }, 5000);
+    },
+    error => { console.log(error); // Error if any
+    },
+    // ()=> // Here call is completed. If you wish to do something 
+    // after call is completed(since this is an asynchronous call), this is the right place to do. ex: call another function
+  );
+
+
+ }
+
 
 }

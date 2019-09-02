@@ -13,6 +13,8 @@ import { HomeComponent } from './components/home/home.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { LandPriceComponent } from './components/land-price/land-price.component';
 import { ProfileComponent } from './components/profile/profile.component';
+import {FuturePrediction} from './components/futureprediction/futureprediction.component';
+
 
 import { ValidateService } from './services/validate.service';
 import { AuthService } from './services/auth.service';
@@ -22,6 +24,8 @@ import { FooterComponent } from './components/footer/footer.component';
 import { HttpClientModule } from '@angular/common/http';
 import { AddLandService } from './services/addLand.service';
 import { PredictionComponent } from './components/prediction/prediction.component';
+import { RatingModule } from 'ng-starrating';
+import { NgxSpinnerModule } from "ngx-spinner";
 
 const appRoutes: Routes =  [
   {path: '', component: HomeComponent},
@@ -30,7 +34,9 @@ const appRoutes: Routes =  [
   {path: 'prediction', component: PredictionComponent},
   {path: 'dashboard', component: DashboardComponent, canActivate: [AuthGuard]},
   {path: 'landprice', component: LandPriceComponent, canActivate: [AuthGuard]},
-  {path: 'profile', component: ProfileComponent, canActivate: [AuthGuard]}
+  {path: 'profile', component: ProfileComponent, canActivate: [AuthGuard]},
+  {path: 'futureprediction', component: FuturePrediction, canActivate: [AuthGuard]}
+
 ];
 
 @NgModule({
@@ -44,13 +50,16 @@ const appRoutes: Routes =  [
     LandPriceComponent,
     ProfileComponent,
     FooterComponent,
-    PredictionComponent
+    PredictionComponent,
+    FuturePrediction
   ],
   imports: [
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
     HttpModule,
+    NgxSpinnerModule,
+    RatingModule,
     HttpClientModule,
     RouterModule.forRoot(appRoutes),
     FlashMessagesModule.forRoot(),

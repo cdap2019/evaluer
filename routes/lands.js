@@ -39,6 +39,14 @@ router.post('/add', (req,res,next)=>{
     })
 });
 
+
+router.get('/search', function(req,res){
+    var regex = new RegExp('col', 'i');  // 'i' makes it case insensitive
+    return Land.find({district: regex}, function(err,q){
+        return res.send(q);
+    });
+});
+
   
   
   module.exports = router;
