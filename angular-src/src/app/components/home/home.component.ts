@@ -23,8 +23,45 @@ export class HomeComponent implements OnInit {
   ngOnInit() {
     this.mapsAPILoader.load().then(
     () => {
+      // const cityBounds = new google.maps.LatLngBounds(
+      //   new google.maps.LatLng(6.979982, 79.874327),
+      //   new google.maps.LatLng(6.979697, 79.880935),
+      //   new google.maps.LatLng(6.975913, 79.883882),
+      //   new google.maps.LatLng(6.971180, 79.882560),
+      //   new google.maps.LatLng(6.966009, 79.878936),
+      //   new google.maps.LatLng(6.960802, 79.877719),
+      //   new google.maps.LatLng(6.957807, 79.878747),
+      //   new google.maps.LatLng(6.948079, 79.877497),
+      //   new google.maps.LatLng(6.943136, 79.879042),
+      //   new google.maps.LatLng(6.929673, 79.883675),
+      //   new google.maps.LatLng(6.908199, 79.886763)
+        
+      //   );
     // tslint:disable-next-line: max-line-length
-    let autocomplete = new google.maps.places.Autocomplete(this.searchElement.nativeElement,{types: ["address"] , componentRestrictions: {country: 'lk'}});
+    let input = this.searchElement.nativeElement;
+    let cityBounds = new google.maps.LatLngBounds(
+      new google.maps.LatLng(6.9319401, 79.8477783),
+        new google.maps.LatLng(6.979982, 79.874327),
+        new google.maps.LatLng(6.979697, 79.880935),
+        new google.maps.LatLng(6.975913, 79.883882),
+        new google.maps.LatLng(6.971180, 79.882560),
+        new google.maps.LatLng(6.966009, 79.878936),
+        new google.maps.LatLng(6.960802, 79.877719),
+        new google.maps.LatLng(6.957807, 79.878747),
+        new google.maps.LatLng(6.948079, 79.877497),
+        new google.maps.LatLng(6.943136, 79.879042),
+        new google.maps.LatLng(6.929673, 79.883675),
+        new google.maps.LatLng(6.908199, 79.886763),
+        new google.maps.LatLng(6.8937037,79.8507687),
+
+
+      );
+    let options = {types: ["address"] ,
+        // bounds: cityBounds,
+        // strictBounds: true,
+        componentRestrictions: {country: 'lk'}};
+    let autocomplete = new google.maps.places.Autocomplete(input, options);
+    // let autocomplete = new google.maps.places.Autocomplete(this.searchElement.nativeElement,{types: ["address"] , componentRestrictions: {country: 'lk'}});
 
     autocomplete.addListener("place_changed", () => {
       this.ngZone.run(() => {
