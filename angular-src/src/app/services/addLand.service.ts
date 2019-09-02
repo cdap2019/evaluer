@@ -8,7 +8,7 @@ export class AddLandService {
   requestOptions = new RequestOptions();
   constructor(private http: HttpClient) { }
 
-  addLand(id,price, distance, route, aindex, province, district, address, lat, lon) {
+  addLand(id, price, distance, route, aindex, province, district, address, lat, lon) {
     console.log(id);
     const uri = 'http://localhost:8080/lands/add';
     const obj = {
@@ -24,16 +24,17 @@ export class AddLandService {
       lat: lat,
       lon: lon,
     };
-    this.http.post(uri,obj)
+    this.http.post(uri, obj)
         .subscribe(res => console.log(res));
   }
 
   getLands() {
     const uri = 'http://localhost:8080/lands';
-    return this.http.get(uri).map(res =>res);
+    return this.http.get(uri).map(res => res);
   }
 
- getCurrentPrice(lat,lng)
+ getCurrentPrice(lat, lng)
+ // tslint:disable-next-line:one-line
  {
   const data = {
     lat: lat,
@@ -42,11 +43,12 @@ export class AddLandService {
   // return this.http.post('users/send_current', data).subscribe((current_price)=>
   // alert(current_price));
 
-      return this.http.post('users/send_current',data);
+      return this.http.post('users/send_current', data);
       // .map((response: Response) => response.json());
  }
 
  getPriceFromDb(address)
+ // tslint:disable-next-line:one-line
  {
   // const data = {
   //   lat: lat,
@@ -55,7 +57,7 @@ export class AddLandService {
   // return this.http.post('users/send_current', data).subscribe((current_price)=>
   // alert(current_price));
 
-      return this.http.post('users/send_current',data);
+      // return this.http.post('users/send_current',data);
       // .map((response: Response) => response.json());
  }
 }
