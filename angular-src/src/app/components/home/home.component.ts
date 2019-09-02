@@ -15,6 +15,8 @@ export class HomeComponent implements OnInit {
   latitude: number;
   longitude: number;
   address:any;
+  priceDb:any;
+  modelPrice:any;
   @ViewChild('search') public searchElement: ElementRef;
 
   // tslint:disable-next-line:max-line-length
@@ -44,25 +46,71 @@ export class HomeComponent implements OnInit {
     );
  }
 
- predictPrice()
+//  predictPrice()
+//  {
+//   this.spinner.show();
+//   // this.addLandService.getCurrentPrice(this.latitude, this.longitude);
+//   this.addLandService.getCurrentPrice(this.latitude, this.longitude).subscribe(
+//     data => { console.log(data[0]); // Data which is returned by call
+//       setTimeout(() => {
+//         this.spinner.hide();
+//         this.router.navigate(['./','prediction'],{ queryParams: { page: data[0],page1:this.address }, skipLocationChange: true });
+//       }, 5000);
+//     },
+//     error => { console.log(error); // Error if any
+//     },
+//     // ()=> // Here call is completed. If you wish to do something 
+//     // after call is completed(since this is an asynchronous call), this is the right place to do. ex: call another function
+//   );
+//  }
+
+predictPrice()
+{
+  this.getPriceFromDb();
+  if(this.priceDb != null)
+  {
+    if(this.priceDb > 1000000)
+    {
+      this.priceDb = this.getRandomInt(this.priceDb - 200000, this.priceDb + 200000);
+    }
+    else
+    {
+      this.priceDb = this.getRandomInt(this.priceDb - 20000, this.priceDb + 20000);
+    }
+  }
+  else
+  {
+    this.getPriceFromModel();
+    this.modelPrice = (this.modelPrice-6000000)/2;
+  }
+}
+
+ getPriceFromDb()
  {
-  this.spinner.show();
-  // this.addLandService.getCurrentPrice(this.latitude, this.longitude);
+  this.addLandService.getPriceFromDb(this.address).subscribe(
+    data => { 
+      console.log(data); // Data which is returned by call
+      this.priceDb = data;
+    },
+    error => { 
+      console.log(error); // Error if any
+    }
+  );
+ }
+
+ getPriceFromModel()
+ {
   this.addLandService.getCurrentPrice(this.latitude, this.longitude).subscribe(
     data => { console.log(data[0]); // Data which is returned by call
-      setTimeout(() => {
-        this.spinner.hide();
-        this.router.navigate(['./','prediction'],{ queryParams: { page: data[0],page1:this.address }, skipLocationChange: true });
-      }, 5000);
+      this.modelPrice = data[0];
     },
     error => { console.log(error); // Error if any
     },
-    // ()=> // Here call is completed. If you wish to do something 
-    // after call is completed(since this is an asynchronous call), this is the right place to do. ex: call another function
   );
-
-
  }
 
+ getRandomInt(min, max) {
+  return Math.floor(Math.random() * (max - min + 1)) + min;
+}
 
 }
