@@ -485,6 +485,7 @@ var HomeComponent = (function () {
             autocomplete.addListener("place_changed", function () {
                 _this.ngZone.run(function () {
                     var place = autocomplete.getPlace();
+                    _this.address = autocomplete.getPlace().address_components[0].long_name;
                     if (place.geometry === undefined || place.geometry === null) {
                         return;
                     }
@@ -505,7 +506,7 @@ var HomeComponent = (function () {
             console.log(data[0]); // Data which is returned by call
             setTimeout(function () {
                 _this.spinner.hide();
-                _this.router.navigate(['./', 'prediction'], { queryParams: { page: data[0] }, skipLocationChange: true });
+                _this.router.navigate(['./', 'prediction'], { queryParams: { page: data[0], page1: _this.address }, skipLocationChange: true });
             }, 5000);
         }, function (error) {
             console.log(error); // Error if any
@@ -974,7 +975,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/components/prediction/prediction.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container\">\r\n    <div class=\"jumbotron\">\r\n        <div class=\"row\">\r\n            <div class=\"col\">\r\n                <h6>Price</h6>\r\n                <p>{{price | currency:\"LKR\": 'symbol' : '6.2-2'}}</p>\r\n            </div>\r\n            <div class=\"col\">\r\n              <h5>Contribution</h5>\r\n              <ul *ngFor=\"let valuer of valuers\">\r\n                <li>{{valuer.name}}</li>\r\n                <star-rating value=\"5\" checkedcolor=\"red\" uncheckedcolor=\"black\" size=\"30px\" readonly=\"false\" (rate)=\"onRate($event)\"></star-rating>\r\n              </ul>\r\n            </div>\r\n        </div>\r\n    </div>\r\n</div>"
+module.exports = "<div class=\"container\">\r\n    <div class=\"jumbotron\">\r\n        <div class=\"row\">\r\n            <div class=\"col\">\r\n                <h5>Price Prediction Per Perch</h5>\r\n                <b>{{address}}</b>\r\n                <p>{{price | currency:\"LKR\": 'symbol' : '6.2-2'}}</p>\r\n            </div>\r\n            <div class=\"col\">\r\n              <h5>Contribution</h5>\r\n              <ul *ngFor=\"let valuer of valuers\">\r\n                <li>{{valuer.name}}</li>\r\n                <star-rating value=\"5\" checkedcolor=\"red\" uncheckedcolor=\"black\" size=\"30px\" readonly=\"false\" (rate)=\"onRate($event)\"></star-rating>\r\n              </ul>\r\n            </div>\r\n        </div>\r\n    </div>\r\n</div>"
 
 /***/ }),
 
@@ -1000,6 +1001,7 @@ var PredictionComponent = (function () {
     function PredictionComponent(route, router) {
         this.route = route;
         this.router = router;
+        this.optimzed = 6000000;
         // tslint:disable-next-line:member-ordering
         this.valuers = [
             {
@@ -1018,7 +1020,8 @@ var PredictionComponent = (function () {
     }
     PredictionComponent.prototype.ngOnInit = function () {
         this.price = this.route.snapshot.queryParamMap.get('page');
-        this.price = this.price - 6000000;
+        this.address = this.route.snapshot.queryParamMap.get('page1');
+        this.price = this.price - this.optimzed;
     };
     PredictionComponent.prototype.onRate = function ($event) {
         alert("Old Value:" + $event.oldValue + ", \n      New Value: " + $event.newValue + ", \n      Checked Color: " + $event.starRating.checkedcolor + ", \n      Unchecked Color: " + $event.starRating.uncheckedcolor);

@@ -14,6 +14,7 @@ export class HomeComponent implements OnInit {
 
   latitude: number;
   longitude: number;
+  address:any;
   @ViewChild('search') public searchElement: ElementRef;
 
   // tslint:disable-next-line:max-line-length
@@ -28,6 +29,7 @@ export class HomeComponent implements OnInit {
     autocomplete.addListener("place_changed", () => {
       this.ngZone.run(() => {
       let place: google.maps.places.PlaceResult = autocomplete.getPlace();
+        this.address = autocomplete.getPlace().address_components[0].long_name;
         if(place.geometry === undefined || place.geometry === null ){
           return;
         }
@@ -51,7 +53,7 @@ export class HomeComponent implements OnInit {
       
       setTimeout(() => {
         this.spinner.hide();
-        this.router.navigate(['./','prediction'],{ queryParams: { page: data[0] }, skipLocationChange: true });
+        this.router.navigate(['./','prediction'],{ queryParams: { page: data[0],page1:this.address }, skipLocationChange: true });
       }, 5000);
     },
     error => { console.log(error); // Error if any
