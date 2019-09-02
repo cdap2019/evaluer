@@ -4,7 +4,11 @@
             <div class="col">
                 <h5>Price Prediction Per Perch</h5>
                 <b>{{address}}</b>
-                <p>{{price | currency:"LKR": 'symbol' : '6.2-2'}}</p>
+                
+                <agm-map [latitude]="lat" [longitude]="lng" [zoom]="zoom">
+                  <agm-marker [latitude]="lat" [longitude]="lng"></agm-marker>
+                </agm-map>
+                <b>{{price | currency:"LKR": 'symbol' : '6.2-2'}}</b>
             </div>
             <div class="col">
               <h5>Contribution</h5>

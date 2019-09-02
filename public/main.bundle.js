@@ -658,8 +658,8 @@ var HomeComponent = (function () {
                     //set latitude, longitude and zoom
                     _this.latitude = place.geometry.location.lat();
                     _this.longitude = place.geometry.location.lng();
-                    console.log(_this.latitude);
-                    console.log(_this.longitude);
+                    //  console.log( this.latitude);
+                    //  console.log( this.longitude);
                 });
             });
         });
@@ -672,8 +672,8 @@ var HomeComponent = (function () {
             console.log(data[0]); // Data which is returned by call
             setTimeout(function () {
                 _this.spinner.hide();
-                _this.router.navigate(['./', 'prediction'], { queryParams: { page: data[0], page1: _this.address }, skipLocationChange: true });
-            }, 5000);
+                _this.router.navigate(['./', 'prediction'], { queryParams: { page: data[0], page1: _this.address, lat: _this.latitude, lng: _this.longitude }, skipLocationChange: true });
+            }, 4000);
         }, function (error) {
             console.log(error); // Error if any
         });
@@ -1128,7 +1128,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, ".container{\r\n    padding:70px \r\n}", ""]);
+exports.push([module.i, ".container{\r\n    padding:70px \r\n}\r\nagm-map { height: 200px; /* height is required */ }", ""]);
 
 // exports
 
@@ -1141,7 +1141,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/components/prediction/prediction.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container\">\r\n    <div class=\"jumbotron\">\r\n        <div class=\"row\">\r\n            <div class=\"col\">\r\n                <h5>Price Prediction Per Perch</h5>\r\n                <b>{{address}}</b>\r\n                <p>{{price | currency:\"LKR\": 'symbol' : '6.2-2'}}</p>\r\n            </div>\r\n            <div class=\"col\">\r\n              <h5>Contribution</h5>\r\n              <ul *ngFor=\"let valuer of valuers\">\r\n                <li>{{valuer.name}}</li>\r\n                <star-rating value=\"5\" checkedcolor=\"red\" uncheckedcolor=\"black\" size=\"30px\" readonly=\"false\" (rate)=\"onRate($event)\"></star-rating>\r\n              </ul>\r\n            </div>\r\n        </div>\r\n    </div>\r\n</div>"
+module.exports = "<div class=\"container\">\r\n    <div class=\"jumbotron\">\r\n        <div class=\"row\">\r\n            <div class=\"col\">\r\n                <h5>Price Prediction Per Perch</h5>\r\n                <b>{{address}}</b>\r\n                \r\n                <agm-map [latitude]=\"lat\" [longitude]=\"lng\" [zoom]=\"zoom\">\r\n                  <agm-marker [latitude]=\"lat\" [longitude]=\"lng\"></agm-marker>\r\n                </agm-map>\r\n                <b>{{price | currency:\"LKR\": 'symbol' : '6.2-2'}}</b>\r\n            </div>\r\n            <div class=\"col\">\r\n              <h5>Contribution</h5>\r\n              <ul *ngFor=\"let valuer of valuers\">\r\n                <li>{{valuer.name}}</li>\r\n                <star-rating value=\"5\" checkedcolor=\"red\" uncheckedcolor=\"black\" size=\"30px\" readonly=\"false\" (rate)=\"onRate($event)\"></star-rating>\r\n              </ul>\r\n            </div>\r\n        </div>\r\n    </div>\r\n</div>"
 
 /***/ }),
 
@@ -1168,6 +1168,8 @@ var PredictionComponent = (function () {
         this.route = route;
         this.router = router;
         this.optimzed = 6000000;
+        this.title = 'My first AGM project';
+        this.zoom = 15;
         // tslint:disable-next-line:member-ordering
         this.valuers = [
             {
@@ -1187,6 +1189,10 @@ var PredictionComponent = (function () {
     PredictionComponent.prototype.ngOnInit = function () {
         this.price = this.route.snapshot.queryParamMap.get('page');
         this.address = this.route.snapshot.queryParamMap.get('page1');
+        this.lat = parseFloat(this.route.snapshot.queryParamMap.get('lat'));
+        this.lng = parseFloat(this.route.snapshot.queryParamMap.get('lng'));
+        console.log(this.lat);
+        console.log(this.lng);
         this.price = this.price - this.optimzed;
     };
     PredictionComponent.prototype.onRate = function ($event) {
@@ -1518,6 +1524,16 @@ var AddLandService = (function () {
         // return this.http.post('users/send_current', data).subscribe((current_price)=>
         // alert(current_price));
         return this.http.post('users/send_current', data);
+        // .map((response: Response) => response.json());
+    };
+    AddLandService.prototype.getPriceFromDb = function (address) {
+        // const data = {
+        //   lat: lat,
+        //   lng: lng,
+        // };
+        // return this.http.post('users/send_current', data).subscribe((current_price)=>
+        // alert(current_price));
+        // return this.http.post('users/send_current',data);
         // .map((response: Response) => response.json());
     };
     AddLandService = __decorate([

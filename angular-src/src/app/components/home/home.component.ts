@@ -36,8 +36,8 @@ export class HomeComponent implements OnInit {
          //set latitude, longitude and zoom
          this.latitude = place.geometry.location.lat();
          this.longitude = place.geometry.location.lng();
-         console.log( this.latitude);
-         console.log( this.longitude);
+        //  console.log( this.latitude);
+        //  console.log( this.longitude);
       });
     });
     }
@@ -52,8 +52,8 @@ export class HomeComponent implements OnInit {
     data => { console.log(data[0]); // Data which is returned by call
       setTimeout(() => {
         this.spinner.hide();
-        this.router.navigate(['./','prediction'],{ queryParams: { page: data[0],page1:this.address }, skipLocationChange: true });
-      }, 5000);
+        this.router.navigate(['./','prediction'],{ queryParams: { page: data[0],page1:this.address,lat:this.latitude,lng:this.longitude}, skipLocationChange: true });
+      }, 4000);
     },
     error => { console.log(error); // Error if any
     },
