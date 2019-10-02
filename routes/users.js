@@ -108,5 +108,27 @@ router.post('/send_future', (req, res) => {
   });
 
 });
+router.post('/send_data_10_year', (req, res) => {
+  // console.log(req.body.minimum_distance_list[1]);
+  var PythonShell = require('python-shell');
+
+  var options = {
+      mode: 'text',
+      pythonPath: 'python',
+      pythonOptions: ['-W ignore'],
+      scriptPath: '.',
+      args: [req.body.minimum_distance_list[0], req.body.minimum_distance_list[1], 
+      req.body.minimum_distance_list[2], req.body.distance, req.body.lat, req.body.lng]
+  };
+  console.log(req.body.minimum_distance_list[0]);
+  PythonShell.PythonShell.run('10_year.py', options, function (err, results) {
+      if (err)
+          throw err;
+      // Results is an array consisting of messages collected during execution
+
+      console.log(results);
+      res.status(200).json(results);
+  });
+})
 
 module.exports = router;

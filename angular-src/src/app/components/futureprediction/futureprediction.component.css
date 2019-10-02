@@ -1,4 +1,7 @@
-.container{
-    padding:70px 
-}
-agm-map { height: 300px; /* height is required */ }
+#map {
+    height: 400px;
+    width: 100%;
+  }
+  #about {
+    margin-top: 5%;
+  }

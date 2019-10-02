@@ -2,107 +2,238 @@
     <h3 class="text-center">Enter your Requirement</h3>
     <form [formGroup]="angForm" novalidate >
         <div class="row"> 
-            <div class="col">
-                <div class="form-group">
-                    <label for="HospitalDistance">HospitalDistance</label>
-                    <input type="number"  class="form-control" placeholder="HospitalDistance" formControlName="HospitalDistance" #HospitalDistance >
-                </div>
-                <div *ngIf="angForm.controls['HospitalDistance'].invalid && (angForm.controls['HospitalDistance'].dirty || angForm.controls['HospitalDistance'].touched)" class="alert alert-danger">
-                    <div *ngIf="angForm.controls['price'].errors.required">
-                            HospitalDistance is required.
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label for="SchoolDistance">SchoolDistance:</label>
-                    <input type="number"  class="form-control" placeholder="SchoolDistance" formControlName="SchoolDistance" #SchoolDistance>
-                </div>
-                <div *ngIf="angForm.controls['SchoolDistance'].invalid && (angForm.controls['SchoolDistance'].dirty || angForm.controls['SchoolDistance'].touched)" class="alert alert-danger">
-                    <div *ngIf="angForm.controls['SchoolDistance'].errors.required">
-                      Distance is required.
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label for="DistToTown">DistToTown</label>
-                    <input type="number"  class="form-control" placeholder="DistToTown" formControlName="DistToTown" #DistToTown>
-                </div>
-                <div *ngIf="angForm.controls['DistToTown'].invalid && (angForm.controls['DistToTown'].dirty || angForm.controls['DistToTown'].touched)" class="alert alert-danger">
-                    <div *ngIf="angForm.controls['DistToTown'].errors.required">
-                        DistToTown is required.
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label for="Populationindex">Population index</label>
-                    <input type="number"  class="form-control" placeholder="Index" formControlName="Populationindex" #Populationindex>
-                </div>
-                <div *ngIf="angForm.controls['Populationindex'].invalid && (angForm.controls['Populationindex'].dirty || angForm.controls['Populationindex'].touched)" class="alert alert-danger">
-                    <div *ngIf="angForm.controls['Populationindex'].errors.required">
-                        Populationindex is required.
-                    </div>
-                </div>
-                <div class="form-group">
-                        <label for="Bank">Bank</label>
-                        <input type="number" class="form-control" placeholder="Bank" formControlName="Bank" #Bank>
-                </div>
-                <div *ngIf="angForm.controls['Bank'].invalid && (angForm.controls['Bank'].dirty || angForm.controls['Bank'].touched)" class="alert alert-danger">
-                    <div *ngIf="angForm.controls['Bank'].errors.required">
-                            Bank is required.
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label for="ZipCode">ZipCode:</label>
-                    <input type="number"  class="form-control" placeholder="ZipCode" formControlName="ZipCode" #ZipCode>
-                </div>
-                <div *ngIf="angForm.controls['ZipCode'].invalid && (angForm.controls['ZipCode'].dirty || angForm.controls['ZipCode'].touched)" class="alert alert-danger">
-                    <div *ngIf="angForm.controls['ZipCode'].errors.required">
-                            ZipCode is required.
-                    </div>
-               </div>
-               <div class="form-group">
-                    <label for="IsFloodedArea">IsFloodedArea</label>
-                    <input type="number"  class="form-control" placeholder="IsFloodedArea" formControlName="IsFloodedArea" #IsFloodedArea>
-                </div>
-                <div *ngIf="angForm.controls['IsFloodedArea'].invalid && (angForm.controls['IsFloodedArea'].dirty || angForm.controls['IsFloodedArea'].touched)" class="alert alert-danger">
-                    <div *ngIf="angForm.controls['IsFloodedAreaIsFloodedArea'].errors.required">
-                        IsFloodedAreais required.
-                    </div>
-                </div>
-            
-                <button  id="myButton" class="float-left submit-button" >Prediction</button>
-              
-                             <!-- <button  (click)="addLandInfo(HospitalDistance.value, SchoolDistance.value, Populationindex.value, Bank.value, ZipCode.value, DistToTown.value, address.value, IsFloodedArea.value,lat.value, lon.value)" class="btn btn-success btn-block" [disabled]="angForm.pristine || angForm.invalid"  >predict</button>-->
-            </div>
-             
-            
-            <div class="col"> 
-                <div class="form-group">
-                    <label for="search Location">search Location</label>
-                    <input type="text"  class="form-control" (keydown.enter)="$event.preventDefault()" 
-                    placeholder="search Location" autocorrect="off" autocapitalize="off" spellcheck="off" formControlName="address" #address>
-                </div>
-                <agm-map [latitude]="latitude" [longitude]="longitude" [zoom]="zoom">
-                    <agm-marker [latitude]="latitude" [longitude]="longitude" [markerDraggable]="true"
-                    (dragEnd)="markerDragEnd($event)"></agm-marker>
-                </agm-map>
-                <div class="form-group">
-                    <label for="lat">Latitude:</label>
-                    <input type="number" class="form-control" [value]="latitude" placeholder="" formControlName="lat" #lat>
-                </div>
-                <div *ngIf="angForm.controls['lat'].invalid && (angForm.controls['lat'].dirty || angForm.controls['lat'].touched)" class="alert alert-danger">
-                    <div *ngIf="angForm.controls['lat'].errors.required">
-                        Latitude is required.
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label  for="lon">Longitude:</label>
-                    <input type="number" class="form-control"  [value]="longitude"  placeholder="" formControlName="lon" #lon>
-                </div>
-                <div *ngIf="angForm.controls['lon'].invalid && (angForm.controls['lon'].dirty || angForm.controls['lon'].touched)" class="alert alert-danger">
-                    <div *ngIf="angForm.controls['lon'].errors.required">
-                        Longitude is required.
-                    </div>
-                </div>
-             
-            </div>
-        </div>    
-    </form>
+            <div id="about"></div>
+<div class="container">
+  <div class="row">
+    <div class="col-md-9">
+      <input id="pac-input" class="controls" type="text" placeholder="Location"
+             style="width: 100%;margin-bottom: 1%; margin-right: 2%;" >               
+      <div id="map" #mapRed></div>
+    </div>
+    <div class="col-md-3">
+      <br><br>          
+      <div class="row">
+          <button (click)="send_data_10_year()" class="btn btn-success" style="width: 100%;">TableChart</button>
+      </div>
+      <br><br><br>
+      <div class="row">
+          <button (click)="per_year()" class="btn btn-primary" style="width: 100%;">PerYearChart</button>
+      </div>
+      <br><br><br>
+      <div class="row">
+          <button class="btn btn-info" style="width: 100%;" (click)="per_month()">PerMonthChart</button>
+          <select name="per_month" id="per_month"  style="width: 100%;margin-top: 10px;" [(ngModel)]="prices.per_month">
+            <option value="2018">2018</option>
+            <option value="2019">2019</option>
+            <option value="2020">2020</option>
+            <option value="2021">2021</option>
+            <option value="2022">2022</option>
+            <option value="2023">2023</option>
+            <option value="2024">2024</option>
+            <option value="2025">2025</option>
+            <option value="2026">2026</option>
+            <option value="2027">2027</option>
+          </select>
+      </div>     
+
+    </div>
+  </div>
+  <br><br>
+  <div class="row">    
+    <h1>TableChart</h1>
+    <table class="table">
+      <thead>
+        <tr>
+              <th>Year</th>
+              <th>Jan</th>
+              <th>Feb</th>
+              <th>Mar</th>
+              <th>Apr</th>
+              <th>May</th>
+              <th>June</th>
+              <th>July</th>
+              <th>Aug</th>
+              <th>Sep</th>
+              <th>Oct</th>
+              <th>Nov</th>
+              <th>Dec</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+            <td>2018</td>
+            <td>{{ prices.pre_data[0] }}</td>
+            <td>{{ prices.pre_data[1] }}</td>
+            <td>{{ prices.pre_data[2] }}</td>
+            <td>{{ prices.pre_data[3] }}</td>
+            <td>{{ prices.pre_data[4] }}</td>
+            <td>{{ prices.pre_data[5] }}</td>
+            <td>{{ prices.pre_data[6] }}</td>
+            <td>{{ prices.pre_data[7] }}</td>
+            <td>{{ prices.pre_data[8] }}</td>
+            <td>{{ prices.pre_data[9] }}</td>
+            <td>{{ prices.pre_data[10] }}</td>
+            <td>{{ prices.pre_data[11] }}</td>         
+        </tr>
+        <tr>
+              <td>2019</td>
+              <td>{{ prices.pre_data[12] }}</td>
+              <td>{{ prices.pre_data[13] }}</td>
+              <td>{{ prices.pre_data[14] }}</td>
+              <td>{{ prices.pre_data[15] }}</td>
+              <td>{{ prices.pre_data[16] }}</td>
+              <td>{{ prices.pre_data[17] }}</td>
+              <td>{{ prices.pre_data[18] }}</td>
+              <td>{{ prices.pre_data[19] }}</td>
+              <td>{{ prices.pre_data[20] }}</td>
+              <td>{{ prices.pre_data[21] }}</td>
+              <td>{{ prices.pre_data[22] }}</td>
+              <td>{{ prices.pre_data[23] }}</td>         
+        </tr>
+        <tr>
+                <td>2020</td>
+                <td>{{ prices.pre_data[24] }}</td>
+                <td>{{ prices.pre_data[25] }}</td>
+                <td>{{ prices.pre_data[26] }}</td>
+                <td>{{ prices.pre_data[27] }}</td>
+                <td>{{ prices.pre_data[28] }}</td>
+                <td>{{ prices.pre_data[29] }}</td>
+                <td>{{ prices.pre_data[30] }}</td>
+                <td>{{ prices.pre_data[31] }}</td>
+                <td>{{ prices.pre_data[32] }}</td>
+                <td>{{ prices.pre_data[33] }}</td>
+                <td>{{ prices.pre_data[34] }}</td>
+                <td>{{ prices.pre_data[35] }}</td>         
+        </tr>
+        <tr>
+                  <td>2021</td>
+                  <td>{{ prices.pre_data[36] }}</td>
+                  <td>{{ prices.pre_data[37] }}</td>
+                  <td>{{ prices.pre_data[38] }}</td>
+                  <td>{{ prices.pre_data[39] }}</td>
+                  <td>{{ prices.pre_data[40] }}</td>
+                  <td>{{ prices.pre_data[41] }}</td>
+                  <td>{{ prices.pre_data[42] }}</td>
+                  <td>{{ prices.pre_data[43] }}</td>
+                  <td>{{ prices.pre_data[44] }}</td>
+                  <td>{{ prices.pre_data[45] }}</td>
+                  <td>{{ prices.pre_data[46] }}</td>
+                  <td>{{ prices.pre_data[47] }}</td>         
+        </tr>
+        <tr>
+                    <td>2022</td>
+                    <td>{{ prices.pre_data[48] }}</td>
+                    <td>{{ prices.pre_data[49] }}</td>
+                    <td>{{ prices.pre_data[50] }}</td>
+                    <td>{{ prices.pre_data[51] }}</td>
+                    <td>{{ prices.pre_data[52] }}</td>
+                    <td>{{ prices.pre_data[53] }}</td>
+                    <td>{{ prices.pre_data[54] }}</td>
+                    <td>{{ prices.pre_data[55] }}</td>
+                    <td>{{ prices.pre_data[56] }}</td>
+                    <td>{{ prices.pre_data[57] }}</td>
+                    <td>{{ prices.pre_data[58] }}</td>
+                    <td>{{ prices.pre_data[59] }}</td>         
+        </tr>
+        <tr>
+                  <td>2023</td>
+                  <td>{{ prices.pre_data[60] }}</td>
+                  <td>{{ prices.pre_data[61] }}</td>
+                  <td>{{ prices.pre_data[62] }}</td>
+                  <td>{{ prices.pre_data[63] }}</td>
+                  <td>{{ prices.pre_data[64] }}</td>
+                  <td>{{ prices.pre_data[65] }}</td>
+                  <td>{{ prices.pre_data[66] }}</td>
+                  <td>{{ prices.pre_data[67] }}</td>
+                  <td>{{ prices.pre_data[68] }}</td>
+                  <td>{{ prices.pre_data[69] }}</td>
+                  <td>{{ prices.pre_data[70] }}</td>
+                  <td>{{ prices.pre_data[71] }}</td>         
+        </tr>
+        <tr>
+                    <td>2024</td>
+                    <td>{{ prices.pre_data[72] }}</td>
+                    <td>{{ prices.pre_data[73] }}</td>
+                    <td>{{ prices.pre_data[74] }}</td>
+                    <td>{{ prices.pre_data[75] }}</td>
+                    <td>{{ prices.pre_data[76] }}</td>
+                    <td>{{ prices.pre_data[77] }}</td>
+                    <td>{{ prices.pre_data[78] }}</td>
+                    <td>{{ prices.pre_data[79] }}</td>
+                    <td>{{ prices.pre_data[80] }}</td>
+                    <td>{{ prices.pre_data[81] }}</td>
+                    <td>{{ prices.pre_data[82] }}</td>
+                    <td>{{ prices.pre_data[83] }}</td>         
+        </tr>
+        <tr>
+                      <td>2025</td>
+                      <td>{{ prices.pre_data[84] }}</td>
+                      <td>{{ prices.pre_data[85] }}</td>
+                      <td>{{ prices.pre_data[86] }}</td>
+                      <td>{{ prices.pre_data[87] }}</td>
+                      <td>{{ prices.pre_data[88] }}</td>
+                      <td>{{ prices.pre_data[89] }}</td>
+                      <td>{{ prices.pre_data[90] }}</td>
+                      <td>{{ prices.pre_data[91] }}</td>
+                      <td>{{ prices.pre_data[92] }}</td>
+                      <td>{{ prices.pre_data[93] }}</td>
+                      <td>{{ prices.pre_data[94] }}</td>
+                      <td>{{ prices.pre_data[95] }}</td>         
+        </tr>
+        <tr>
+                        <td>2026</td>
+                        <td>{{ prices.pre_data[96] }}</td>
+                        <td>{{ prices.pre_data[97] }}</td>
+                        <td>{{ prices.pre_data[98] }}</td>
+                        <td>{{ prices.pre_data[99] }}</td>
+                        <td>{{ prices.pre_data[100] }}</td>
+                        <td>{{ prices.pre_data[101] }}</td>
+                        <td>{{ prices.pre_data[102] }}</td>
+                        <td>{{ prices.pre_data[103] }}</td>
+                        <td>{{ prices.pre_data[104] }}</td>
+                        <td>{{ prices.pre_data[105] }}</td>
+                        <td>{{ prices.pre_data[106] }}</td>
+                        <td>{{ prices.pre_data[107] }}</td>         
+        </tr>
+        <tr>
+                          <td>2027</td>
+                          <td>{{ prices.pre_data[108] }}</td>
+                          <td>{{ prices.pre_data[109] }}</td>
+                          <td>{{ prices.pre_data[110] }}</td>
+                          <td>{{ prices.pre_data[111] }}</td>
+                          <td>{{ prices.pre_data[112] }}</td>
+                          <td>{{ prices.pre_data[113] }}</td>
+                          <td>{{ prices.pre_data[114] }}</td>
+                          <td>{{ prices.pre_data[115] }}</td>
+                          <td>{{ prices.pre_data[116] }}</td>
+                          <td>{{ prices.pre_data[117] }}</td>
+                          <td>{{ prices.pre_data[118] }}</td>
+                          <td>{{ prices.pre_data[119] }}</td>         
+        </tr>  
+
+                        
+      </tbody>     
+    </table>
+  </div>
+  <div class="row">
+    <h1>PerYearChart</h1>
+    <table>
+      <tr class="row">
+        <td class="col" style="width: 1000px; height: 20%;"><canvas id="lineChart_per_year"></canvas></td>
+      </tr>
+    </table>
+  </div>
+  <div class="row">
+      <h1>PerMonthChart</h1>
+      <table>
+        <tr class="row">
+          <td class="col" style="width: 1000px; height: 20%;"><canvas id="lineChart_per_month"></canvas></td>
+        </tr>
+      </table>
+    </div>
 </div>
+
+<!--<input type="button" value="Locate">-->
+
+
+
