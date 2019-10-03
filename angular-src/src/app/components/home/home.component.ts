@@ -57,8 +57,8 @@ export class HomeComponent implements OnInit {
 
       );
     let options = {types: ["address"] ,
-        // bounds: cityBounds,
-        // strictBounds: true,
+        bounds: cityBounds,
+        strictBounds: true,
         componentRestrictions: {country: 'lk'}};
     let autocomplete = new google.maps.places.Autocomplete(input, options);
     // let autocomplete = new google.maps.places.Autocomplete(this.searchElement.nativeElement,{types: ["address"] , componentRestrictions: {country: 'lk'}});

@@ -41,15 +41,15 @@ export class PredictionComponent implements OnInit {
   valuers:any = [
     {
       id : 1,
-      name: 'Valuer 1'
+      name: 'John Doe'
     },
     {
       id : 2,
-      name: 'Valuer 2'
+      name: 'Micheal Styles'
     },
     {
       id :3,
-      name: 'Valuer 3'
+      name: 'Tom Finn'
     },
   ]
 

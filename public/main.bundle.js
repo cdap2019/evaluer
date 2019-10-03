@@ -663,8 +663,8 @@ var HomeComponent = (function () {
             var input = _this.searchElement.nativeElement;
             var cityBounds = new google.maps.LatLngBounds(new google.maps.LatLng(6.9319401, 79.8477783), new google.maps.LatLng(6.979982, 79.874327), new google.maps.LatLng(6.979697, 79.880935), new google.maps.LatLng(6.975913, 79.883882), new google.maps.LatLng(6.971180, 79.882560), new google.maps.LatLng(6.966009, 79.878936), new google.maps.LatLng(6.960802, 79.877719), new google.maps.LatLng(6.957807, 79.878747), new google.maps.LatLng(6.948079, 79.877497), new google.maps.LatLng(6.943136, 79.879042), new google.maps.LatLng(6.929673, 79.883675), new google.maps.LatLng(6.908199, 79.886763), new google.maps.LatLng(6.8937037, 79.8507687));
             var options = { types: ["address"],
-                // bounds: cityBounds,
-                // strictBounds: true,
+                bounds: cityBounds,
+                strictBounds: true,
                 componentRestrictions: { country: 'lk' } };
             var autocomplete = new google.maps.places.Autocomplete(input, options);
             // let autocomplete = new google.maps.places.Autocomplete(this.searchElement.nativeElement,{types: ["address"] , componentRestrictions: {country: 'lk'}});
@@ -1161,7 +1161,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/components/prediction/prediction.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container\">\r\n    <div class=\"jumbotron\">\r\n        <div class=\"row\">\r\n            <div class=\"col\">\r\n                <h5>Price Prediction Per Perch</h5>\r\n                <b>{{address}}</b>\r\n                \r\n                <agm-map [latitude]=\"lat\" [longitude]=\"lng\" [zoom]=\"zoom\">\r\n                  <agm-marker [latitude]=\"lat\" [longitude]=\"lng\"></agm-marker>\r\n                </agm-map>\r\n                <b>{{price | currency:\"LKR\": 'symbol' : '6.2-2'}}</b>\r\n            </div>\r\n            <div class=\"col\">\r\n              <h5>Contribution</h5>\r\n              <ul *ngFor=\"let valuer of valuers\">\r\n                <li>{{valuer.name}}</li>\r\n                <star-rating value=\"5\" checkedcolor=\"red\" uncheckedcolor=\"black\" size=\"30px\" readonly=\"false\" (rate)=\"onRate($event)\"></star-rating>\r\n              </ul>\r\n            </div>\r\n        </div>\r\n    </div>\r\n</div>"
+module.exports = "<div class=\"container\">\r\n    <div class=\"jumbotron\">\r\n        <div class=\"row\">\r\n            <div class=\"col\">\r\n                <h5>Price Prediction Per Perch</h5>\r\n                <b>{{address}}</b>\r\n                \r\n                <agm-map [latitude]=\"lat\" [longitude]=\"lng\" [zoom]=\"zoom\">\r\n                  <agm-marker [latitude]=\"lat\" [longitude]=\"lng\"></agm-marker>\r\n                </agm-map>\r\n                <b>{{price | currency:\"LKR\": 'symbol' : '6.2-2'}}</b>\r\n                <p>A highly residential area with all the facilities.<br>Alsosuitable for commercial purposes.</p>\r\n            </div>\r\n            <div class=\"col\">\r\n              <h5>Contribution</h5>\r\n              <ul *ngFor=\"let valuer of valuers\">\r\n                <li>{{valuer.name}}</li>\r\n                <star-rating value=\"5\" checkedcolor=\"red\" uncheckedcolor=\"black\" size=\"30px\" readonly=\"false\" (rate)=\"onRate($event)\"></star-rating>\r\n              </ul>\r\n            </div>\r\n        </div>\r\n    </div>\r\n</div>"
 
 /***/ }),
 
@@ -1194,15 +1194,15 @@ var PredictionComponent = (function () {
         this.valuers = [
             {
                 id: 1,
-                name: 'Valuer 1'
+                name: 'John Doe'
             },
             {
                 id: 2,
-                name: 'Valuer 2'
+                name: 'Micheal Styles'
             },
             {
                 id: 3,
-                name: 'Valuer 3'
+                name: 'Tom Finn'
             },
         ];
     }
