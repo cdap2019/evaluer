@@ -1,0 +1,14 @@
+3
+
+RÊs]˜  ã               @   s$   d dl Zd dlZdd„ Zdd„ ZdS )é    Nc       
+      C   s¤   d}t j| | ƒ}t j|| ƒ}t j|d ƒt j|d ƒ t jt j| ƒƒt jt j|ƒƒ t j|d ƒ t j|d ƒ  }dt jt j|ƒt jd| ƒƒ }|| }	|	S )Ni™Ra é   é   )ÚnpÚdeg2radÚsinÚcosÚarctan2Úsqrt)
+Zlat1Zlng1Zlat2Zlng2ÚRZdLatZdLongÚaÚcÚd© r   ú[H:\Project\Javascript\Angular\Land-Price-Chart(2019-09-07)\gettingMean-2\bin\floodedarea.pyÚdistance   s    X r   c       
+      C   sÎ   t jdƒ}|jt jƒ d}g }xtdƒD ]„}x@tt|d ƒƒD ],}t| ||d | |d | ƒ}|j|ƒ q>W tj	|ƒ}|j
+ƒ }||d | 7 }d|d |< d|d |< g }q(W |d }	|	dk rÆd}	nd	}	|	S )
+NzisFloodedArea.csvr   é   Ú
+isfloodedAreaZLatitudeZ
+Longtitudeéd   g      à?r   )ÚpdÚread_csvÚapplyÚ
+to_numericÚrangeÚlenr   Úappendr   ÚasarrayÚargmin)
+ÚlatÚlngZdata_floodedÚresultÚdistÚiÚjZdistant_two_pointsÚidxÚ	isfloodedr   r   r   r      s&    
+
+r   )Úpandasr   Únumpyr   r   r   r   r   r   r   Ú<module>   s   
