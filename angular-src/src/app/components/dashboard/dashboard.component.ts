@@ -111,8 +111,8 @@ export class DashboardComponent implements OnInit {
         province: ['', Validators.required ],
         district: ['', Validators.required ],
         address: ['', Validators.required ],
-        lat: ['', Validators.required ],
-        lon: ['', Validators.required ]
+        // lat: ['', Validators.required ],
+        // lon: ['', Validators.required ]
       });
     }
     

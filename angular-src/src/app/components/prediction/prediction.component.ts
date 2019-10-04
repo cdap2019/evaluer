@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { StarRatingComponent } from 'ng-starrating';
+import { AddLandService } from 'app/services/addLand.service';
 
  
 
@@ -17,7 +18,7 @@ export class PredictionComponent implements OnInit {
   lat :any;
   lng :any;
   zoom = 15;
-  constructor( private route: ActivatedRoute ,private router:Router) { }
+  constructor( private route: ActivatedRoute ,private router:Router,private addLandService:AddLandService) { }
 
   ngOnInit() {
     this.price = this.route.snapshot.queryParamMap.get('page');
@@ -27,9 +28,20 @@ export class PredictionComponent implements OnInit {
     console.log(this.lat);
     console.log(this.lng);
     this.price = this.price - this.optimzed ;
+    this.getValuersDetails();
 
   }
 
+  getValuersDetails()
+  {
+    // console.log(this.address.trim());
+    this.addLandService.getValuers(this.address.trim()).subscribe(
+      data => { console.log(data); 
+
+      },
+      error => { console.log(error);}
+    );
+  }
   onRate($event:{oldValue:number, newValue:number, starRating:StarRatingComponent}) {
     alert(`Old Value:${$event.oldValue}, 
       New Value: ${$event.newValue}, 

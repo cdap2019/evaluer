@@ -66,6 +66,7 @@ export class HomeComponent implements OnInit {
     autocomplete.addListener("place_changed", () => {
       this.ngZone.run(() => {
       let place: google.maps.places.PlaceResult = autocomplete.getPlace();
+        // this.address = autocomplete.getPlace();
         this.address = autocomplete.getPlace().address_components[0].long_name;
         if(place.geometry === undefined || place.geometry === null ){
           return;

@@ -2,10 +2,14 @@ const mongoose = require('mongoose');
 
 // Land Schema
 const LandSchema = mongoose.Schema ({
-  user:{
-    type: String,
-    required: true
+  user: { 
+    type: mongoose.Schema.Types.ObjectId, 
+    ref: 'User' 
   },
+  // user:{
+  //   type: String,
+  //   required: true
+  // },
   price: {
     type: Number,
     required: true
@@ -32,7 +36,8 @@ const LandSchema = mongoose.Schema ({
   },
   address:{
     type: String,
-    required: true
+    required: true,
+    trim: true
   },
   lat:{
     type: Number,
@@ -41,6 +46,10 @@ const LandSchema = mongoose.Schema ({
   lon:{
     type: Number,
     required: true
+  },
+  recordInsertedDate:{
+    type:Date,
+    default:Date.now
   }
 });
 
