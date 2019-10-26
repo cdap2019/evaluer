@@ -63,6 +63,9 @@ export class AddLandService {
 
  getValuers(address)
  {
-      return this.http.post('http://localhost:8080/lands/filter', address);
+  const data = {
+    address: address
+  };
+      return this.http.post('http://localhost:8080/lands/filter', data);
  }
 }

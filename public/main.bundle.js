@@ -1220,7 +1220,9 @@ var PredictionComponent = (function () {
     };
     PredictionComponent.prototype.getValuersDetails = function () {
         // console.log(this.address.trim());
-        this.addLandService.getValuers(this.address.trim()).subscribe(function (data) {
+        var addr = this.address.split(" ");
+        console.log(addr[0]);
+        this.addLandService.getValuers(addr[0]).subscribe(function (data) {
             console.log(data);
         }, function (error) { console.log(error); });
     };
@@ -1566,7 +1568,10 @@ var AddLandService = (function () {
         // .map((response: Response) => response.json());
     };
     AddLandService.prototype.getValuers = function (address) {
-        return this.http.post('http://localhost:8080/lands/filter', address);
+        var data = {
+            address: address
+        };
+        return this.http.post('http://localhost:8080/lands/filter', data);
     };
     AddLandService = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"])(),

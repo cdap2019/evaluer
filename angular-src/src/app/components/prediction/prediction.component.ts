@@ -34,8 +34,11 @@ export class PredictionComponent implements OnInit {
 
   getValuersDetails()
   {
+    
     // console.log(this.address.trim());
-    this.addLandService.getValuers(this.address.trim()).subscribe(
+    let addr = this.address.split(" ");
+    // console.log(addr[0]);
+    this.addLandService.getValuers(addr[0]).subscribe(
       data => { console.log(data); 
 
       },

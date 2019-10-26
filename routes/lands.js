@@ -4,10 +4,11 @@ var Land = require('../models/land');
 
 router.post('/filter', function(req, res, next) {
     var address = req.body.address;
-    Land.find({ "address" : { $regex: "/" + address + "/", $options: 'i'  }})
-    // .populate('user','name email')
+    Land.find({ "address" : { "$regex": address , "$options": "i"  }})
+    .populate('user','name email')
     .exec(function(err, person) {
         console.log(person);
+        res.status(201).json({person});
         // do something.
         // variable `person` contains the final populated data
     });
