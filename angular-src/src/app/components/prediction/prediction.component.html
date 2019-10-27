@@ -1,23 +1,22 @@
 <div class="container">
-    <div class="jumbotron">
-        <div class="row">
-            <div class="col">
-                <h5>Price Prediction Per Perch</h5>
-                <b>{{address}}</b>
-                
-                <agm-map [latitude]="lat" [longitude]="lng" [zoom]="zoom">
-                  <agm-marker [latitude]="lat" [longitude]="lng"></agm-marker>
-                </agm-map>
-                <b>{{price | currency:"LKR": 'symbol' : '6.2-2'}}</b>
-                <p>A highly residential area with all the facilities.<br>Alsosuitable for commercial purposes.</p>
-            </div>
-            <div class="col">
-              <h5>Contribution</h5>
-              <ul *ngFor="let valuer of valuers">
-                <li>{{valuer.name}}</li>
-                <star-rating value="5" checkedcolor="red" uncheckedcolor="black" size="30px" readonly="false" (rate)="onRate($event)"></star-rating>
-              </ul>
-            </div>
-        </div>
-    </div>
+  <div class="jumbotron">
+      <div class="row">
+          <div class="col">
+              <h5>Price Prediction Per Perch</h5>
+              <b>{{address}}</b>
+              
+              <agm-map [latitude]="lat" [longitude]="lng" [zoom]="zoom">
+                <agm-marker [latitude]="lat" [longitude]="lng"></agm-marker>
+              </agm-map>
+              <b>{{price | currency:"LKR": 'symbol' : '6.2-2'}}</b>
+          </div>
+          <div class="col">
+            <h5>Contribution</h5>
+            <ul *ngFor="let valuer of valuers">
+              <li>name: {{valuer.user.name}} <br>email: {{valuer.user.email}}</li>
+              <star-rating value="5" checkedcolor="red" uncheckedcolor="black" size="30px" readonly="false" (rate)="onRate($event)"></star-rating>
+            </ul>
+          </div>
+      </div>
+  </div>
 </div>

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { StarRatingComponent } from 'ng-starrating';
+import { AddLandService } from 'app/services/addLand.service';
 
  
 
@@ -10,14 +11,14 @@ import { StarRatingComponent } from 'ng-starrating';
   styleUrls: ['./prediction.component.css']
 })
 export class PredictionComponent implements OnInit {
-
+  valuers:any;
   price: any;
   optimzed:any = 6000000;
   address:any;  title = 'My first AGM project';
   lat :any;
   lng :any;
   zoom = 15;
-  constructor( private route: ActivatedRoute ,private router:Router) { }
+  constructor( private route: ActivatedRoute ,private router:Router,private addLandService:AddLandService) { }
 
   ngOnInit() {
     this.price = this.route.snapshot.queryParamMap.get('page');
@@ -27,9 +28,25 @@ export class PredictionComponent implements OnInit {
     console.log(this.lat);
     console.log(this.lng);
     this.price = this.price - this.optimzed ;
+    this.getValuersDetails();
 
   }
 
+  getValuersDetails()
+  {
+    
+    // console.log(this.address.trim());
+    let addr = this.address.split(" ");
+    // console.log(addr[0]);
+    this.addLandService.getValuers(addr[0]).subscribe(
+      data => { 
+        console.log(data);
+        this.valuers = data; 
+
+      },
+      error => { console.log(error);}
+    );
+  }
   onRate($event:{oldValue:number, newValue:number, starRating:StarRatingComponent}) {
     alert(`Old Value:${$event.oldValue}, 
       New Value: ${$event.newValue}, 
@@ -38,19 +55,19 @@ export class PredictionComponent implements OnInit {
   }
 
   // tslint:disable-next-line:member-ordering
-  valuers:any = [
-    {
-      id : 1,
-      name: 'John Doe'
-    },
-    {
-      id : 2,
-      name: 'Micheal Styles'
-    },
-    {
-      id :3,
-      name: 'Tom Finn'
-    },
-  ]
+  // valuers:any = [
+  //   {
+  //     id : 1,
+  //     name: 'Valuer 1'
+  //   },
+  //   {
+  //     id : 2,
+  //     name: 'Valuer 2'
+  //   },
+  //   {
+  //     id :3,
+  //     name: 'Valuer 3'
+  //   },
+  // ]
 
 }

@@ -1,6 +1,21 @@
 const express = require('express');
 const router = express.Router();
-const Land = require('../models/land');
+var Land = require('../models/land');
+
+router.post('/filter', function(req, res, next) {
+    var address = req.body.address;
+    Land.find({ "address" : { "$regex": address , "$options": "i"  }})
+    .populate('user','name email')
+    .exec(function(err, person) {
+        console.log(person);
+        
+        if(err){
+            res.status(404).json(err);
+        }else{
+            res.status(201).json(person);
+        }
+    });
+  });
 
 // get lands 
 router.get('/',(req,res,next)=>{

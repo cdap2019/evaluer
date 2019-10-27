@@ -60,4 +60,12 @@ export class AddLandService {
       // return this.http.post('users/send_current',data);
       // .map((response: Response) => response.json());
  }
+
+ getValuers(address)
+ {
+  const data = {
+    address: address
+  };
+      return this.http.post('http://localhost:8080/lands/filter', data);
+ }
 }

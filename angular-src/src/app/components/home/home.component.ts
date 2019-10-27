@@ -57,8 +57,8 @@ export class HomeComponent implements OnInit {
 
       );
     let options = {types: ["address"] ,
-        bounds: cityBounds,
-        strictBounds: true,
+        // bounds: cityBounds,
+        // strictBounds: true,
         componentRestrictions: {country: 'lk'}};
     let autocomplete = new google.maps.places.Autocomplete(input, options);
     // let autocomplete = new google.maps.places.Autocomplete(this.searchElement.nativeElement,{types: ["address"] , componentRestrictions: {country: 'lk'}});
@@ -66,6 +66,7 @@ export class HomeComponent implements OnInit {
     autocomplete.addListener("place_changed", () => {
       this.ngZone.run(() => {
       let place: google.maps.places.PlaceResult = autocomplete.getPlace();
+        // this.address = autocomplete.getPlace();
         this.address = autocomplete.getPlace().address_components[0].long_name;
         if(place.geometry === undefined || place.geometry === null ){
           return;
