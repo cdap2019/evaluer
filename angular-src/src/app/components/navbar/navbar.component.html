@@ -12,13 +12,16 @@
         </ul>
         <ul class="navbar-nav ml-auto">
           <li class="nav-item" *ngIf="authService.loggedIn()" [routerLinkActive]="['active']" [routerLinkActiveOptions] = "{exact:true}">
-            <a class="nav-link" [routerLink]="['/dashboard']">Dashboard </a>
+            <a class="nav-link" [routerLink]="['/dashboard']">Profile </a>
+          </li>
+          <li class="nav-item" *ngIf="!authService.loggedIn()" [routerLinkActive]="['active']" [routerLinkActiveOptions] = "{exact:true}">
+            <a class="nav-link" [routerLink]="['/landprice']">Infrastructure </a>
+          </li>
+          <li class="nav-item" *ngIf="!authService.loggedIn()" [routerLinkActive]="['active']" [routerLinkActiveOptions] = "{exact:true}">
+            <a class="nav-link" [routerLink]="['/futureprediction']">Future prediction</a>
           </li>
           <li class="nav-item" *ngIf="authService.loggedIn()" [routerLinkActive]="['active']" [routerLinkActiveOptions] = "{exact:true}">
-            <a class="nav-link" [routerLink]="['/landprice']">Land-Price </a>
-          </li>
-          <li class="nav-item" *ngIf="authService.loggedIn()" [routerLinkActive]="['active']" [routerLinkActiveOptions] = "{exact:true}">
-            <a class="nav-link" [routerLink]="['/profile']">Profile </a>
+            <a class="nav-link" [routerLink]="['/profile']"> Dashboard</a>
           </li>
           <li class="nav-item" *ngIf="!authService.loggedIn()" [routerLinkActive]="['active']" [routerLinkActiveOptions] = "{exact:true}">
             <a class="nav-link" [routerLink]="['/login']">Login </a>
@@ -26,10 +29,6 @@
           <li class="nav-item" *ngIf="!authService.loggedIn()" [routerLinkActive]="['active']" [routerLinkActiveOptions] = "{exact:true}">
             <a class="nav-link" [routerLink]="['/register']">Register</a>
           </li>
-            <li class="nav-item" *ngIf="authService.loggedIn()" [routerLinkActive]="['active']" [routerLinkActiveOptions] = "{exact:true}">
-              <a class="nav-link" [routerLink]="['/futureprediction']">Futureprediction</a>
-            </li>
-          
           <li class="nav-item" *ngIf="authService.loggedIn()"><a class="nav-link" (click)="onLogoutClick()" href="#">Logout</a>
           </li>
         </ul>

@@ -2,24 +2,27 @@
 <div id="about"></div>
 <div class="container" >
   <div class="row" >
-    <div class="col-md-9">
+    <div class="col-md-8">
       <input id="pac-input" class="controls" type="text" placeholder="Location"
              style="width: 80%;margin-bottom: 1%; margin-right: 2%;" >
       <input type="button" value="Locate">
       <div id="map" #mapRed></div>
     </div >
 
-    <div class="col-md-3" >
+    <div class="col-md-4" >
       <br><br>
-      <input type="button" class="btn btn-primary" value=" Price(RS)" style="width: 150px;" (click)="send_current_position()"><br>
-      <div class="martop10"></div>
-      <input type="text" [(ngModel)]="prices.current_price" ><br>
-
-      <div class="martop10"></div>
-      <input type="button" class="btn btn-primary" value="Future Price(RS)" (click)="send_data()" style="width: 150px;"><br>
-      <div class="martop10"></div>
-      <input type="text" [(ngModel)]="prices.future_price" >
-    
+      <div class="row">
+        <div class="col">
+            <input type="button" class="btn btn-primary" value=" Price(RS)" style="width: 150px;" (click)="send_current_position()"><br> <br>
+            <input type="button" class="btn btn-primary" value="Future Price(RS)" (click)="send_data()" style="width: 150px;">
+        </div>
+       
+        <div class="col">
+            <input class="form-control" type="text" [(ngModel)]="prices.current_price" > <br>
+            <input class="form-control" type="text" [(ngModel)]="prices.future_price" >
+        </div>
+      </div>
+      <br>
       <div class="martop10 row">
         <div class="col-sm-5"><label for="">School(%)</label></div>
         <div class="col-sm-7"><input type="text" [(ngModel)]="prices.school_percent" ></div>

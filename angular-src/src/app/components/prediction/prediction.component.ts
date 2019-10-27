@@ -3,8 +3,6 @@ import { Router, ActivatedRoute } from '@angular/router';
 import { StarRatingComponent } from 'ng-starrating';
 import { AddLandService } from 'app/services/addLand.service';
 
- 
-
 @Component({
   selector: 'app-prediction',
   templateUrl: './prediction.component.html',
@@ -54,20 +52,5 @@ export class PredictionComponent implements OnInit {
       Unchecked Color: ${$event.starRating.uncheckedcolor}`);
   }
 
-  // tslint:disable-next-line:member-ordering
-  // valuers:any = [
-  //   {
-  //     id : 1,
-  //     name: 'Valuer 1'
-  //   },
-  //   {
-  //     id : 2,
-  //     name: 'Valuer 2'
-  //   },
-  //   {
-  //     id :3,
-  //     name: 'Valuer 3'
-  //   },
-  // ]
 
 }

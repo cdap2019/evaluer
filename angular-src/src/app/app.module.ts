@@ -33,9 +33,9 @@ const appRoutes: Routes =  [
   {path: 'login', component: LoginComponent},
   {path: 'prediction', component: PredictionComponent},
   {path: 'dashboard', component: DashboardComponent, canActivate: [AuthGuard]},
-  {path: 'landprice', component: LandPriceComponent, canActivate: [AuthGuard]},
+  {path: 'landprice', component: LandPriceComponent},
   {path: 'profile', component: ProfileComponent, canActivate: [AuthGuard]},
-  {path: 'futureprediction', component: futurepredictionComponent, canActivate: [AuthGuard]}
+  {path: 'futureprediction', component: futurepredictionComponent}
 
 ];
 
