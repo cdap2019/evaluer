@@ -1160,7 +1160,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/components/prediction/prediction.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container\">\r\n    <div class=\"jumbotron\">\r\n        <div class=\"row\">\r\n            <div class=\"col\">\r\n                <h5>Price Prediction Per Perch</h5>\r\n                <b>{{address}}</b>\r\n                \r\n                <agm-map [latitude]=\"lat\" [longitude]=\"lng\" [zoom]=\"zoom\">\r\n                  <agm-marker [latitude]=\"lat\" [longitude]=\"lng\"></agm-marker>\r\n                </agm-map>\r\n                <b>{{price | currency:\"LKR\": 'symbol' : '6.2-2'}}</b>\r\n            </div>\r\n            <div class=\"col\">\r\n              <h5>Contribution</h5>\r\n              <ul *ngFor=\"let valuer of valuers\">\r\n                <li>{{valuer.name}}</li>\r\n                <star-rating value=\"5\" checkedcolor=\"red\" uncheckedcolor=\"black\" size=\"30px\" readonly=\"false\" (rate)=\"onRate($event)\"></star-rating>\r\n              </ul>\r\n            </div>\r\n        </div>\r\n    </div>\r\n</div>"
+module.exports = "<div class=\"container\">\r\n    <div class=\"jumbotron\">\r\n        <div class=\"row\">\r\n            <div class=\"col\">\r\n                <h5>Price Prediction Per Perch</h5>\r\n                <b>{{address}}</b>\r\n                \r\n                <agm-map [latitude]=\"lat\" [longitude]=\"lng\" [zoom]=\"zoom\">\r\n                  <agm-marker [latitude]=\"lat\" [longitude]=\"lng\"></agm-marker>\r\n                </agm-map>\r\n                <b>{{price | currency:\"LKR\": 'symbol' : '6.2-2'}}</b>\r\n            </div>\r\n            <div class=\"col\">\r\n              <h5>Contribution</h5>\r\n              <ul *ngFor=\"let valuer of valuers\">\r\n                <li>name: {{valuer.user.name}} <br>email: {{valuer.user.email}}</li>\r\n                <star-rating value=\"5\" checkedcolor=\"red\" uncheckedcolor=\"black\" size=\"30px\" readonly=\"false\" (rate)=\"onRate($event)\"></star-rating>\r\n              </ul>\r\n            </div>\r\n        </div>\r\n    </div>\r\n</div>"
 
 /***/ }),
 
@@ -1192,21 +1192,6 @@ var PredictionComponent = (function () {
         this.optimzed = 6000000;
         this.title = 'My first AGM project';
         this.zoom = 15;
-        // tslint:disable-next-line:member-ordering
-        this.valuers = [
-            {
-                id: 1,
-                name: 'Valuer 1'
-            },
-            {
-                id: 2,
-                name: 'Valuer 2'
-            },
-            {
-                id: 3,
-                name: 'Valuer 3'
-            },
-        ];
     }
     PredictionComponent.prototype.ngOnInit = function () {
         this.price = this.route.snapshot.queryParamMap.get('page');
@@ -1219,11 +1204,13 @@ var PredictionComponent = (function () {
         this.getValuersDetails();
     };
     PredictionComponent.prototype.getValuersDetails = function () {
+        var _this = this;
         // console.log(this.address.trim());
         var addr = this.address.split(" ");
-        console.log(addr[0]);
+        // console.log(addr[0]);
         this.addLandService.getValuers(addr[0]).subscribe(function (data) {
             console.log(data);
+            _this.valuers = data;
         }, function (error) { console.log(error); });
     };
     PredictionComponent.prototype.onRate = function ($event) {

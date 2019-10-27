@@ -11,7 +11,7 @@ import { AddLandService } from 'app/services/addLand.service';
   styleUrls: ['./prediction.component.css']
 })
 export class PredictionComponent implements OnInit {
-
+  valuers:any;
   price: any;
   optimzed:any = 6000000;
   address:any;  title = 'My first AGM project';
@@ -39,7 +39,9 @@ export class PredictionComponent implements OnInit {
     let addr = this.address.split(" ");
     // console.log(addr[0]);
     this.addLandService.getValuers(addr[0]).subscribe(
-      data => { console.log(data); 
+      data => { 
+        console.log(data);
+        this.valuers = data; 
 
       },
       error => { console.log(error);}
@@ -53,19 +55,19 @@ export class PredictionComponent implements OnInit {
   }
 
   // tslint:disable-next-line:member-ordering
-  valuers:any = [
-    {
-      id : 1,
-      name: 'Valuer 1'
-    },
-    {
-      id : 2,
-      name: 'Valuer 2'
-    },
-    {
-      id :3,
-      name: 'Valuer 3'
-    },
-  ]
+  // valuers:any = [
+  //   {
+  //     id : 1,
+  //     name: 'Valuer 1'
+  //   },
+  //   {
+  //     id : 2,
+  //     name: 'Valuer 2'
+  //   },
+  //   {
+  //     id :3,
+  //     name: 'Valuer 3'
+  //   },
+  // ]
 
 }

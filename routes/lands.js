@@ -8,9 +8,12 @@ router.post('/filter', function(req, res, next) {
     .populate('user','name email')
     .exec(function(err, person) {
         console.log(person);
-        res.status(201).json({person});
-        // do something.
-        // variable `person` contains the final populated data
+        
+        if(err){
+            res.status(404).json(err);
+        }else{
+            res.status(201).json(person);
+        }
     });
   });
 
