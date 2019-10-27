@@ -9,15 +9,15 @@
     <div class="col-md-3">
       <br><br>          
       <div class="row">
-          <button (click)="send_data_10_year()" class="btn btn-success" style="width: 100%;">TableChart</button>
+          <button (click)="send_data_10_year()" class="btn btn-success" style="width: 100%;">Table Chart</button>
       </div>
       <br><br><br>
       <div class="row">
-          <button (click)="per_year()" class="btn btn-primary" style="width: 100%;">PerYearChart</button>
+          <button (click)="per_year()" class="btn btn-primary" style="width: 100%;">Per Year Chart</button>
       </div>
       <br><br><br>
       <div class="row">
-          <button class="btn btn-info" style="width: 100%;" (click)="per_month()">PerMonthChart</button>
+          <button class="btn btn-info" style="width: 100%;" (click)="per_month()">Per Month Chart</button>
           <select name="per_month" id="per_month"  style="width: 100%;margin-top: 10px;" [(ngModel)]="prices.per_month">
             <option value="2018">2018</option>
             <option value="2019">2019</option>
@@ -37,7 +37,9 @@
   <br><br>
   <div class="row">    
     <h1>TableChart</h1>
-    <table class="table">
+    <table class="table" style="max-height: 500px;
+    overflow: auto;
+    display:inline-block">
       <thead>
         <tr>
               <th>Year</th>

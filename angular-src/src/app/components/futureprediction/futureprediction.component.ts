@@ -91,7 +91,7 @@ function Line_Chart_Per_Year() {
         ],
         datasets: [
           {
-            label: "Average Land Price Per Year*10^7",
+            label: "Average Land Price Per Year",
             data: [
               futurepredictionComponent.credentials.pre_data_list_per_year[0],
               futurepredictionComponent.credentials.pre_data_list_per_year[1],
@@ -114,7 +114,7 @@ function Line_Chart_Per_Year() {
 
       options: {
         title: {
-          text: "PerYearChart",
+          text: "Per Year Chart",
           display: true
         },
         scales: {
@@ -166,7 +166,7 @@ function Line_Chart_Per_Month() {
         ],
         datasets: [
           {
-            label: "Average Land Price Per Month*10^7",
+            label: "Average Land Price Per Month",
             // data: [ futurepredictionComponent.credentials.pre_data_list[0] ,7,3,5,2,10,15,16,19,3,1,9],
             data: [
               futurepredictionComponent.credentials.pre_data_list_per_month[0],
@@ -192,7 +192,7 @@ function Line_Chart_Per_Month() {
 
       options: {
         title: {
-          text: "PerMonthChart",
+          text: "Per Month Chart",
           display: true
         },
         scales: {
