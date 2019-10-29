@@ -1,0 +1,2278 @@
+webpackJsonp(["main"],{
+
+/***/ "../../../../../src/$$_lazy_route_resource lazy recursive":
+/***/ (function(module, exports) {
+
+function webpackEmptyAsyncContext(req) {
+	// Here Promise.resolve().then() is used instead of new Promise() to prevent
+	// uncatched exception popping up in devtools
+	return Promise.resolve().then(function() {
+		throw new Error("Cannot find module '" + req + "'.");
+	});
+}
+webpackEmptyAsyncContext.keys = function() { return []; };
+webpackEmptyAsyncContext.resolve = webpackEmptyAsyncContext;
+module.exports = webpackEmptyAsyncContext;
+webpackEmptyAsyncContext.id = "../../../../../src/$$_lazy_route_resource lazy recursive";
+
+/***/ }),
+
+/***/ "../../../../../src/app/app.component.css":
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, "", ""]);
+
+// exports
+
+
+/*** EXPORTS FROM exports-loader ***/
+module.exports = module.exports.toString();
+
+/***/ }),
+
+/***/ "../../../../../src/app/app.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "<app-navbar></app-navbar>\r\n  <flash-messages></flash-messages>\r\n  <router-outlet></router-outlet>\r\n<!-- <hr> -->\r\n\r\n"
+
+/***/ }),
+
+/***/ "../../../../../src/app/app.component.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppComponent; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/esm5/core.js");
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+
+var AppComponent = (function () {
+    function AppComponent() {
+        this.title = 'app';
+    }
+    AppComponent = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+            selector: 'app-root',
+            template: __webpack_require__("../../../../../src/app/app.component.html"),
+            styles: [__webpack_require__("../../../../../src/app/app.component.css")]
+        })
+    ], AppComponent);
+    return AppComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "../../../../../src/app/app.module.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppModule; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__ = __webpack_require__("../../../platform-browser/esm5/platform-browser.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__("../../../core/esm5/core.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_forms__ = __webpack_require__("../../../forms/esm5/forms.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_http__ = __webpack_require__("../../../http/esm5/http.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_router__ = __webpack_require__("../../../router/esm5/router.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__agm_core__ = __webpack_require__("../../../../@agm/core/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__app_component__ = __webpack_require__("../../../../../src/app/app.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__components_navbar_navbar_component__ = __webpack_require__("../../../../../src/app/components/navbar/navbar.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__components_login_login_component__ = __webpack_require__("../../../../../src/app/components/login/login.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__components_register_register_component__ = __webpack_require__("../../../../../src/app/components/register/register.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__components_home_home_component__ = __webpack_require__("../../../../../src/app/components/home/home.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__components_dashboard_dashboard_component__ = __webpack_require__("../../../../../src/app/components/dashboard/dashboard.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__components_land_price_land_price_component__ = __webpack_require__("../../../../../src/app/components/land-price/land-price.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__components_profile_profile_component__ = __webpack_require__("../../../../../src/app/components/profile/profile.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__components_futureprediction_futureprediction_component__ = __webpack_require__("../../../../../src/app/components/futureprediction/futureprediction.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__services_validate_service__ = __webpack_require__("../../../../../src/app/services/validate.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__services_auth_service__ = __webpack_require__("../../../../../src/app/services/auth.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17_angular2_flash_messages__ = __webpack_require__("../../../../angular2-flash-messages/module/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17_angular2_flash_messages___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_17_angular2_flash_messages__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__guards_auth_guard__ = __webpack_require__("../../../../../src/app/guards/auth.guard.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__components_footer_footer_component__ = __webpack_require__("../../../../../src/app/components/footer/footer.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__angular_common_http__ = __webpack_require__("../../../common/esm5/http.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__services_addLand_service__ = __webpack_require__("../../../../../src/app/services/addLand.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_22__components_prediction_prediction_component__ = __webpack_require__("../../../../../src/app/components/prediction/prediction.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_23_ng_starrating__ = __webpack_require__("../../../../ng-starrating/fesm5/ng-starrating.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_24_ngx_spinner__ = __webpack_require__("../../../../ngx-spinner/ngx-spinner.umd.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_24_ngx_spinner___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_24_ngx_spinner__);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+var appRoutes = [
+    { path: '', component: __WEBPACK_IMPORTED_MODULE_10__components_home_home_component__["a" /* HomeComponent */] },
+    { path: 'register', component: __WEBPACK_IMPORTED_MODULE_9__components_register_register_component__["a" /* RegisterComponent */] },
+    { path: 'login', component: __WEBPACK_IMPORTED_MODULE_8__components_login_login_component__["a" /* LoginComponent */] },
+    { path: 'prediction', component: __WEBPACK_IMPORTED_MODULE_22__components_prediction_prediction_component__["a" /* PredictionComponent */] },
+    { path: 'dashboard', component: __WEBPACK_IMPORTED_MODULE_11__components_dashboard_dashboard_component__["a" /* DashboardComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_18__guards_auth_guard__["a" /* AuthGuard */]] },
+    { path: 'landprice', component: __WEBPACK_IMPORTED_MODULE_12__components_land_price_land_price_component__["a" /* LandPriceComponent */] },
+    { path: 'profile', component: __WEBPACK_IMPORTED_MODULE_13__components_profile_profile_component__["a" /* ProfileComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_18__guards_auth_guard__["a" /* AuthGuard */]] },
+    { path: 'futureprediction', component: __WEBPACK_IMPORTED_MODULE_14__components_futureprediction_futureprediction_component__["a" /* futurepredictionComponent */] }
+];
+var AppModule = (function () {
+    function AppModule() {
+    }
+    AppModule = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["NgModule"])({
+            declarations: [
+                __WEBPACK_IMPORTED_MODULE_6__app_component__["a" /* AppComponent */],
+                __WEBPACK_IMPORTED_MODULE_7__components_navbar_navbar_component__["a" /* NavbarComponent */],
+                __WEBPACK_IMPORTED_MODULE_8__components_login_login_component__["a" /* LoginComponent */],
+                __WEBPACK_IMPORTED_MODULE_9__components_register_register_component__["a" /* RegisterComponent */],
+                __WEBPACK_IMPORTED_MODULE_10__components_home_home_component__["a" /* HomeComponent */],
+                __WEBPACK_IMPORTED_MODULE_11__components_dashboard_dashboard_component__["a" /* DashboardComponent */],
+                __WEBPACK_IMPORTED_MODULE_12__components_land_price_land_price_component__["a" /* LandPriceComponent */],
+                __WEBPACK_IMPORTED_MODULE_13__components_profile_profile_component__["a" /* ProfileComponent */],
+                __WEBPACK_IMPORTED_MODULE_19__components_footer_footer_component__["a" /* FooterComponent */],
+                __WEBPACK_IMPORTED_MODULE_22__components_prediction_prediction_component__["a" /* PredictionComponent */],
+                __WEBPACK_IMPORTED_MODULE_14__components_futureprediction_futureprediction_component__["a" /* futurepredictionComponent */]
+            ],
+            imports: [
+                __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__["a" /* BrowserModule */],
+                __WEBPACK_IMPORTED_MODULE_2__angular_forms__["b" /* FormsModule */],
+                __WEBPACK_IMPORTED_MODULE_2__angular_forms__["c" /* ReactiveFormsModule */],
+                __WEBPACK_IMPORTED_MODULE_3__angular_http__["HttpModule"],
+                __WEBPACK_IMPORTED_MODULE_24_ngx_spinner__["NgxSpinnerModule"],
+                __WEBPACK_IMPORTED_MODULE_23_ng_starrating__["a" /* RatingModule */],
+                __WEBPACK_IMPORTED_MODULE_20__angular_common_http__["b" /* HttpClientModule */],
+                __WEBPACK_IMPORTED_MODULE_4__angular_router__["c" /* RouterModule */].forRoot(appRoutes),
+                __WEBPACK_IMPORTED_MODULE_17_angular2_flash_messages__["FlashMessagesModule"].forRoot(),
+                __WEBPACK_IMPORTED_MODULE_5__agm_core__["a" /* AgmCoreModule */].forRoot({
+                    apiKey: 'AIzaSyDhoZamzj5fd26T7qbetCYKfSBBfQq0YEs',
+                    libraries: ['places']
+                    /* apiKey is required, unless you are a
+                    premium customer, in which case you can
+                    use clientId
+                    */
+                })
+            ],
+            providers: [__WEBPACK_IMPORTED_MODULE_15__services_validate_service__["a" /* ValidateService */], __WEBPACK_IMPORTED_MODULE_16__services_auth_service__["a" /* AuthService */], __WEBPACK_IMPORTED_MODULE_18__guards_auth_guard__["a" /* AuthGuard */], __WEBPACK_IMPORTED_MODULE_21__services_addLand_service__["a" /* AddLandService */]],
+            bootstrap: [__WEBPACK_IMPORTED_MODULE_6__app_component__["a" /* AppComponent */]]
+        })
+    ], AppModule);
+    return AppModule;
+}());
+
+
+
+/***/ }),
+
+/***/ "../../../../../src/app/components/dashboard/dashboard.component.css":
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, ".container{\r\n    padding:70px \r\n}\r\nagm-map { height: 300px; /* height is required */ }", ""]);
+
+// exports
+
+
+/*** EXPORTS FROM exports-loader ***/
+module.exports = module.exports.toString();
+
+/***/ }),
+
+/***/ "../../../../../src/app/components/dashboard/dashboard.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"container\">\r\n    <h3 class=\"text-center\">Enter your land information</h3>\r\n    <form [formGroup]=\"angForm\" novalidate >\r\n        <div class=\"row\"> \r\n            <div class=\"col\">\r\n                <div class=\"form-group\">\r\n                    <label for=\"price\">Price:</label>\r\n                    <input type=\"number\"  class=\"form-control\" placeholder=\"Price\" formControlName=\"price\" #price >\r\n                </div>\r\n                <div *ngIf=\"angForm.controls['price'].invalid && (angForm.controls['price'].dirty || angForm.controls['price'].touched)\" class=\"alert alert-danger\">\r\n                    <div *ngIf=\"angForm.controls['price'].errors.required\">\r\n                      Price is required.\r\n                    </div>\r\n                </div>\r\n                <div class=\"form-group\">\r\n                    <label for=\"distance\">Distance to nearest bus route:</label>\r\n                    <input type=\"number\"  class=\"form-control\" placeholder=\"Distance\" formControlName=\"distance\" #distance>\r\n                </div>\r\n                <div *ngIf=\"angForm.controls['distance'].invalid && (angForm.controls['distance'].dirty || angForm.controls['distance'].touched)\" class=\"alert alert-danger\">\r\n                    <div *ngIf=\"angForm.controls['distance'].errors.required\">\r\n                      Distance is required.\r\n                    </div>\r\n                </div>\r\n                <div class=\"form-group\">\r\n                    <label for=\"route\">Nearest bus route:</label>\r\n                    <input type=\"text\"  class=\"form-control\" placeholder=\"Route\" formControlName=\"route\" #route>\r\n                </div>\r\n                <div *ngIf=\"angForm.controls['route'].invalid && (angForm.controls['route'].dirty || angForm.controls['route'].touched)\" class=\"alert alert-danger\">\r\n                    <div *ngIf=\"angForm.controls['route'].errors.required\">\r\n                      Route is required.\r\n                    </div>\r\n                </div>\r\n                <div class=\"form-group\">\r\n                    <label for=\"aindex\">Accessbility index:</label>\r\n                    <input type=\"number\"  class=\"form-control\" placeholder=\"Index\" formControlName=\"aindex\" #aindex>\r\n                </div>\r\n                <div *ngIf=\"angForm.controls['aindex'].invalid && (angForm.controls['aindex'].dirty || angForm.controls['aindex'].touched)\" class=\"alert alert-danger\">\r\n                    <div *ngIf=\"angForm.controls['aindex'].errors.required\">\r\n                      Index is required.\r\n                    </div>\r\n                </div>\r\n                <div class=\"form-group\">\r\n                        <label for=\"province\">Province:</label>\r\n                        <input type=\"text\" class=\"form-control\" placeholder=\"Province\" formControlName=\"province\" #province>\r\n                </div>\r\n                <div *ngIf=\"angForm.controls['province'].invalid && (angForm.controls['province'].dirty || angForm.controls['province'].touched)\" class=\"alert alert-danger\">\r\n                    <div *ngIf=\"angForm.controls['province'].errors.required\">\r\n                      Province is required.\r\n                    </div>\r\n                </div>\r\n                <div class=\"form-group\">\r\n                    <label for=\"district\">District:</label>\r\n                    <input type=\"text\"  class=\"form-control\" placeholder=\"District\" formControlName=\"district\" #district>\r\n                </div>\r\n                <div *ngIf=\"angForm.controls['district'].invalid && (angForm.controls['district'].dirty || angForm.controls['district'].touched)\" class=\"alert alert-danger\">\r\n                    <div *ngIf=\"angForm.controls['district'].errors.required\">\r\n                        District is required.\r\n                    </div>\r\n                </div>\r\n                <button (click)=\"addLandInfo(price.value, distance.value, route.value, aindex.value, province.value, district.value, address.value, lat.value, lon.value)\"  class=\"btn btn-success btn-block\" [disabled]=\"angForm.pristine || angForm.invalid\"  >Submit</button>\r\n            </div>\r\n            <div class=\"col\"> \r\n                <div class=\"form-group\">\r\n                    <label for=\"address\">Address</label>\r\n                    <input type=\"text\"  class=\"form-control\" (keydown.enter)=\"$event.preventDefault()\" \r\n                    placeholder=\"Search Nearest Location\" autocorrect=\"off\" autocapitalize=\"off\" spellcheck=\"off\" formControlName=\"address\" #address>\r\n                </div>\r\n                <agm-map [latitude]=\"latitude\" [longitude]=\"longitude\" [zoom]=\"zoom\">\r\n                    <agm-marker [latitude]=\"latitude\" [longitude]=\"longitude\" [markerDraggable]=\"true\"\r\n                    (dragEnd)=\"markerDragEnd($event)\"></agm-marker>\r\n                </agm-map>\r\n                <div class=\"form-group\">\r\n                    <label for=\"lat\">Latitude:</label>\r\n                    <input type=\"number\" class=\"form-control\" [value]=\"latitude\" placeholder=\"\" formControlName=\"lat\" disabled #lat>\r\n                </div>\r\n                <!-- <div *ngIf=\"angForm.controls['lat'].invalid && (angForm.controls['lat'].dirty || angForm.controls['lat'].touched)\" class=\"alert alert-danger\">\r\n                    <div *ngIf=\"angForm.controls['lat'].errors.required\">\r\n                        Latitude is required.\r\n                    </div>\r\n                </div> -->\r\n                <div class=\"form-group\">\r\n                    <label  for=\"lon\">Longitude:</label>\r\n                    <input type=\"number\" class=\"form-control\"  [value]=\"longitude\"  placeholder=\"\" formControlName=\"lon\" disabled #lon>\r\n                </div>\r\n                <!-- <div *ngIf=\"angForm.controls['lon'].invalid && (angForm.controls['lon'].dirty || angForm.controls['lon'].touched)\" class=\"alert alert-danger\">\r\n                    <div *ngIf=\"angForm.controls['lon'].errors.required\">\r\n                        Longitude is required.\r\n                    </div>\r\n                </div> -->\r\n             \r\n            </div>\r\n        </div>    \r\n    </form>\r\n</div>\r\n"
+
+/***/ }),
+
+/***/ "../../../../../src/app/components/dashboard/dashboard.component.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return DashboardComponent; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/esm5/core.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__agm_core__ = __webpack_require__("../../../../@agm/core/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_forms__ = __webpack_require__("../../../forms/esm5/forms.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_app_services_addLand_service__ = __webpack_require__("../../../../../src/app/services/addLand.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_router__ = __webpack_require__("../../../router/esm5/router.js");
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+
+var DashboardComponent = (function () {
+    function DashboardComponent(mapsAPILoader, ngZone, fb, addLandService, router) {
+        this.mapsAPILoader = mapsAPILoader;
+        this.ngZone = ngZone;
+        this.fb = fb;
+        this.addLandService = addLandService;
+        this.router = router;
+        this.title = 'AGM project';
+        this.user = localStorage.getItem('user');
+        this.userId = JSON.parse(this.user);
+        this.createForm();
+        // var test = JSON.parse(this.user);
+        // console.log(test.id);
+    }
+    DashboardComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        //load Places Autocomplete
+        this.mapsAPILoader.load().then(function () {
+            _this.setCurrentLocation();
+            _this.geoCoder = new google.maps.Geocoder;
+            var autocomplete = new google.maps.places.Autocomplete(_this.searchElementRef.nativeElement, {
+                types: ["address"], componentRestrictions: { country: 'lk' }
+            });
+            autocomplete.addListener("place_changed", function () {
+                _this.ngZone.run(function () {
+                    //get the place result
+                    var place = autocomplete.getPlace();
+                    //verify result
+                    if (place.geometry === undefined || place.geometry === null) {
+                        return;
+                    }
+                    //set latitude, longitude and zoom
+                    _this.latitude = place.geometry.location.lat();
+                    _this.longitude = place.geometry.location.lng();
+                    _this.zoom = 12;
+                });
+            });
+        });
+    };
+    // Get Current Location Coordinates
+    DashboardComponent.prototype.setCurrentLocation = function () {
+        var _this = this;
+        if ('geolocation' in navigator) {
+            navigator.geolocation.getCurrentPosition(function (position) {
+                _this.latitude = position.coords.latitude;
+                _this.longitude = position.coords.longitude;
+                _this.zoom = 8;
+                _this.getAddress(_this.latitude, _this.longitude);
+            });
+        }
+    };
+    DashboardComponent.prototype.markerDragEnd = function ($event) {
+        console.log($event);
+        this.latitude = $event.coords.lat;
+        this.longitude = $event.coords.lng;
+        this.getAddress(this.latitude, this.longitude);
+    };
+    DashboardComponent.prototype.getAddress = function (latitude, longitude) {
+        var _this = this;
+        this.geoCoder.geocode({ 'location': { lat: latitude, lng: longitude } }, function (results, status) {
+            console.log(results);
+            console.log(status);
+            if (status === 'OK') {
+                if (results[0]) {
+                    _this.zoom = 12;
+                    _this.address = results[0].formatted_address;
+                }
+                else {
+                    window.alert('No results found');
+                }
+            }
+            else {
+                window.alert('Geocoder failed due to: ' + status);
+            }
+        });
+    };
+    DashboardComponent.prototype.createForm = function () {
+        this.angForm = this.fb.group({
+            price: ['', __WEBPACK_IMPORTED_MODULE_2__angular_forms__["d" /* Validators */].required],
+            distance: ['', __WEBPACK_IMPORTED_MODULE_2__angular_forms__["d" /* Validators */].required],
+            route: ['', __WEBPACK_IMPORTED_MODULE_2__angular_forms__["d" /* Validators */].required],
+            aindex: ['', __WEBPACK_IMPORTED_MODULE_2__angular_forms__["d" /* Validators */].required],
+            province: ['', __WEBPACK_IMPORTED_MODULE_2__angular_forms__["d" /* Validators */].required],
+            district: ['', __WEBPACK_IMPORTED_MODULE_2__angular_forms__["d" /* Validators */].required],
+            address: ['', __WEBPACK_IMPORTED_MODULE_2__angular_forms__["d" /* Validators */].required],
+        });
+    };
+    DashboardComponent.prototype.addLandInfo = function (price, distance, route, aindex, province, district, address, lat, lon) {
+        var id = this.userId.id;
+        console.log(id);
+        this.addLandService.addLand(id, price, distance, route, aindex, province, district, address, lat, lon);
+        this.router.navigate(['/profile']);
+    };
+    __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["ViewChild"])('address'),
+        __metadata("design:type", __WEBPACK_IMPORTED_MODULE_0__angular_core__["ElementRef"])
+    ], DashboardComponent.prototype, "searchElementRef", void 0);
+    DashboardComponent = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+            selector: 'app-dashboard',
+            template: __webpack_require__("../../../../../src/app/components/dashboard/dashboard.component.html"),
+            styles: [__webpack_require__("../../../../../src/app/components/dashboard/dashboard.component.css")]
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__agm_core__["b" /* MapsAPILoader */],
+            __WEBPACK_IMPORTED_MODULE_0__angular_core__["NgZone"],
+            __WEBPACK_IMPORTED_MODULE_2__angular_forms__["a" /* FormBuilder */],
+            __WEBPACK_IMPORTED_MODULE_3_app_services_addLand_service__["a" /* AddLandService */],
+            __WEBPACK_IMPORTED_MODULE_4__angular_router__["b" /* Router */]])
+    ], DashboardComponent);
+    return DashboardComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "../../../../../src/app/components/footer/footer.component.css":
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, ".site-footer\r\n{\r\n  background-color:#26272b;\r\n  padding:45px 0 20px;\r\n  font-size:15px;\r\n  line-height:24px;\r\n  color:#737373;\r\n}\r\n.site-footer hr\r\n{\r\n  border-top-color:#bbb;\r\n  opacity:0.5\r\n}\r\n.site-footer hr.small\r\n{\r\n  margin:20px 0\r\n}\r\n.site-footer h6\r\n{\r\n  color:#fff;\r\n  font-size:16px;\r\n  text-transform:uppercase;\r\n  margin-top:5px;\r\n  letter-spacing:2px\r\n}\r\n.site-footer a\r\n{\r\n  color:#737373;\r\n}\r\n.site-footer a:hover\r\n{\r\n  color:#3366cc;\r\n  text-decoration:none;\r\n}\r\n.footer-links\r\n{\r\n  padding-left:0;\r\n  list-style:none\r\n}\r\n.footer-links li\r\n{\r\n  display:block\r\n}\r\n.footer-links a\r\n{\r\n  color:#737373\r\n}\r\n.footer-links a:active,.footer-links a:focus,.footer-links a:hover\r\n{\r\n  color:#3366cc;\r\n  text-decoration:none;\r\n}\r\n.footer-links.inline li\r\n{\r\n  display:inline-block\r\n}\r\n.site-footer .social-icons\r\n{\r\n  text-align:right\r\n}\r\n.site-footer .social-icons a\r\n{\r\n  width:40px;\r\n  height:40px;\r\n  line-height:40px;\r\n  margin-left:6px;\r\n  margin-right:0;\r\n  border-radius:100%;\r\n  background-color:#33353d\r\n}\r\n.copyright-text\r\n{\r\n  margin:0\r\n}\r\n@media (max-width:991px)\r\n{\r\n  .site-footer [class^=col-]\r\n  {\r\n    margin-bottom:30px\r\n  }\r\n}\r\n@media (max-width:767px)\r\n{\r\n  .site-footer\r\n  {\r\n    padding-bottom:0\r\n  }\r\n  .site-footer .copyright-text,.site-footer .social-icons\r\n  {\r\n    text-align:center\r\n  }\r\n}\r\n.social-icons\r\n{\r\n  padding-left:0;\r\n  margin-bottom:0;\r\n  list-style:none\r\n}\r\n.social-icons li\r\n{\r\n  display:inline-block;\r\n  margin-bottom:4px\r\n}\r\n.social-icons li.title\r\n{\r\n  margin-right:15px;\r\n  text-transform:uppercase;\r\n  color:#96a2b2;\r\n  font-weight:700;\r\n  font-size:13px\r\n}\r\n.social-icons a{\r\n  background-color:#eceeef;\r\n  color:#818a91;\r\n  font-size:16px;\r\n  display:inline-block;\r\n  line-height:44px;\r\n  width:44px;\r\n  height:44px;\r\n  text-align:center;\r\n  margin-right:8px;\r\n  border-radius:100%;\r\n  transition:all .2s linear\r\n}\r\n.social-icons a:active,.social-icons a:focus,.social-icons a:hover\r\n{\r\n  color:#fff;\r\n  background-color:#29aafe\r\n}\r\n.social-icons.size-sm a\r\n{\r\n  line-height:34px;\r\n  height:34px;\r\n  width:34px;\r\n  font-size:14px\r\n}\r\n.social-icons a.facebook:hover\r\n{\r\n  background-color:#3b5998\r\n}\r\n.social-icons a.twitter:hover\r\n{\r\n  background-color:#00aced\r\n}\r\n.social-icons a.linkedin:hover\r\n{\r\n  background-color:#007bb6\r\n}\r\n.social-icons a.dribbble:hover\r\n{\r\n  background-color:#ea4c89\r\n}\r\n@media (max-width:767px)\r\n{\r\n  .social-icons li.title\r\n  {\r\n    display:block;\r\n    margin-right:0;\r\n    font-weight:600\r\n  }\r\n}\r\n\r\n", ""]);
+
+// exports
+
+
+/*** EXPORTS FROM exports-loader ***/
+module.exports = module.exports.toString();
+
+/***/ }),
+
+/***/ "../../../../../src/app/components/footer/footer.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "  <footer class=\"site-footer\">\r\n    <div class=\"container\">\r\n      <div class=\"row\">\r\n        <div class=\"col-sm-12 col-md-6\">\r\n          <h6>About</h6>\r\n          <p class=\"text-justify\">Scanfcode.com <i>CODE WANTS TO BE SIMPLE </i> is an initiative  to help the upcoming programmers with the code. Scanfcode focuses on providing the most efficient code or snippets as the code wants to be simple. We will help programmers build up concepts in different programming languages that include C, C++, Java, HTML, CSS, Bootstrap, JavaScript, PHP, Android, SQL and Algorithm.</p>\r\n        </div>\r\n\r\n        <div class=\"col-xs-6 col-md-3\">\r\n          <h6>Categories</h6>\r\n          <ul class=\"footer-links\">\r\n            <li><a href=\"\">Future Predictions</a></li>\r\n            <li><a href=\"\">Infastructure</a></li>\r\n            <li><a href=\"\">Sample</a></li>\r\n            <li><a href=\"\">Sample</a></li>\r\n            <li><a href=\"\">Sample</a></li>\r\n            <li><a href=\"\">Sample</a></li>\r\n          </ul>\r\n        </div>\r\n\r\n        <div class=\"col-xs-6 col-md-3\">\r\n          <h6>Quick Links</h6>\r\n          <ul class=\"footer-links\">\r\n            <li><a href=\"\">About Us</a></li>\r\n            <li><a href=\"\">Contact Us</a></li>\r\n            <li><a href=\"\">Contribute</a></li>\r\n            <li><a href=\"\">Privacy Policy</a></li>\r\n            <li><a href=\"\">Sitemap</a></li>\r\n          </ul>\r\n        </div>\r\n      </div>\r\n      <hr>\r\n    </div>\r\n    <div class=\"container\">\r\n      <div class=\"row\">\r\n        <div class=\"col-md-8 col-sm-6 col-xs-12\">\r\n          <p class=\"copyright-text\">Copyright &copy; 2019 All Rights Reserved by \r\n       <a href=\"#\">Evaluer</a>.\r\n          </p>\r\n        </div>\r\n\r\n        <div class=\"col-md-4 col-sm-6 col-xs-12\">\r\n          <ul class=\"social-icons\">\r\n            <li><a class=\"facebook\" href=\"#\"><i class=\"fa fa-facebook\"></i></a></li>\r\n            <li><a class=\"twitter\" href=\"#\"><i class=\"fa fa-twitter\"></i></a></li>\r\n            <li><a class=\"dribbble\" href=\"#\"><i class=\"fa fa-dribbble\"></i></a></li>\r\n            <li><a class=\"linkedin\" href=\"#\"><i class=\"fa fa-linkedin\"></i></a></li>   \r\n          </ul>\r\n        </div>\r\n      </div>\r\n    </div>\r\n</footer>\r\n"
+
+/***/ }),
+
+/***/ "../../../../../src/app/components/footer/footer.component.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return FooterComponent; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/esm5/core.js");
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+var FooterComponent = (function () {
+    function FooterComponent() {
+    }
+    FooterComponent.prototype.ngOnInit = function () {
+    };
+    FooterComponent = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+            selector: 'app-footer',
+            template: __webpack_require__("../../../../../src/app/components/footer/footer.component.html"),
+            styles: [__webpack_require__("../../../../../src/app/components/footer/footer.component.css")]
+        }),
+        __metadata("design:paramtypes", [])
+    ], FooterComponent);
+    return FooterComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "../../../../../src/app/components/futureprediction/futureprediction.component.css":
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, "#map {\r\n    height: 400px;\r\n    width: 100%;\r\n  }\r\n  #about {\r\n    margin-top: 5%;\r\n  }", ""]);
+
+// exports
+
+
+/*** EXPORTS FROM exports-loader ***/
+module.exports = module.exports.toString();
+
+/***/ }),
+
+/***/ "../../../../../src/app/components/futureprediction/futureprediction.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "<div id=\"about\"></div>\r\n<div class=\"container\">\r\n  <div class=\"row\">\r\n    <div class=\"col-md-9\">\r\n      <input id=\"pac-input\" class=\"controls\" type=\"text\" placeholder=\"Location\"\r\n             style=\"width: 100%;margin-bottom: 1%; margin-right: 2%;\" >               \r\n      <div id=\"map\" #mapRed></div>\r\n    </div>\r\n    <div class=\"col-md-3\">\r\n      <br><br>          \r\n      <div class=\"row\">\r\n          <button (click)=\"send_data_10_year()\" class=\"btn btn-success\" style=\"width: 100%;\">Table Chart</button>\r\n      </div>\r\n      <br><br><br>\r\n      <div class=\"row\">\r\n          <button (click)=\"per_year()\" class=\"btn btn-primary\" style=\"width: 100%;\">Per Year Chart</button>\r\n      </div>\r\n      <br><br><br>\r\n      <div class=\"row\">\r\n          <button class=\"btn btn-info\" style=\"width: 100%;\" (click)=\"per_month()\">Per Month Chart</button>\r\n          <select name=\"per_month\" id=\"per_month\"  style=\"width: 100%;margin-top: 10px;\" [(ngModel)]=\"prices.per_month\">\r\n            <option value=\"2018\">2018</option>\r\n            <option value=\"2019\">2019</option>\r\n            <option value=\"2020\">2020</option>\r\n            <option value=\"2021\">2021</option>\r\n            <option value=\"2022\">2022</option>\r\n            <option value=\"2023\">2023</option>\r\n            <option value=\"2024\">2024</option>\r\n            <option value=\"2025\">2025</option>\r\n            <option value=\"2026\">2026</option>\r\n            <option value=\"2027\">2027</option>\r\n          </select>\r\n      </div>     \r\n\r\n    </div>\r\n  </div>\r\n  <br><br>\r\n  <div class=\"row\">    \r\n    <h3>Table Chart</h3>\r\n    <table class=\"table\" style=\"max-height: 500px;\r\n    overflow: auto;\r\n    display:inline-block\">\r\n      <thead>\r\n        <tr>\r\n              <th>Year</th>\r\n              <th>Jan</th>\r\n              <th>Feb</th>\r\n              <th>Mar</th>\r\n              <th>Apr</th>\r\n              <th>May</th>\r\n              <th>June</th>\r\n              <th>July</th>\r\n              <th>Aug</th>\r\n              <th>Sep</th>\r\n              <th>Oct</th>\r\n              <th>Nov</th>\r\n              <th>Dec</th>\r\n        </tr>\r\n      </thead>\r\n      <tbody>\r\n        <tr>\r\n            <td>2018</td>\r\n            <td>{{ prices.pre_data[0] }}</td>\r\n            <td>{{ prices.pre_data[1] }}</td>\r\n            <td>{{ prices.pre_data[2] }}</td>\r\n            <td>{{ prices.pre_data[3] }}</td>\r\n            <td>{{ prices.pre_data[4] }}</td>\r\n            <td>{{ prices.pre_data[5] }}</td>\r\n            <td>{{ prices.pre_data[6] }}</td>\r\n            <td>{{ prices.pre_data[7] }}</td>\r\n            <td>{{ prices.pre_data[8] }}</td>\r\n            <td>{{ prices.pre_data[9] }}</td>\r\n            <td>{{ prices.pre_data[10] }}</td>\r\n            <td>{{ prices.pre_data[11] }}</td>         \r\n        </tr>\r\n        <tr>\r\n              <td>2019</td>\r\n              <td>{{ prices.pre_data[12] }}</td>\r\n              <td>{{ prices.pre_data[13] }}</td>\r\n              <td>{{ prices.pre_data[14] }}</td>\r\n              <td>{{ prices.pre_data[15] }}</td>\r\n              <td>{{ prices.pre_data[16] }}</td>\r\n              <td>{{ prices.pre_data[17] }}</td>\r\n              <td>{{ prices.pre_data[18] }}</td>\r\n              <td>{{ prices.pre_data[19] }}</td>\r\n              <td>{{ prices.pre_data[20] }}</td>\r\n              <td>{{ prices.pre_data[21] }}</td>\r\n              <td>{{ prices.pre_data[22] }}</td>\r\n              <td>{{ prices.pre_data[23] }}</td>         \r\n        </tr>\r\n        <tr>\r\n                <td>2020</td>\r\n                <td>{{ prices.pre_data[24] }}</td>\r\n                <td>{{ prices.pre_data[25] }}</td>\r\n                <td>{{ prices.pre_data[26] }}</td>\r\n                <td>{{ prices.pre_data[27] }}</td>\r\n                <td>{{ prices.pre_data[28] }}</td>\r\n                <td>{{ prices.pre_data[29] }}</td>\r\n                <td>{{ prices.pre_data[30] }}</td>\r\n                <td>{{ prices.pre_data[31] }}</td>\r\n                <td>{{ prices.pre_data[32] }}</td>\r\n                <td>{{ prices.pre_data[33] }}</td>\r\n                <td>{{ prices.pre_data[34] }}</td>\r\n                <td>{{ prices.pre_data[35] }}</td>         \r\n        </tr>\r\n        <tr>\r\n                  <td>2021</td>\r\n                  <td>{{ prices.pre_data[36] }}</td>\r\n                  <td>{{ prices.pre_data[37] }}</td>\r\n                  <td>{{ prices.pre_data[38] }}</td>\r\n                  <td>{{ prices.pre_data[39] }}</td>\r\n                  <td>{{ prices.pre_data[40] }}</td>\r\n                  <td>{{ prices.pre_data[41] }}</td>\r\n                  <td>{{ prices.pre_data[42] }}</td>\r\n                  <td>{{ prices.pre_data[43] }}</td>\r\n                  <td>{{ prices.pre_data[44] }}</td>\r\n                  <td>{{ prices.pre_data[45] }}</td>\r\n                  <td>{{ prices.pre_data[46] }}</td>\r\n                  <td>{{ prices.pre_data[47] }}</td>         \r\n        </tr>\r\n        <tr>\r\n                    <td>2022</td>\r\n                    <td>{{ prices.pre_data[48] }}</td>\r\n                    <td>{{ prices.pre_data[49] }}</td>\r\n                    <td>{{ prices.pre_data[50] }}</td>\r\n                    <td>{{ prices.pre_data[51] }}</td>\r\n                    <td>{{ prices.pre_data[52] }}</td>\r\n                    <td>{{ prices.pre_data[53] }}</td>\r\n                    <td>{{ prices.pre_data[54] }}</td>\r\n                    <td>{{ prices.pre_data[55] }}</td>\r\n                    <td>{{ prices.pre_data[56] }}</td>\r\n                    <td>{{ prices.pre_data[57] }}</td>\r\n                    <td>{{ prices.pre_data[58] }}</td>\r\n                    <td>{{ prices.pre_data[59] }}</td>         \r\n        </tr>\r\n        <tr>\r\n                  <td>2023</td>\r\n                  <td>{{ prices.pre_data[60] }}</td>\r\n                  <td>{{ prices.pre_data[61] }}</td>\r\n                  <td>{{ prices.pre_data[62] }}</td>\r\n                  <td>{{ prices.pre_data[63] }}</td>\r\n                  <td>{{ prices.pre_data[64] }}</td>\r\n                  <td>{{ prices.pre_data[65] }}</td>\r\n                  <td>{{ prices.pre_data[66] }}</td>\r\n                  <td>{{ prices.pre_data[67] }}</td>\r\n                  <td>{{ prices.pre_data[68] }}</td>\r\n                  <td>{{ prices.pre_data[69] }}</td>\r\n                  <td>{{ prices.pre_data[70] }}</td>\r\n                  <td>{{ prices.pre_data[71] }}</td>         \r\n        </tr>\r\n        <tr>\r\n                    <td>2024</td>\r\n                    <td>{{ prices.pre_data[72] }}</td>\r\n                    <td>{{ prices.pre_data[73] }}</td>\r\n                    <td>{{ prices.pre_data[74] }}</td>\r\n                    <td>{{ prices.pre_data[75] }}</td>\r\n                    <td>{{ prices.pre_data[76] }}</td>\r\n                    <td>{{ prices.pre_data[77] }}</td>\r\n                    <td>{{ prices.pre_data[78] }}</td>\r\n                    <td>{{ prices.pre_data[79] }}</td>\r\n                    <td>{{ prices.pre_data[80] }}</td>\r\n                    <td>{{ prices.pre_data[81] }}</td>\r\n                    <td>{{ prices.pre_data[82] }}</td>\r\n                    <td>{{ prices.pre_data[83] }}</td>         \r\n        </tr>\r\n        <tr>\r\n                      <td>2025</td>\r\n                      <td>{{ prices.pre_data[84] }}</td>\r\n                      <td>{{ prices.pre_data[85] }}</td>\r\n                      <td>{{ prices.pre_data[86] }}</td>\r\n                      <td>{{ prices.pre_data[87] }}</td>\r\n                      <td>{{ prices.pre_data[88] }}</td>\r\n                      <td>{{ prices.pre_data[89] }}</td>\r\n                      <td>{{ prices.pre_data[90] }}</td>\r\n                      <td>{{ prices.pre_data[91] }}</td>\r\n                      <td>{{ prices.pre_data[92] }}</td>\r\n                      <td>{{ prices.pre_data[93] }}</td>\r\n                      <td>{{ prices.pre_data[94] }}</td>\r\n                      <td>{{ prices.pre_data[95] }}</td>         \r\n        </tr>\r\n        <tr>\r\n                        <td>2026</td>\r\n                        <td>{{ prices.pre_data[96] }}</td>\r\n                        <td>{{ prices.pre_data[97] }}</td>\r\n                        <td>{{ prices.pre_data[98] }}</td>\r\n                        <td>{{ prices.pre_data[99] }}</td>\r\n                        <td>{{ prices.pre_data[100] }}</td>\r\n                        <td>{{ prices.pre_data[101] }}</td>\r\n                        <td>{{ prices.pre_data[102] }}</td>\r\n                        <td>{{ prices.pre_data[103] }}</td>\r\n                        <td>{{ prices.pre_data[104] }}</td>\r\n                        <td>{{ prices.pre_data[105] }}</td>\r\n                        <td>{{ prices.pre_data[106] }}</td>\r\n                        <td>{{ prices.pre_data[107] }}</td>         \r\n        </tr>\r\n        <tr>\r\n                          <td>2027</td>\r\n                          <td>{{ prices.pre_data[108] }}</td>\r\n                          <td>{{ prices.pre_data[109] }}</td>\r\n                          <td>{{ prices.pre_data[110] }}</td>\r\n                          <td>{{ prices.pre_data[111] }}</td>\r\n                          <td>{{ prices.pre_data[112] }}</td>\r\n                          <td>{{ prices.pre_data[113] }}</td>\r\n                          <td>{{ prices.pre_data[114] }}</td>\r\n                          <td>{{ prices.pre_data[115] }}</td>\r\n                          <td>{{ prices.pre_data[116] }}</td>\r\n                          <td>{{ prices.pre_data[117] }}</td>\r\n                          <td>{{ prices.pre_data[118] }}</td>\r\n                          <td>{{ prices.pre_data[119] }}</td>         \r\n        </tr>  \r\n\r\n                        \r\n      </tbody>     \r\n    </table>\r\n  </div>\r\n  <div class=\"row\">\r\n    <h3>Per Year Chart</h3>\r\n    <table>\r\n      <tr class=\"row\">\r\n        <td class=\"col\" style=\"width: 1000px; height: 20%;\"><canvas id=\"lineChart_per_year\"></canvas></td>\r\n      </tr>\r\n    </table>\r\n  </div>\r\n  <div class=\"row\">\r\n      <h3>Per Month Chart</h3>\r\n      <table>\r\n        <tr class=\"row\">\r\n          <td class=\"col\" style=\"width: 1000px; height: 20%;\"><canvas id=\"lineChart_per_month\"></canvas></td>\r\n        </tr>\r\n      </table>\r\n    </div>\r\n</div>\r\n\r\n<!--<input type=\"button\" value=\"Locate\">-->\r\n\r\n\r\n\r\n"
+
+/***/ }),
+
+/***/ "../../../../../src/app/components/futureprediction/futureprediction.component.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return futurepredictionComponent; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/esm5/core.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_common_http__ = __webpack_require__("../../../common/esm5/http.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_chart_js__ = __webpack_require__("../../../../chart.js/dist/Chart.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_chart_js___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_chart_js__);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+var httpOptions = {
+    headers: new __WEBPACK_IMPORTED_MODULE_1__angular_common_http__["c" /* HttpHeaders */]({
+        "Content-Type": "application/json",
+        Authorization: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZDVhMmYzNTU2M2UyMjBhOTQ5YjBmOTIiLCJlbWFpbCI6ImoxYW4uaG9uZ0B5YW5kZXguY29tIiwibmFtZSI6ImJyYXMiLCJleHAiOjE1NjY4MzI4OTIsImlhdCI6MTU2NjIyODA5Mn0.DfPAVVsaNCV3urx35HQdWIeXTV4ybe3lVQl4E_aA37M"
+    })
+};
+function test(pl) {
+    futurepredictionComponent.credentials.lat = pl.geometry.location.lat();
+    futurepredictionComponent.credentials.lng = pl.geometry.location.lng();
+}
+function send_DisToPettah(distance) {
+    futurepredictionComponent.credentials.distance = distance;
+}
+function minimum_distance_list(minimum_distance) {
+    futurepredictionComponent.credentials.minimum_distance_list.push(minimum_distance);
+}
+function xx(pp) {
+    futurepredictionComponent.credentials.pre_data = pp;
+    console.log(futurepredictionComponent.credentials.pre_data);
+    for (var j = 0; j < 30; j++) {
+        var xyz = futurepredictionComponent.credentials.pre_data[j];
+        for (var i = 0; i < 4; i++) {
+            var yyy = xyz.slice(1 + 15 * i, 11 + 15 * i);
+            if (yyy < 3) {
+                futurepredictionComponent.credentials.pre_data_list.push(yyy * 10);
+                futurepredictionComponent.credentials.pre_data_list_as_lkr.push(yyy * 100000000);
+            }
+            else {
+                futurepredictionComponent.credentials.pre_data_list.push(yyy);
+                futurepredictionComponent.credentials.pre_data_list_as_lkr.push(yyy * 10000000);
+            }
+        }
+    }
+    //  alert(futurepredictionComponent.credentials.pre_data_list[119]);
+}
+function Line_Chart_Per_Year() {
+    // alert(futurepredictionComponent.credentials.pre_data_list[119]);
+    for (var i = 0; i < 10; i++) {
+        var per_year_sum = 0;
+        for (var j = 0; j < 12; j++) {
+            per_year_sum += parseFloat(futurepredictionComponent.credentials.pre_data_list[i * 12 + j]);
+            // alert(per_year_sum);
+        }
+        futurepredictionComponent.credentials.pre_data_list_per_year.push(per_year_sum / 12);
+    }
+    // alert(futurepredictionComponent.credentials.pre_data_list_per_year)
+    futurepredictionComponent.credentials.LineChartPerYear = new __WEBPACK_IMPORTED_MODULE_2_chart_js__["Chart"]("lineChart_per_year", {
+        type: "line",
+        data: {
+            labels: [
+                "2018",
+                "2019",
+                "2020",
+                "2021",
+                "2022",
+                "2023",
+                "2024",
+                "2025",
+                "2026",
+                "2027"
+            ],
+            datasets: [
+                {
+                    label: "Average Land Price Per Year",
+                    data: [
+                        futurepredictionComponent.credentials.pre_data_list_per_year[0],
+                        futurepredictionComponent.credentials.pre_data_list_per_year[1],
+                        futurepredictionComponent.credentials.pre_data_list_per_year[2],
+                        futurepredictionComponent.credentials.pre_data_list_per_year[3],
+                        futurepredictionComponent.credentials.pre_data_list_per_year[4],
+                        futurepredictionComponent.credentials.pre_data_list_per_year[5],
+                        futurepredictionComponent.credentials.pre_data_list_per_year[6],
+                        futurepredictionComponent.credentials.pre_data_list_per_year[7],
+                        futurepredictionComponent.credentials.pre_data_list_per_year[8],
+                        futurepredictionComponent.credentials.pre_data_list_per_year[9]
+                    ],
+                    fill: false,
+                    lineTension: 0.1,
+                    borderColor: "red",
+                    borderWidth: 1
+                }
+            ]
+        },
+        options: {
+            title: {
+                text: "Per Year Chart",
+                display: true
+            },
+            scales: {
+                yAxes: [
+                    {
+                        ticks: {
+                            beginAtZero: true
+                        }
+                    }
+                ]
+            }
+        }
+    });
+}
+function Line_Chart_Per_Month() {
+    var year = futurepredictionComponent.credentials.per_month;
+    // alert(year);
+    // alert(futurepredictionComponent.credentials.pre_data_list[119]);
+    for (var j = (parseInt(year) - 2018) * 12; j < (parseInt(year) - 2018) * 12 + 12; j++) {
+        futurepredictionComponent.credentials.pre_data_list_per_month.push(futurepredictionComponent.credentials.pre_data_list[j]);
+    }
+    // alert(futurepredictionComponent.credentials.pre_data_list_per_month)
+    futurepredictionComponent.credentials.LineChartPerYear = new __WEBPACK_IMPORTED_MODULE_2_chart_js__["Chart"]("lineChart_per_month", {
+        type: "line",
+        data: {
+            labels: [
+                "Jan",
+                "Feb",
+                "Mar",
+                "Apr",
+                "May",
+                "Jun",
+                "Jul",
+                "Aug",
+                "Sep",
+                "Oct",
+                "Nov",
+                "Dec"
+            ],
+            datasets: [
+                {
+                    label: "Average Land Price Per Month",
+                    // data: [ futurepredictionComponent.credentials.pre_data_list[0] ,7,3,5,2,10,15,16,19,3,1,9],
+                    data: [
+                        futurepredictionComponent.credentials.pre_data_list_per_month[0],
+                        futurepredictionComponent.credentials.pre_data_list_per_month[1],
+                        futurepredictionComponent.credentials.pre_data_list_per_month[2],
+                        futurepredictionComponent.credentials.pre_data_list_per_month[3],
+                        futurepredictionComponent.credentials.pre_data_list_per_month[4],
+                        futurepredictionComponent.credentials.pre_data_list_per_month[5],
+                        futurepredictionComponent.credentials.pre_data_list_per_month[6],
+                        futurepredictionComponent.credentials.pre_data_list_per_month[7],
+                        futurepredictionComponent.credentials.pre_data_list_per_month[8],
+                        futurepredictionComponent.credentials.pre_data_list_per_month[9],
+                        futurepredictionComponent.credentials.pre_data_list_per_month[10],
+                        futurepredictionComponent.credentials.pre_data_list_per_month[11]
+                    ],
+                    fill: false,
+                    lineTension: 0.1,
+                    borderColor: "red",
+                    borderWidth: 1
+                }
+            ]
+        },
+        options: {
+            title: {
+                text: "Per Month Chart",
+                display: true
+            },
+            scales: {
+                yAxes: [
+                    {
+                        ticks: {
+                            beginAtZero: true
+                        }
+                    }
+                ]
+            }
+        }
+    });
+}
+var futurepredictionComponent = (function () {
+    function futurepredictionComponent(http) {
+        this.http = http;
+        this.title = "A6withChartJs";
+        this.LineChart = [];
+        this.BarChart = [];
+        this.prices = {
+            pre_data: [],
+            per_month: ""
+        };
+    }
+    futurepredictionComponent_1 = futurepredictionComponent;
+    futurepredictionComponent.prototype.handleError = function (error) {
+        console.error("Something has gone wrong", error);
+        return Promise.reject(error.message || error);
+    };
+    futurepredictionComponent.prototype.ngOnInit = function () {
+        this.initAutocomplete();
+    };
+    futurepredictionComponent.prototype.initAutocomplete = function () {
+        var map = new google.maps.Map(this.mapRed.nativeElement, {
+            center: { lat: 6.9271, lng: 79.8621 },
+            zoom: 14,
+            mapTypeId: "roadmap"
+        });
+        var input = document.getElementById("pac-input");
+        var searchBox = new google.maps.places.SearchBox(input);
+        map.addListener("bounds_changed", function () {
+            searchBox.setBounds(map.getBounds());
+        });
+        var markers = [];
+        searchBox.addListener("places_changed", function () {
+            var places = searchBox.getPlaces();
+            markers = [];
+            var bounds = new google.maps.LatLngBounds();
+            var place = places[0];
+            var icon = {
+                url: place.icon,
+                size: new google.maps.Size(71, 71),
+                origin: new google.maps.Point(0, 0),
+                anchor: new google.maps.Point(17, 34),
+                scaledSize: new google.maps.Size(25, 25)
+            };
+            markers.push(new google.maps.Marker({
+                map: map,
+                icon: icon,
+                title: place.name,
+                position: place.geometry.location
+            }));
+            if (place.geometry.viewport) {
+                bounds.union(place.geometry.viewport);
+            }
+            else {
+                bounds.union(place.geometry.location);
+            }
+            var service = new google.maps.places.PlacesService(map);
+            var building = ["hospital", "bank", "school"];
+            test(place);
+            for (var i = 0; i < building.length; i++) {
+                service.nearbySearch({
+                    location: place.geometry.location,
+                    radius: 1500,
+                    type: building[i]
+                }, function (results, status) {
+                    // alert(results.length)
+                    if (results.length == 0) {
+                        console.log("0");
+                    }
+                    else {
+                        if (status !== "OK")
+                            return;
+                        // alert(results[0].geometry.location.lat());
+                        var rad = function (x) {
+                            return (x * Math.PI) / 180;
+                        };
+                        // let number: number = 0;
+                        var total_distance = 0;
+                        var average_distance = 0;
+                        var build_number = 0;
+                        // let passed: array = [];
+                        var passed = [];
+                        var filterDistance = function (p) {
+                            var R = 6378137; // Earth’s mean radius in meter
+                            var dLat = rad(p.geometry.location.lat() - place.geometry.location.lat());
+                            var dLong = rad(p.geometry.location.lng() - place.geometry.location.lng());
+                            var a = Math.sin(dLat / 2) * Math.sin(dLat / 2) +
+                                Math.cos(rad(place.geometry.location.lat())) *
+                                    Math.cos(rad(p.geometry.location.lat())) *
+                                    Math.sin(dLong / 2) *
+                                    Math.sin(dLong / 2);
+                            var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+                            var d = R * c;
+                            return d; // returns the distance in meter
+                        };
+                        var DisToTown = function () {
+                            var R = 6378137; // Earth’s mean radius in meter
+                            var dLat = rad(6.9329 - place.geometry.location.lat());
+                            var dLong = rad(79.8554 - place.geometry.location.lng());
+                            var a = Math.sin(dLat / 2) * Math.sin(dLat / 2) +
+                                Math.cos(rad(place.geometry.location.lat())) *
+                                    Math.cos(rad(6.9329)) *
+                                    Math.sin(dLong / 2) *
+                                    Math.sin(dLong / 2);
+                            var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+                            var d = R * c;
+                            return d; // returns the distance in meter
+                        };
+                        var DisToPettah = DisToTown();
+                        send_DisToPettah(DisToPettah);
+                        // alert(DisToPettah) ;
+                        // alert(results.length);
+                        var distance_list = [];
+                        for (var j = 0; j < results.length; j++) {
+                            distance_list.push(filterDistance(results[j]));
+                            // alert(filterDistance(results[j]));
+                            if (filterDistance(results[j]) < 1500) {
+                                total_distance += filterDistance(results[j]);
+                                build_number += 1;
+                                passed.push(results[j]);
+                            }
+                        }
+                        // alert(distance_list);
+                        var dist = Math.min.apply(null, distance_list);
+                        minimum_distance_list(dist);
+                        // alert(dist);
+                        if (build_number !== 0) {
+                            average_distance = total_distance / build_number;
+                        }
+                        else {
+                            average_distance = 0;
+                        }
+                        for (var i = 0; i < passed.length; i++) {
+                            var image = {
+                                url: passed[i].icon,
+                                size: new google.maps.Size(71, 71),
+                                origin: new google.maps.Point(0, 0),
+                                anchor: new google.maps.Point(17, 34),
+                                scaledSize: new google.maps.Size(25, 25)
+                            };
+                            var marker = new google.maps.Marker({
+                                map: map,
+                                icon: image,
+                                title: passed[i].name,
+                                position: passed[i].geometry.location
+                            });
+                            bounds.extend(passed[i].geometry.location);
+                        }
+                        map.fitBounds(bounds);
+                        map.setZoom(15);
+                    }
+                });
+            }
+        });
+        // alert(json);
+    };
+    futurepredictionComponent.prototype.send_data_10_year = function () {
+        var _this = this;
+        // alert('ok');
+        var data = {
+            minimum_distance_list: [],
+            distance: "",
+            lat: "",
+            lng: ""
+        };
+        data.distance = futurepredictionComponent_1.credentials.distance;
+        data.minimum_distance_list =
+            futurepredictionComponent_1.credentials.minimum_distance_list;
+        data.lat = futurepredictionComponent_1.credentials.lat;
+        data.lng = futurepredictionComponent_1.credentials.lng;
+        return this.http
+            .post("http://localhost:8080/users/send_data_10_year", data, httpOptions)
+            .subscribe(function (prediction_data_10_year) {
+            // console.log(prediction_data_10_year),/
+            futurepredictionComponent_1.credentials.pre_data_list = [];
+            futurepredictionComponent_1.credentials.pre_data_list_as_lkr = [];
+            futurepredictionComponent_1.credentials.pre_data_list_per_month = [];
+            futurepredictionComponent_1.credentials.pre_data_list_per_year = [];
+            xx(prediction_data_10_year),
+                (_this.prices.pre_data =
+                    futurepredictionComponent_1.credentials.pre_data_list_as_lkr);
+        });
+    };
+    futurepredictionComponent.prototype.per_year = function () {
+        Line_Chart_Per_Year();
+    };
+    futurepredictionComponent.prototype.per_month = function () {
+        futurepredictionComponent_1.credentials.per_month = this.prices.per_month;
+        // alert(futurepredictionComponent.credentials.per_month);
+        Line_Chart_Per_Month();
+    };
+    futurepredictionComponent.credentials = {
+        lat: "",
+        lng: "",
+        distance: "",
+        minimum_distance_list: new Array(),
+        pre_data: {},
+        pre_data_list: new Array(),
+        pre_data_list_as_lkr: new Array(),
+        pre_data_list_per_year: new Array(),
+        pre_data_list_per_month: new Array(),
+        LineChartPerYear: [],
+        LineChartPerMonth: [],
+        per_month: ""
+    };
+    __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["ViewChild"])("mapRed"),
+        __metadata("design:type", __WEBPACK_IMPORTED_MODULE_0__angular_core__["ElementRef"])
+    ], futurepredictionComponent.prototype, "mapRed", void 0);
+    futurepredictionComponent = futurepredictionComponent_1 = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+            selector: "app-futureprediction",
+            template: __webpack_require__("../../../../../src/app/components/futureprediction/futureprediction.component.html"),
+            styles: [__webpack_require__("../../../../../src/app/components/futureprediction/futureprediction.component.css")]
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__angular_common_http__["a" /* HttpClient */]])
+    ], futurepredictionComponent);
+    return futurepredictionComponent;
+    var futurepredictionComponent_1;
+}());
+
+
+
+/***/ }),
+
+/***/ "../../../../../src/app/components/home/home.component.css":
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, ".home{\r\n    background: url(\"/assets/landing.jpg\");\r\n    background-repeat: no-repeat;\r\n    background-position: center center;\r\n    background-attachment: fixed;\r\n    background-size: cover;\r\n}\r\n\r\n.input-group{\r\n    width: 60% ;\r\n    padding: 22px;\r\n}\r\nimg{\r\n    width:700px;\r\n    float:right;\r\n    margin-bottom:-81px;\r\n}\r\nh1{\r\n    font-size: 3.1875rem ;\r\n    padding: 20px ;\r\n    color:#424036;\r\n}\r\n.loading{\r\n    color: white;\r\n    padding-top: 50px;\r\n  }\r\n@media(max-width: 768px){\r\n    img{\r\n        width: 220px;\r\n        /* margin-bottom: -26px; */\r\n     \r\n     }\r\n\r\n     .input-group{\r\n         width: 100%;\r\n     }\r\n     h1{\r\n        font-size:  2.1875rem ;\r\n    }\r\n    \r\n  }", ""]);
+
+// exports
+
+
+/*** EXPORTS FROM exports-loader ***/
+module.exports = module.exports.toString();
+
+/***/ }),
+
+/***/ "../../../../../src/app/components/home/home.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "<!--  <div class=\"jumbotron text-center\">\r\n  <h1>MEAN Authentication App1234</h1>\r\n  <p class=\"lead\">Welcome to our custom MEAN authentication application built from scratch </p>\r\n  <div>\r\n    <a class=\"btn btn-primary\" [routerLink]=\"['/register']\">Register</a> <a class=\"btn btn-dark\" [routerLink]=\"['/login']\">Login</a>\r\n  </div>\r\n</div> -->\r\n\r\n<!-- <div class=\"jumbotron\"> -->\r\n    <!-- <img src=\"/assets/landing.jpg\" width=\"100%\" /> -->\r\n<!-- </div>  -->\r\n\r\n<div class=\"home\">\r\n  <div class=\"row\">\r\n    <div class=\"col\">\r\n    </div>\r\n    <div class=\"col\">\r\n        <ngx-spinner  type=\"ball-clip-rotate-multiple\" size=\"medium\">\r\n          <p class=\"loading\">Loading...</p>\r\n        </ngx-spinner>\r\n        <h1>Lightning Fast Valuation<br>Provider</h1>\r\n        <div class=\"input-group search-box\">\r\n            <input type=\"text\" placeholder=\"Search for Location\" autocorrect=\"off\" autocapitalize=\"off\" spellcheck=\"off\" class=\"form-control\" #search>\r\n            <div class=\"input-group-append\">\r\n              <button (click)=\"predictPrice()\" class=\"btn btn-dark\"><i class=\"fa fa-search\"></i></button>\r\n            </div>\r\n          </div>\r\n      <img src=\"../../../assets/house.png\" alt=\"\">\r\n    \r\n    </div>\r\n  </div>\r\n</div>\r\n<app-footer></app-footer>\r\n"
+
+/***/ }),
+
+/***/ "../../../../../src/app/components/home/home.component.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return HomeComponent; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__agm_core__ = __webpack_require__("../../../../@agm/core/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__("../../../core/esm5/core.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_app_services_addLand_service__ = __webpack_require__("../../../../../src/app/services/addLand.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_router__ = __webpack_require__("../../../router/esm5/router.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_ngx_spinner__ = __webpack_require__("../../../../ngx-spinner/ngx-spinner.umd.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_ngx_spinner___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_ngx_spinner__);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+
+var HomeComponent = (function () {
+    // tslint:disable-next-line:max-line-length
+    function HomeComponent(spinner, router, addLandService, mapsAPILoader, ngZone) {
+        this.spinner = spinner;
+        this.router = router;
+        this.addLandService = addLandService;
+        this.mapsAPILoader = mapsAPILoader;
+        this.ngZone = ngZone;
+    }
+    HomeComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        this.mapsAPILoader.load().then(function () {
+            var input = _this.searchElement.nativeElement;
+            var cityBounds = new google.maps.LatLngBounds(new google.maps.LatLng(6.9319401, 79.8477783), new google.maps.LatLng(6.979982, 79.874327), new google.maps.LatLng(6.979697, 79.880935), new google.maps.LatLng(6.975913, 79.883882), new google.maps.LatLng(6.971180, 79.882560), new google.maps.LatLng(6.966009, 79.878936), new google.maps.LatLng(6.960802, 79.877719), new google.maps.LatLng(6.957807, 79.878747), new google.maps.LatLng(6.948079, 79.877497), new google.maps.LatLng(6.943136, 79.879042), new google.maps.LatLng(6.929673, 79.883675), new google.maps.LatLng(6.908199, 79.886763), new google.maps.LatLng(6.8937037, 79.8507687));
+            var options = { types: ["address"],
+                // bounds: cityBounds,
+                // strictBounds: true,
+                componentRestrictions: { country: 'lk' } };
+            var autocomplete = new google.maps.places.Autocomplete(input, options);
+            autocomplete.addListener("place_changed", function () {
+                _this.ngZone.run(function () {
+                    var place = autocomplete.getPlace();
+                    // this.address = autocomplete.getPlace();
+                    _this.address = autocomplete.getPlace().address_components[0].long_name;
+                    if (place.geometry === undefined || place.geometry === null) {
+                        return;
+                    }
+                    //set latitude, longitude and zoom
+                    _this.latitude = place.geometry.location.lat();
+                    _this.longitude = place.geometry.location.lng();
+                    //  console.log( this.latitude);
+                    //  console.log( this.longitude);
+                });
+            });
+        });
+    };
+    HomeComponent.prototype.predictPrice = function () {
+        var _this = this;
+        this.spinner.show();
+        this.addLandService.getCurrentPrice(this.latitude, this.longitude).subscribe(function (data) {
+            console.log(data[0]); // Data which is returned by call
+            setTimeout(function () {
+                _this.spinner.hide();
+                _this.router.navigate(['./', 'prediction'], { queryParams: { page: data[0], page1: _this.address, lat: _this.latitude, lng: _this.longitude }, skipLocationChange: true });
+            }, 3500);
+        }, function (error) {
+            console.log(error); // Error if any
+        });
+    };
+    __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["ViewChild"])('search'),
+        __metadata("design:type", __WEBPACK_IMPORTED_MODULE_1__angular_core__["ElementRef"])
+    ], HomeComponent.prototype, "searchElement", void 0);
+    HomeComponent = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["Component"])({
+            selector: 'app-home',
+            template: __webpack_require__("../../../../../src/app/components/home/home.component.html"),
+            styles: [__webpack_require__("../../../../../src/app/components/home/home.component.css")]
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_4_ngx_spinner__["NgxSpinnerService"], __WEBPACK_IMPORTED_MODULE_3__angular_router__["b" /* Router */], __WEBPACK_IMPORTED_MODULE_2_app_services_addLand_service__["a" /* AddLandService */], __WEBPACK_IMPORTED_MODULE_0__agm_core__["b" /* MapsAPILoader */], __WEBPACK_IMPORTED_MODULE_1__angular_core__["NgZone"]])
+    ], HomeComponent);
+    return HomeComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "../../../../../src/app/components/land-price/land-price.component.css":
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, "#map {\r\n  height: 400px;\r\n  width: 100%;\r\n}\r\n#about {\r\n  margin-top: 5%;\r\n}\r\n/* .home{\r\n  background: url(\"/assets/landing.jpg\");\r\n  background-repeat: no-repeat;\r\n  background-position: center center;\r\n  background-attachment: fixed;\r\n  background-size: cover;\r\n  height: 100%;\r\n} */", ""]);
+
+// exports
+
+
+/*** EXPORTS FROM exports-loader ***/
+module.exports = module.exports.toString();
+
+/***/ }),
+
+/***/ "../../../../../src/app/components/land-price/land-price.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"home\">\r\n<div id=\"about\"></div>\r\n<div class=\"container\" >\r\n  <div class=\"row\" >\r\n    <div class=\"col-md-8\">\r\n      <input id=\"pac-input\" class=\"controls\" type=\"text\" placeholder=\"Location\"\r\n             style=\"width: 80%;margin-bottom: 1%; margin-right: 2%;\" >\r\n      <input type=\"button\" value=\"Locate\">\r\n      <div id=\"map\" #mapRed></div>\r\n    </div >\r\n\r\n    <div class=\"col-md-4\" >\r\n      <br><br>\r\n      <div class=\"row\">\r\n        <div class=\"col\">\r\n            <input type=\"button\" class=\"btn btn-primary\" value=\" Price(RS)\" style=\"width: 150px;\" (click)=\"send_current_position()\"><br> <br>\r\n            <input type=\"button\" class=\"btn btn-primary\" value=\"Future Price(RS)\" (click)=\"send_data()\" style=\"width: 150px;\">\r\n        </div>\r\n       \r\n        <div class=\"col\">\r\n            <input class=\"form-control\" type=\"text\" [(ngModel)]=\"prices.current_price\" > <br>\r\n            <input class=\"form-control\" type=\"text\" [(ngModel)]=\"prices.future_price\" >\r\n        </div>\r\n      </div>\r\n      <br>\r\n      <div class=\"martop10 row\">\r\n        <div class=\"col-sm-5\"><label for=\"\">School(%)</label></div>\r\n        <div class=\"col-sm-7\"><input type=\"text\" [(ngModel)]=\"prices.school_percent\" ></div>\r\n      </div>\r\n      <div class=\"martop10 row\">\r\n        <div class=\"col-sm-5\"><label for=\"\">Hospital(%)</label></div>\r\n        <div class=\"col-sm-7\"><input type=\"text\" [(ngModel)]=\"prices.hospital_percent\" ></div>\r\n      </div>\r\n      <div class=\"martop10 row\">\r\n        <div class=\"col-sm-5\"><label for=\"\">Supermarket(%)</label></div>\r\n        <div class=\"col-sm-7\"><input type=\"text\" [(ngModel)]=\"prices.supermarket_percent\" ></div>\r\n      </div>\r\n      <div class=\"martop10 row\">\r\n        <div class=\"col-sm-5\"><label for=\"\">Road(%)</label></div>\r\n        <div class=\"col-sm-7\"><input type=\"text\" [(ngModel)]=\"prices.road_percent\" ></div>\r\n      </div>\r\n      <div class=\"martop10 row\">\r\n        <div class=\"col-sm-5\"><label for=\"\">Apartment(%)</label></div>\r\n        <div class=\"col-sm-7\"><input type=\"text\" [(ngModel)]=\"prices.apartment_percent\" ></div>\r\n      </div>\r\n    </div>\r\n   </div>\r\n</div>\r\n</div>\r\n \r\n\r\n\r\n\r\n<!--<input type=\"button\" value=\"Locate\">-->\r\n\r\n\r\n\r\n"
+
+/***/ }),
+
+/***/ "../../../../../src/app/components/land-price/land-price.component.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return LandPriceComponent; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/esm5/core.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_common_http__ = __webpack_require__("../../../common/esm5/http.js");
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+var httpOptions = {
+    headers: new __WEBPACK_IMPORTED_MODULE_1__angular_common_http__["c" /* HttpHeaders */]({ 'Content-Type': 'application/json',
+        'Authorization': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZDVhMmYzNTU2M2UyMjBhOTQ5YjBmOTIiLCJlbWFpbCI6ImoxYW4uaG9uZ0B5YW5kZXguY29tIiwibmFtZSI6ImJyYXMiLCJleHAiOjE1NjY4MzI4OTIsImlhdCI6MTU2NjIyODA5Mn0.DfPAVVsaNCV3urx35HQdWIeXTV4ybe3lVQl4E_aA37M'
+    })
+};
+function test(pl) {
+    LandPriceComponent.credentials.lat = pl.geometry.location.lat();
+    LandPriceComponent.credentials.lng = pl.geometry.location.lng();
+}
+function future(av, nu) {
+    LandPriceComponent.credentials.av_list.push(av);
+    LandPriceComponent.credentials.nu_list.push(nu);
+    console.log(LandPriceComponent.credentials.av_list);
+    console.log(LandPriceComponent.credentials.nu_list);
+}
+var LandPriceComponent = (function () {
+    function LandPriceComponent(http) {
+        this.http = http;
+        this.prices = {
+            current_price: '',
+            future_price: 'Predict...',
+            school_percent: 'Percent of School',
+            hospital_percent: 'Percent of Hospital',
+            supermarket_percent: 'Percent of Supermarket',
+            road_percent: 'Percent of Road',
+            apartment_percent: 'Percent of Apartment',
+        };
+    }
+    LandPriceComponent_1 = LandPriceComponent;
+    LandPriceComponent.prototype.handleError = function (error) {
+        console.error('Something has gone wrong', error);
+        return Promise.reject(error.message || error);
+    };
+    LandPriceComponent.prototype.ngOnInit = function () {
+        this.initAutocomplete();
+    };
+    LandPriceComponent.prototype.initAutocomplete = function () {
+        var map = new google.maps.Map(this.mapRed.nativeElement, {
+            center: { lat: 6.9271, lng: 79.8621 },
+            zoom: 14,
+            mapTypeId: 'roadmap'
+        });
+        var input = document.getElementById('pac-input');
+        var searchBox = new google.maps.places.SearchBox(input);
+        map.addListener('bounds_changed', function () {
+            searchBox.setBounds(map.getBounds());
+        });
+        var markers = [];
+        searchBox.addListener('places_changed', function () {
+            LandPriceComponent_1.credentials.av_list = [];
+            LandPriceComponent_1.credentials.nu_list = [];
+            var places = searchBox.getPlaces();
+            markers = [];
+            var bounds = new google.maps.LatLngBounds();
+            for (var i = 0; i < places.length; i++) {
+                var place = places[i];
+                var icon = {
+                    url: place.icon,
+                    size: new google.maps.Size(71, 71),
+                    origin: new google.maps.Point(0, 0),
+                    anchor: new google.maps.Point(17, 34),
+                    scaledSize: new google.maps.Size(25, 25)
+                };
+                markers.push(new google.maps.Marker({
+                    map: map,
+                    icon: icon,
+                    title: place.name,
+                    position: place.geometry.location
+                }));
+                if (place.geometry.viewport) {
+                    bounds.union(place.geometry.viewport);
+                }
+                else {
+                    bounds.union(place.geometry.location);
+                }
+                var service = new google.maps.places.PlacesService(map);
+                var building = ['school', 'hospital', 'supermarket', 'road', 'apartment'];
+                test(place);
+                for (var i = 0; i < building.length; i++) {
+                    service.nearbySearch({ location: place.geometry.location, radius: 1000, type: building[i] }, function (results, status) {
+                        // alert(results.length)
+                        if (results.length == 0) {
+                            future(0, 0);
+                        }
+                        else {
+                            if (status !== 'OK')
+                                return;
+                            // alert(results[0].geometry.location.lat());
+                            var rad = function (x) {
+                                return x * Math.PI / 180;
+                            };
+                            // let number: number = 0;
+                            var total_distance = 0;
+                            var average_distance = 0;
+                            var build_number = 0;
+                            // let passed: array = [];
+                            var passed = [];
+                            var filterDistance = function (p) {
+                                var R = 6378137; // Earth’s mean radius in meter
+                                var dLat = rad(p.geometry.location.lat() - place.geometry.location.lat());
+                                var dLong = rad(p.geometry.location.lng() - place.geometry.location.lng());
+                                var a = Math.sin(dLat / 2) * Math.sin(dLat / 2) +
+                                    Math.cos(rad(place.geometry.location.lat())) * Math.cos(rad(p.geometry.location.lat())) *
+                                        Math.sin(dLong / 2) * Math.sin(dLong / 2);
+                                var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+                                var d = R * c;
+                                return d; // returns the distance in meter
+                            };
+                            // alert(results.length);
+                            for (var j = 0; j < results.length; j++) {
+                                if (filterDistance(results[j]) < 1000) {
+                                    total_distance += filterDistance(results[j]);
+                                    build_number += 1;
+                                    passed.push(results[j]);
+                                }
+                            }
+                            if (build_number !== 0) {
+                                average_distance = total_distance / build_number;
+                                // alert(average_distance);alert(build_number);
+                                future(average_distance, build_number);
+                            }
+                            else {
+                                average_distance = 0;
+                                future(average_distance, build_number);
+                            }
+                            for (var i = 0; i < passed.length; i++) {
+                                var image = {
+                                    url: passed[i].icon,
+                                    size: new google.maps.Size(71, 71),
+                                    origin: new google.maps.Point(0, 0),
+                                    anchor: new google.maps.Point(17, 34),
+                                    scaledSize: new google.maps.Size(25, 25)
+                                };
+                                var marker = new google.maps.Marker({
+                                    map: map,
+                                    icon: image,
+                                    title: passed[i].name,
+                                    position: passed[i].geometry.location
+                                });
+                                bounds.extend(passed[i].geometry.location);
+                            }
+                            map.fitBounds(bounds);
+                            map.setZoom(15);
+                        }
+                    });
+                }
+            }
+        });
+        // alert(json);
+    };
+    LandPriceComponent.prototype.send_current_position = function (json) {
+        var _this = this;
+        // alert(LandPriceComponent.credentials.lat);
+        var data = {
+            lat: '',
+            lng: ''
+        };
+        data.lat = LandPriceComponent_1.credentials.lat;
+        // alert(data.lat);
+        data.lng = LandPriceComponent_1.credentials.lng;
+        // alert(data.lng);
+        return this.http.post('users/send_current', data, httpOptions).subscribe(function (current_price) { console.log(current_price), _this.prices.current_price = parseInt(current_price[0]).toString(); });
+    };
+    LandPriceComponent.prototype.send_data = function () {
+        var _this = this;
+        // alert('OK');
+        var data = {
+            av: [],
+            nu: [],
+            current: ''
+        };
+        data.av = LandPriceComponent_1.credentials.av_list;
+        // alert(data.av[4]);
+        data.nu = LandPriceComponent_1.credentials.nu_list;
+        data.current = this.prices.current_price;
+        return this.http.post('users/send_future', data, httpOptions).subscribe(function (future_price) {
+            console.log(future_price), _this.prices.future_price = parseInt(future_price[5]).toString(), _this.prices.school_percent = (future_price[0] * 100).toString().slice(0, 5),
+                _this.prices.hospital_percent = (future_price[1] * 100).toString().slice(0, 5), _this.prices.supermarket_percent = (future_price[2] * 100).toString().slice(0, 5), _this.prices.road_percent = (future_price[3] * 100).toString().slice(0, 5),
+                _this.prices.apartment_percent = (future_price[4] * 100).toString().slice(0, 5);
+        });
+    };
+    LandPriceComponent.credentials = {
+        lat: '',
+        lng: '',
+        av_list: new Array(),
+        nu_list: new Array()
+    };
+    __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["ViewChild"])("mapRed"),
+        __metadata("design:type", __WEBPACK_IMPORTED_MODULE_0__angular_core__["ElementRef"])
+    ], LandPriceComponent.prototype, "mapRed", void 0);
+    LandPriceComponent = LandPriceComponent_1 = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+            selector: 'app-land-price',
+            template: __webpack_require__("../../../../../src/app/components/land-price/land-price.component.html"),
+            styles: [__webpack_require__("../../../../../src/app/components/land-price/land-price.component.css")]
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__angular_common_http__["a" /* HttpClient */]])
+    ], LandPriceComponent);
+    return LandPriceComponent;
+    var LandPriceComponent_1;
+}());
+
+
+
+/***/ }),
+
+/***/ "../../../../../src/app/components/login/login.component.css":
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, ".container{\r\n    padding:70px \r\n}", ""]);
+
+// exports
+
+
+/*** EXPORTS FROM exports-loader ***/
+module.exports = module.exports.toString();
+
+/***/ }),
+
+/***/ "../../../../../src/app/components/login/login.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"container\">\r\n    <h2 class=\"page-header\" >Login</h2>\r\n    <form class=\"form-signin\" (submit)=\"onLoginSubmit()\">\r\n            <div class=\"form-group\">\r\n              <label for=\"Username\">Username</label>\r\n              <input type=\"text\" class=\"form-control\" placeholder=\"Enter Username\" [(ngModel)]=\"username\" name=\"username\">\r\n            </div>\r\n            <div class=\"form-group\">\r\n            <label for=\"Password\">Password</label>\r\n            <input type=\"password\" class=\"form-control\" placeholder=\" Enter Password\" [(ngModel)]=\"password\" name=\"password\">\r\n            </div>\r\n            <div class=\"checkbox\">\r\n              <label>\r\n                <input type=\"checkbox\" value=\"remember-me\"> Remember me\r\n              </label>\r\n            </div>\r\n            <input class=\"btn btn-lg btn-primary\" type=\"submit\" value=\"Login\">\r\n    </form>    \r\n</div>"
+
+/***/ }),
+
+/***/ "../../../../../src/app/components/login/login.component.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return LoginComponent; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/esm5/core.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_auth_service__ = __webpack_require__("../../../../../src/app/services/auth.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_router__ = __webpack_require__("../../../router/esm5/router.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_angular2_flash_messages__ = __webpack_require__("../../../../angular2-flash-messages/module/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_angular2_flash_messages___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_angular2_flash_messages__);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+var LoginComponent = (function () {
+    function LoginComponent(authService, router, flashMessage) {
+        this.authService = authService;
+        this.router = router;
+        this.flashMessage = flashMessage;
+    }
+    LoginComponent.prototype.ngOnInit = function () {
+    };
+    LoginComponent.prototype.onLoginSubmit = function () {
+        var _this = this;
+        var user = {
+            username: this.username,
+            password: this.password
+        };
+        this.authService.authenticateUser(user).subscribe(function (data) {
+            if (data.success) {
+                _this.authService.storeUserData(data.token, data.user);
+                _this.flashMessage.show('You are now logged in', { cssClass: 'alert-success', timeout: 5000 });
+                _this.router.navigate(['dashboard']);
+            }
+            else {
+                _this.flashMessage.show(data.msg, { cssClass: 'alert-danger', timeout: 5000 });
+                _this.router.navigate(['login']);
+            }
+        });
+    };
+    LoginComponent = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+            selector: 'app-login',
+            template: __webpack_require__("../../../../../src/app/components/login/login.component.html"),
+            styles: [__webpack_require__("../../../../../src/app/components/login/login.component.css")]
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__services_auth_service__["a" /* AuthService */],
+            __WEBPACK_IMPORTED_MODULE_2__angular_router__["b" /* Router */],
+            __WEBPACK_IMPORTED_MODULE_3_angular2_flash_messages__["FlashMessagesService"]])
+    ], LoginComponent);
+    return LoginComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "../../../../../src/app/components/navbar/navbar.component.css":
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, "", ""]);
+
+// exports
+
+
+/*** EXPORTS FROM exports-loader ***/
+module.exports = module.exports.toString();
+
+/***/ }),
+
+/***/ "../../../../../src/app/components/navbar/navbar.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "<nav class=\"navbar navbar-expand-md navbar-dark bg-dark fixed-top\">\r\n      <a class=\"navbar-brand\" href=\"#\">Evaluer</a>\r\n      <button class=\"navbar-toggler\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarsExampleDefault\" aria-controls=\"navbarsExampleDefault\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">\r\n        <span class=\"navbar-toggler-icon\"></span>\r\n      </button>\r\n\r\n      <div class=\"collapse navbar-collapse\" id=\"navbarsExampleDefault\">\r\n        <ul class=\"navbar-nav mr-auto\">\r\n          <li class=\"nav-item\" [routerLinkActive]=\"['active']\" [routerLinkActiveOptions] = \"{exact:true}\">\r\n            <a class=\"nav-link\" [routerLink]=\"['/']\">Home <span></span></a>\r\n          </li>\r\n        </ul>\r\n        <ul class=\"navbar-nav ml-auto\">\r\n          <li class=\"nav-item\" *ngIf=\"authService.loggedIn()\" [routerLinkActive]=\"['active']\" [routerLinkActiveOptions] = \"{exact:true}\">\r\n            <a class=\"nav-link\" [routerLink]=\"['/dashboard']\">Profile </a>\r\n          </li>\r\n          <li class=\"nav-item\" *ngIf=\"!authService.loggedIn()\" [routerLinkActive]=\"['active']\" [routerLinkActiveOptions] = \"{exact:true}\">\r\n            <a class=\"nav-link\" [routerLink]=\"['/landprice']\">Infrastructure </a>\r\n          </li>\r\n          <li class=\"nav-item\" *ngIf=\"!authService.loggedIn()\" [routerLinkActive]=\"['active']\" [routerLinkActiveOptions] = \"{exact:true}\">\r\n            <a class=\"nav-link\" [routerLink]=\"['/futureprediction']\">Future prediction</a>\r\n          </li>\r\n          <li class=\"nav-item\" *ngIf=\"authService.loggedIn()\" [routerLinkActive]=\"['active']\" [routerLinkActiveOptions] = \"{exact:true}\">\r\n            <a class=\"nav-link\" [routerLink]=\"['/profile']\"> Dashboard</a>\r\n          </li>\r\n          <li class=\"nav-item\" *ngIf=\"!authService.loggedIn()\" [routerLinkActive]=\"['active']\" [routerLinkActiveOptions] = \"{exact:true}\">\r\n            <a class=\"nav-link\" [routerLink]=\"['/login']\">Login </a>\r\n          </li>\r\n          <li class=\"nav-item\" *ngIf=\"!authService.loggedIn()\" [routerLinkActive]=\"['active']\" [routerLinkActiveOptions] = \"{exact:true}\">\r\n            <a class=\"nav-link\" [routerLink]=\"['/register']\">Register</a>\r\n          </li>\r\n          <li class=\"nav-item\" *ngIf=\"authService.loggedIn()\"><a class=\"nav-link\" (click)=\"onLogoutClick()\" href=\"#\">Logout</a>\r\n          </li>\r\n        </ul>\r\n      </div>\r\n    </nav>\r\n"
+
+/***/ }),
+
+/***/ "../../../../../src/app/components/navbar/navbar.component.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return NavbarComponent; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/esm5/core.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_auth_service__ = __webpack_require__("../../../../../src/app/services/auth.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_router__ = __webpack_require__("../../../router/esm5/router.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_angular2_flash_messages__ = __webpack_require__("../../../../angular2-flash-messages/module/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_angular2_flash_messages___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_angular2_flash_messages__);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+var NavbarComponent = (function () {
+    function NavbarComponent(authService, router, flashMessage) {
+        this.authService = authService;
+        this.router = router;
+        this.flashMessage = flashMessage;
+    }
+    NavbarComponent.prototype.ngOnInit = function () {
+    };
+    NavbarComponent.prototype.onLogoutClick = function () {
+        this.authService.logout();
+        this.flashMessage.show('You are logged out', {
+            cssClass: 'alert-success', timeout: 3000
+        });
+        this.router.navigate(['/login']);
+        return false;
+    };
+    NavbarComponent = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+            selector: 'app-navbar',
+            template: __webpack_require__("../../../../../src/app/components/navbar/navbar.component.html"),
+            styles: [__webpack_require__("../../../../../src/app/components/navbar/navbar.component.css")]
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__services_auth_service__["a" /* AuthService */],
+            __WEBPACK_IMPORTED_MODULE_2__angular_router__["b" /* Router */],
+            __WEBPACK_IMPORTED_MODULE_3_angular2_flash_messages__["FlashMessagesService"]])
+    ], NavbarComponent);
+    return NavbarComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "../../../../../src/app/components/prediction/prediction.component.css":
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, ".container{\r\n    padding:70px \r\n}\r\nagm-map { height: 200px; /* height is required */ }", ""]);
+
+// exports
+
+
+/*** EXPORTS FROM exports-loader ***/
+module.exports = module.exports.toString();
+
+/***/ }),
+
+/***/ "../../../../../src/app/components/prediction/prediction.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"container\">\r\n  <div class=\"jumbotron\">\r\n      <div class=\"row\">\r\n          <div class=\"col\">\r\n              <h5>Price Prediction Per Perch</h5>\r\n              <b>{{address}}</b>\r\n              \r\n              <agm-map [latitude]=\"lat\" [longitude]=\"lng\" [zoom]=\"zoom\">\r\n                <agm-marker [latitude]=\"lat\" [longitude]=\"lng\"></agm-marker>\r\n              </agm-map>\r\n              <b>{{price | currency:\"LKR\": 'symbol' : '6.2-2'}}</b>\r\n          </div>\r\n          <div class=\"col\">\r\n            <h5>Contribution</h5>\r\n            <ul *ngFor=\"let valuer of valuers\">\r\n              <li>name: {{valuer.user.name}} <br>email: {{valuer.user.email}}</li>\r\n              <star-rating value=\"5\" checkedcolor=\"red\" uncheckedcolor=\"black\" size=\"30px\" readonly=\"false\" (rate)=\"onRate($event)\"></star-rating>\r\n            </ul>\r\n          </div>\r\n      </div>\r\n      <div class=\"row\">\r\n        <div class=\"col-7\">\r\n          \r\n        </div>\r\n        <div class=\"col-5\">\r\n          <a  [routerLink]=\"['/landprice']\" class=\"btn btn-info\" role=\"button\">Infarstructure</a>\r\n          <a  [routerLink]=\"['/futureprediction']\" class=\"btn btn-success\" role=\"button\">Future Price</a>\r\n        </div>\r\n      </div>\r\n  </div>\r\n</div>"
+
+/***/ }),
+
+/***/ "../../../../../src/app/components/prediction/prediction.component.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return PredictionComponent; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/esm5/core.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__("../../../router/esm5/router.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_app_services_addLand_service__ = __webpack_require__("../../../../../src/app/services/addLand.service.ts");
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+var PredictionComponent = (function () {
+    function PredictionComponent(route, router, addLandService) {
+        this.route = route;
+        this.router = router;
+        this.addLandService = addLandService;
+        this.optimzed = 6000000;
+        this.title = 'My first AGM project';
+        this.zoom = 15;
+    }
+    PredictionComponent.prototype.ngOnInit = function () {
+        this.price = this.route.snapshot.queryParamMap.get('page');
+        this.address = this.route.snapshot.queryParamMap.get('page1');
+        this.lat = parseFloat(this.route.snapshot.queryParamMap.get('lat'));
+        this.lng = parseFloat(this.route.snapshot.queryParamMap.get('lng'));
+        console.log(this.lat);
+        console.log(this.lng);
+        this.price = this.price - this.optimzed;
+        this.getValuersDetails();
+    };
+    PredictionComponent.prototype.getValuersDetails = function () {
+        var _this = this;
+        // console.log(this.address.trim());
+        var addr = this.address.split(" ");
+        // console.log(addr[0]);
+        this.addLandService.getValuers(addr[0]).subscribe(function (data) {
+            console.log(data);
+            _this.valuers = data;
+        }, function (error) { console.log(error); });
+    };
+    PredictionComponent.prototype.onRate = function ($event) {
+        alert("Old Value:" + $event.oldValue + ", \n      New Value: " + $event.newValue + ", \n      Checked Color: " + $event.starRating.checkedcolor + ", \n      Unchecked Color: " + $event.starRating.uncheckedcolor);
+    };
+    PredictionComponent = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+            selector: 'app-prediction',
+            template: __webpack_require__("../../../../../src/app/components/prediction/prediction.component.html"),
+            styles: [__webpack_require__("../../../../../src/app/components/prediction/prediction.component.css")]
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__angular_router__["a" /* ActivatedRoute */], __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* Router */], __WEBPACK_IMPORTED_MODULE_2_app_services_addLand_service__["a" /* AddLandService */]])
+    ], PredictionComponent);
+    return PredictionComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "../../../../../src/app/components/profile/profile.component.css":
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, ".container{\r\n    padding:70px \r\n}", ""]);
+
+// exports
+
+
+/*** EXPORTS FROM exports-loader ***/
+module.exports = module.exports.toString();
+
+/***/ }),
+
+/***/ "../../../../../src/app/components/profile/profile.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "<!-- <div *ngIf=\"user\">\r\n  <h2 class=\"page-header\">{{user.name}}</h2>\r\n  <ul class=\"list-group\">\r\n    <li class=\"list-group-item\">Username : {{user.username}}</li>\r\n    <li class=\"list-group-item\">Email : {{user.email}}</li>\r\n  </ul>\r\n</div> -->\r\n<div class=\"container\">\r\n  <div class=\"jumbotron\">\r\n      <table class=\"table table-hover\">\r\n          <thead>\r\n          <tr>\r\n              <td>Address</td>\r\n              <td>Price</td>\r\n              <td>Distance</td>\r\n              <td>Route</td>\r\n              <td>Province</td>\r\n              <td>District</td>\r\n              <td colspan=\"2\">Actions</td>\r\n          </tr>\r\n          </thead>\r\n        \r\n          <tbody>\r\n              <tr *ngFor=\"let land of lands\">\r\n                  <td>{{ land.address }}</td>\r\n                  <td>{{ land.price }}</td>\r\n                  <td>{{ land.distance }}</td>\r\n                  <td>{{ land.route }}</td>\r\n                  <td>{{ land.province }}</td>\r\n                  <td>{{ land.district }}</td>\r\n                  <td><a [routerLink]=\"\" class=\"btn btn-primary\">Edit</a></td>\r\n                  <td><a routerLink=\"\" class=\"btn btn-danger\">Delete</a></td>\r\n              </tr>\r\n          </tbody>\r\n        </table>\r\n  </div>\r\n</div>"
+
+/***/ }),
+
+/***/ "../../../../../src/app/components/profile/profile.component.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ProfileComponent; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/esm5/core.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_auth_service__ = __webpack_require__("../../../../../src/app/services/auth.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_router__ = __webpack_require__("../../../router/esm5/router.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_app_services_addLand_service__ = __webpack_require__("../../../../../src/app/services/addLand.service.ts");
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+var ProfileComponent = (function () {
+    function ProfileComponent(authService, router, addLandService) {
+        this.authService = authService;
+        this.router = router;
+        this.addLandService = addLandService;
+        this.lands = [];
+        this.userInfo = localStorage.getItem('user');
+        this.userId = JSON.parse(this.userInfo);
+    }
+    ProfileComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        this.authService.getProfile().subscribe(function (profile) {
+            _this.user = profile.user;
+        }, function (err) {
+            console.log(err);
+            return false;
+        });
+        this.getLands();
+    };
+    ProfileComponent.prototype.getLands = function () {
+        var _this = this;
+        this.addLandService.getLands().subscribe(function (res) {
+            _this.temp = res,
+                _this.temp.forEach(function (land) {
+                    if (_this.userId.id == land.user) {
+                        _this.lands.push(land);
+                    }
+                    else if (_this.userId.id == '5d635ff9d73ff1632402ce23') {
+                        _this.lands = res;
+                    }
+                });
+            // if(this.userId.id === res.user)
+            // {
+            //   this.lands = res;
+            //   console.log(res);
+            // }
+            // else{
+            //   console.log('No records')
+            // }
+        });
+    };
+    ProfileComponent = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+            selector: 'app-profile',
+            template: __webpack_require__("../../../../../src/app/components/profile/profile.component.html"),
+            styles: [__webpack_require__("../../../../../src/app/components/profile/profile.component.css")]
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__services_auth_service__["a" /* AuthService */], __WEBPACK_IMPORTED_MODULE_2__angular_router__["b" /* Router */], __WEBPACK_IMPORTED_MODULE_3_app_services_addLand_service__["a" /* AddLandService */]])
+    ], ProfileComponent);
+    return ProfileComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "../../../../../src/app/components/register/register.component.css":
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, ".container{\r\n    padding:70px \r\n}", ""]);
+
+// exports
+
+
+/*** EXPORTS FROM exports-loader ***/
+module.exports = module.exports.toString();
+
+/***/ }),
+
+/***/ "../../../../../src/app/components/register/register.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"container\">\r\n<h2 class=\"page-header\">Register</h2>\r\n<form (submit)=\"onRegisterSubmit()\" >\r\n  <div class=\"form-group\">\r\n    <label for=\"name\">Name</label>\r\n    <input type=\"text\" [(ngModel)]=\"name\" name=\"name\" class=\"form-control\" id=\"name\" placeholder=\"Enter Name\">\r\n  </div>\r\n  <div class=\"form-group\">\r\n    <label for=\"username\">Username</label>\r\n    <input type=\"text\" [(ngModel)]=\"username\" name=\"username\" class=\"form-control\" id=\"username\" placeholder=\"Enter Username\">\r\n  </div>\r\n  <div class=\"form-group\">\r\n    <label for=\"email\">Email</label>\r\n    <input type=\"email\" [(ngModel)]=\"email\" name=\"email\" class=\"form-control\" id=\"email\" aria-describedby=\"emailHelp\" placeholder=\"Enter Email\">\r\n    <small id=\"emailHelp\" class=\"form-text text-muted\">We'll never share your email with anyone else.</small>\r\n  </div>\r\n  <div class=\"form-group\">\r\n    <label for=\"password\">Password</label>\r\n    <input type=\"password\" [(ngModel)]=\"password\" name=\"password\" class=\"form-control\" id=\"password\" placeholder=\" Enter Password\">\r\n  </div>\r\n  <input type=\"submit\" class=\"btn btn-primary\" value=\"Submit\">\r\n</form>\r\n</div>\r\n"
+
+/***/ }),
+
+/***/ "../../../../../src/app/components/register/register.component.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return RegisterComponent; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/esm5/core.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_validate_service__ = __webpack_require__("../../../../../src/app/services/validate.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_auth_service__ = __webpack_require__("../../../../../src/app/services/auth.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_angular2_flash_messages__ = __webpack_require__("../../../../angular2-flash-messages/module/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_angular2_flash_messages___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_angular2_flash_messages__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_router__ = __webpack_require__("../../../router/esm5/router.js");
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+
+var RegisterComponent = (function () {
+    function RegisterComponent(validateService, authService, router, flashMessage) {
+        this.validateService = validateService;
+        this.authService = authService;
+        this.router = router;
+        this.flashMessage = flashMessage;
+    }
+    RegisterComponent.prototype.ngOnInit = function () {
+    };
+    RegisterComponent.prototype.onRegisterSubmit = function () {
+        var _this = this;
+        var user = {
+            name: this.name,
+            email: this.email,
+            username: this.username,
+            password: this.password
+        };
+        // Required Fields
+        if (!this.validateService.validateRegister(user)) {
+            this.flashMessage.show('Please fill in all fields', { cssClass: 'alert-danger', timeout: 3000 });
+            return false;
+        }
+        // Validate Email
+        if (!this.validateService.validateEmail(user.email)) {
+            this.flashMessage.show('Please use a valid email', { cssClass: 'alert-danger', timeout: 3000 });
+            return false;
+        }
+        // Register user
+        this.authService.registerUser(user).subscribe(function (data) {
+            if (data.success) {
+                _this.flashMessage.show('You are now registered and can now login', { cssClass: 'alert-success', timeout: 3000 });
+                _this.router.navigate(['/login']);
+            }
+            else {
+                _this.flashMessage.show('Something went wrong', { cssClass: 'alert-danger', timeout: 3000 });
+                _this.router.navigate(['/register']);
+            }
+        });
+    };
+    RegisterComponent = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+            selector: 'app-register',
+            template: __webpack_require__("../../../../../src/app/components/register/register.component.html"),
+            styles: [__webpack_require__("../../../../../src/app/components/register/register.component.css")]
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__services_validate_service__["a" /* ValidateService */],
+            __WEBPACK_IMPORTED_MODULE_2__services_auth_service__["a" /* AuthService */],
+            __WEBPACK_IMPORTED_MODULE_4__angular_router__["b" /* Router */],
+            __WEBPACK_IMPORTED_MODULE_3_angular2_flash_messages__["FlashMessagesService"]])
+    ], RegisterComponent);
+    return RegisterComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "../../../../../src/app/guards/auth.guard.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AuthGuard; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/esm5/core.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__("../../../router/esm5/router.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_auth_service__ = __webpack_require__("../../../../../src/app/services/auth.service.ts");
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+var AuthGuard = (function () {
+    function AuthGuard(authService, router) {
+        this.authService = authService;
+        this.router = router;
+    }
+    AuthGuard.prototype.canActivate = function () {
+        if (this.authService.loggedIn()) {
+            return true;
+        }
+        else {
+            this.router.navigate(['/login']);
+            return false;
+        }
+    };
+    AuthGuard = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"])(),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_2__services_auth_service__["a" /* AuthService */], __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* Router */]])
+    ], AuthGuard);
+    return AuthGuard;
+}());
+
+
+
+/***/ }),
+
+/***/ "../../../../../src/app/services/addLand.service.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AddLandService; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/esm5/core.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_common_http__ = __webpack_require__("../../../common/esm5/http.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_http__ = __webpack_require__("../../../http/esm5/http.js");
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+var AddLandService = (function () {
+    function AddLandService(http) {
+        this.http = http;
+        this.requestOptions = new __WEBPACK_IMPORTED_MODULE_2__angular_http__["RequestOptions"]();
+    }
+    AddLandService.prototype.addLand = function (id, price, distance, route, aindex, province, district, address, lat, lon) {
+        console.log(id);
+        var uri = 'http://localhost:8080/lands/add';
+        var obj = {
+            user: id,
+            price: price,
+            distance: distance,
+            route: route,
+            index: aindex,
+            // tslint:disable-next-line:whitespace
+            province: province,
+            district: district,
+            address: address,
+            lat: lat,
+            lon: lon,
+        };
+        this.http.post(uri, obj)
+            .subscribe(function (res) { return console.log(res); });
+    };
+    AddLandService.prototype.getLands = function () {
+        var uri = 'http://localhost:8080/lands';
+        return this.http.get(uri).map(function (res) { return res; });
+    };
+    AddLandService.prototype.getCurrentPrice = function (lat, lng) {
+        var data = {
+            lat: lat,
+            lng: lng,
+        };
+        // return this.http.post('users/send_current', data).subscribe((current_price)=>
+        // alert(current_price));
+        return this.http.post('users/send_current', data);
+        // .map((response: Response) => response.json());
+    };
+    AddLandService.prototype.getPriceFromDb = function (address) {
+        // const data = {
+        //   lat: lat,
+        //   lng: lng,
+        // };
+        // return this.http.post('users/send_current', data).subscribe((current_price)=>
+        // alert(current_price));
+        // return this.http.post('users/send_current',data);
+        // .map((response: Response) => response.json());
+    };
+    AddLandService.prototype.getValuers = function (address) {
+        var data = {
+            address: address
+        };
+        return this.http.post('http://localhost:8080/lands/filter', data);
+    };
+    AddLandService = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"])(),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__angular_common_http__["a" /* HttpClient */]])
+    ], AddLandService);
+    return AddLandService;
+}());
+
+
+
+/***/ }),
+
+/***/ "../../../../../src/app/services/auth.service.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AuthService; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/esm5/core.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__("../../../http/esm5/http.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__ = __webpack_require__("../../../../rxjs-compat/_esm5/add/operator/map.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_angular2_jwt__ = __webpack_require__("../../../../angular2-jwt/angular2-jwt.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_angular2_jwt___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_angular2_jwt__);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+var AuthService = (function () {
+    function AuthService(http) {
+        this.http = http;
+        this.baseURL = 'http://localhost:8080/';
+        // this.isDev = false;  // Change to false before deployment
+    }
+    AuthService.prototype.registerUser = function (user) {
+        var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["Headers"]();
+        headers.append('Content-Type', 'application/json');
+        return this.http.post(this.baseURL + 'users/register', user, { headers: headers })
+            .map(function (res) { return res.json(); });
+    };
+    AuthService.prototype.authenticateUser = function (user) {
+        var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["Headers"]();
+        headers.append('Content-Type', 'application/json');
+        return this.http.post(this.baseURL + 'users/authenticate', user, { headers: headers })
+            .map(function (res) { return res.json(); });
+    };
+    AuthService.prototype.getProfile = function () {
+        var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["Headers"]();
+        this.loadToken();
+        headers.append('Authorization', this.authToken);
+        headers.append('Content-Type', 'application/json');
+        return this.http.get(this.baseURL + 'users/profile', { headers: headers })
+            .map(function (res) { return res.json(); });
+    };
+    AuthService.prototype.storeUserData = function (token, user) {
+        localStorage.setItem('id_token', token);
+        localStorage.setItem('user', JSON.stringify(user));
+        this.authToken = token;
+        this.user = user;
+    };
+    AuthService.prototype.loadToken = function () {
+        var token = localStorage.getItem('id_token');
+        this.authToken = token;
+    };
+    AuthService.prototype.loggedIn = function () {
+        return Object(__WEBPACK_IMPORTED_MODULE_3_angular2_jwt__["tokenNotExpired"])('id_token');
+    };
+    AuthService.prototype.logout = function () {
+        this.authToken = null;
+        this.user = null;
+        localStorage.clear();
+    };
+    AuthService = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"])(),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__angular_http__["Http"]])
+    ], AuthService);
+    return AuthService;
+}());
+
+
+
+/***/ }),
+
+/***/ "../../../../../src/app/services/validate.service.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ValidateService; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/esm5/core.js");
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+var ValidateService = (function () {
+    function ValidateService() {
+    }
+    ValidateService.prototype.validateRegister = function (user) {
+        if (user.name == undefined || user.email == undefined || user.username == undefined || user.password == undefined) {
+            return false;
+        }
+        else {
+            return true;
+        }
+    };
+    ValidateService.prototype.validateEmail = function (email) {
+        var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+        return re.test(email);
+    };
+    ValidateService = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"])(),
+        __metadata("design:paramtypes", [])
+    ], ValidateService);
+    return ValidateService;
+}());
+
+
+
+/***/ }),
+
+/***/ "../../../../../src/environments/environment.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return environment; });
+// The file contents for the current environment will overwrite these during build.
+// The build system defaults to the dev environment which uses `environment.ts`, but if you do
+// `ng build --env=prod` then `environment.prod.ts` will be used instead.
+// The list of which env maps to which file can be found in `.angular-cli.json`.
+var environment = {
+    production: false
+};
+
+
+/***/ }),
+
+/***/ "../../../../../src/main.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/esm5/core.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser_dynamic__ = __webpack_require__("../../../platform-browser-dynamic/esm5/platform-browser-dynamic.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__app_app_module__ = __webpack_require__("../../../../../src/app/app.module.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__environments_environment__ = __webpack_require__("../../../../../src/environments/environment.ts");
+
+
+
+
+if (__WEBPACK_IMPORTED_MODULE_3__environments_environment__["a" /* environment */].production) {
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["enableProdMode"])();
+}
+Object(__WEBPACK_IMPORTED_MODULE_1__angular_platform_browser_dynamic__["a" /* platformBrowserDynamic */])().bootstrapModule(__WEBPACK_IMPORTED_MODULE_2__app_app_module__["a" /* AppModule */])
+    .catch(function (err) { return console.log(err); });
+
+
+/***/ }),
+
+/***/ "../../../../moment/locale recursive ^\\.\\/.*$":
+/***/ (function(module, exports, __webpack_require__) {
+
+var map = {
+	"./af": "../../../../moment/locale/af.js",
+	"./af.js": "../../../../moment/locale/af.js",
+	"./ar": "../../../../moment/locale/ar.js",
+	"./ar-dz": "../../../../moment/locale/ar-dz.js",
+	"./ar-dz.js": "../../../../moment/locale/ar-dz.js",
+	"./ar-kw": "../../../../moment/locale/ar-kw.js",
+	"./ar-kw.js": "../../../../moment/locale/ar-kw.js",
+	"./ar-ly": "../../../../moment/locale/ar-ly.js",
+	"./ar-ly.js": "../../../../moment/locale/ar-ly.js",
+	"./ar-ma": "../../../../moment/locale/ar-ma.js",
+	"./ar-ma.js": "../../../../moment/locale/ar-ma.js",
+	"./ar-sa": "../../../../moment/locale/ar-sa.js",
+	"./ar-sa.js": "../../../../moment/locale/ar-sa.js",
+	"./ar-tn": "../../../../moment/locale/ar-tn.js",
+	"./ar-tn.js": "../../../../moment/locale/ar-tn.js",
+	"./ar.js": "../../../../moment/locale/ar.js",
+	"./az": "../../../../moment/locale/az.js",
+	"./az.js": "../../../../moment/locale/az.js",
+	"./be": "../../../../moment/locale/be.js",
+	"./be.js": "../../../../moment/locale/be.js",
+	"./bg": "../../../../moment/locale/bg.js",
+	"./bg.js": "../../../../moment/locale/bg.js",
+	"./bm": "../../../../moment/locale/bm.js",
+	"./bm.js": "../../../../moment/locale/bm.js",
+	"./bn": "../../../../moment/locale/bn.js",
+	"./bn.js": "../../../../moment/locale/bn.js",
+	"./bo": "../../../../moment/locale/bo.js",
+	"./bo.js": "../../../../moment/locale/bo.js",
+	"./br": "../../../../moment/locale/br.js",
+	"./br.js": "../../../../moment/locale/br.js",
+	"./bs": "../../../../moment/locale/bs.js",
+	"./bs.js": "../../../../moment/locale/bs.js",
+	"./ca": "../../../../moment/locale/ca.js",
+	"./ca.js": "../../../../moment/locale/ca.js",
+	"./cs": "../../../../moment/locale/cs.js",
+	"./cs.js": "../../../../moment/locale/cs.js",
+	"./cv": "../../../../moment/locale/cv.js",
+	"./cv.js": "../../../../moment/locale/cv.js",
+	"./cy": "../../../../moment/locale/cy.js",
+	"./cy.js": "../../../../moment/locale/cy.js",
+	"./da": "../../../../moment/locale/da.js",
+	"./da.js": "../../../../moment/locale/da.js",
+	"./de": "../../../../moment/locale/de.js",
+	"./de-at": "../../../../moment/locale/de-at.js",
+	"./de-at.js": "../../../../moment/locale/de-at.js",
+	"./de-ch": "../../../../moment/locale/de-ch.js",
+	"./de-ch.js": "../../../../moment/locale/de-ch.js",
+	"./de.js": "../../../../moment/locale/de.js",
+	"./dv": "../../../../moment/locale/dv.js",
+	"./dv.js": "../../../../moment/locale/dv.js",
+	"./el": "../../../../moment/locale/el.js",
+	"./el.js": "../../../../moment/locale/el.js",
+	"./en-SG": "../../../../moment/locale/en-SG.js",
+	"./en-SG.js": "../../../../moment/locale/en-SG.js",
+	"./en-au": "../../../../moment/locale/en-au.js",
+	"./en-au.js": "../../../../moment/locale/en-au.js",
+	"./en-ca": "../../../../moment/locale/en-ca.js",
+	"./en-ca.js": "../../../../moment/locale/en-ca.js",
+	"./en-gb": "../../../../moment/locale/en-gb.js",
+	"./en-gb.js": "../../../../moment/locale/en-gb.js",
+	"./en-ie": "../../../../moment/locale/en-ie.js",
+	"./en-ie.js": "../../../../moment/locale/en-ie.js",
+	"./en-il": "../../../../moment/locale/en-il.js",
+	"./en-il.js": "../../../../moment/locale/en-il.js",
+	"./en-nz": "../../../../moment/locale/en-nz.js",
+	"./en-nz.js": "../../../../moment/locale/en-nz.js",
+	"./eo": "../../../../moment/locale/eo.js",
+	"./eo.js": "../../../../moment/locale/eo.js",
+	"./es": "../../../../moment/locale/es.js",
+	"./es-do": "../../../../moment/locale/es-do.js",
+	"./es-do.js": "../../../../moment/locale/es-do.js",
+	"./es-us": "../../../../moment/locale/es-us.js",
+	"./es-us.js": "../../../../moment/locale/es-us.js",
+	"./es.js": "../../../../moment/locale/es.js",
+	"./et": "../../../../moment/locale/et.js",
+	"./et.js": "../../../../moment/locale/et.js",
+	"./eu": "../../../../moment/locale/eu.js",
+	"./eu.js": "../../../../moment/locale/eu.js",
+	"./fa": "../../../../moment/locale/fa.js",
+	"./fa.js": "../../../../moment/locale/fa.js",
+	"./fi": "../../../../moment/locale/fi.js",
+	"./fi.js": "../../../../moment/locale/fi.js",
+	"./fo": "../../../../moment/locale/fo.js",
+	"./fo.js": "../../../../moment/locale/fo.js",
+	"./fr": "../../../../moment/locale/fr.js",
+	"./fr-ca": "../../../../moment/locale/fr-ca.js",
+	"./fr-ca.js": "../../../../moment/locale/fr-ca.js",
+	"./fr-ch": "../../../../moment/locale/fr-ch.js",
+	"./fr-ch.js": "../../../../moment/locale/fr-ch.js",
+	"./fr.js": "../../../../moment/locale/fr.js",
+	"./fy": "../../../../moment/locale/fy.js",
+	"./fy.js": "../../../../moment/locale/fy.js",
+	"./ga": "../../../../moment/locale/ga.js",
+	"./ga.js": "../../../../moment/locale/ga.js",
+	"./gd": "../../../../moment/locale/gd.js",
+	"./gd.js": "../../../../moment/locale/gd.js",
+	"./gl": "../../../../moment/locale/gl.js",
+	"./gl.js": "../../../../moment/locale/gl.js",
+	"./gom-latn": "../../../../moment/locale/gom-latn.js",
+	"./gom-latn.js": "../../../../moment/locale/gom-latn.js",
+	"./gu": "../../../../moment/locale/gu.js",
+	"./gu.js": "../../../../moment/locale/gu.js",
+	"./he": "../../../../moment/locale/he.js",
+	"./he.js": "../../../../moment/locale/he.js",
+	"./hi": "../../../../moment/locale/hi.js",
+	"./hi.js": "../../../../moment/locale/hi.js",
+	"./hr": "../../../../moment/locale/hr.js",
+	"./hr.js": "../../../../moment/locale/hr.js",
+	"./hu": "../../../../moment/locale/hu.js",
+	"./hu.js": "../../../../moment/locale/hu.js",
+	"./hy-am": "../../../../moment/locale/hy-am.js",
+	"./hy-am.js": "../../../../moment/locale/hy-am.js",
+	"./id": "../../../../moment/locale/id.js",
+	"./id.js": "../../../../moment/locale/id.js",
+	"./is": "../../../../moment/locale/is.js",
+	"./is.js": "../../../../moment/locale/is.js",
+	"./it": "../../../../moment/locale/it.js",
+	"./it-ch": "../../../../moment/locale/it-ch.js",
+	"./it-ch.js": "../../../../moment/locale/it-ch.js",
+	"./it.js": "../../../../moment/locale/it.js",
+	"./ja": "../../../../moment/locale/ja.js",
+	"./ja.js": "../../../../moment/locale/ja.js",
+	"./jv": "../../../../moment/locale/jv.js",
+	"./jv.js": "../../../../moment/locale/jv.js",
+	"./ka": "../../../../moment/locale/ka.js",
+	"./ka.js": "../../../../moment/locale/ka.js",
+	"./kk": "../../../../moment/locale/kk.js",
+	"./kk.js": "../../../../moment/locale/kk.js",
+	"./km": "../../../../moment/locale/km.js",
+	"./km.js": "../../../../moment/locale/km.js",
+	"./kn": "../../../../moment/locale/kn.js",
+	"./kn.js": "../../../../moment/locale/kn.js",
+	"./ko": "../../../../moment/locale/ko.js",
+	"./ko.js": "../../../../moment/locale/ko.js",
+	"./ku": "../../../../moment/locale/ku.js",
+	"./ku.js": "../../../../moment/locale/ku.js",
+	"./ky": "../../../../moment/locale/ky.js",
+	"./ky.js": "../../../../moment/locale/ky.js",
+	"./lb": "../../../../moment/locale/lb.js",
+	"./lb.js": "../../../../moment/locale/lb.js",
+	"./lo": "../../../../moment/locale/lo.js",
+	"./lo.js": "../../../../moment/locale/lo.js",
+	"./lt": "../../../../moment/locale/lt.js",
+	"./lt.js": "../../../../moment/locale/lt.js",
+	"./lv": "../../../../moment/locale/lv.js",
+	"./lv.js": "../../../../moment/locale/lv.js",
+	"./me": "../../../../moment/locale/me.js",
+	"./me.js": "../../../../moment/locale/me.js",
+	"./mi": "../../../../moment/locale/mi.js",
+	"./mi.js": "../../../../moment/locale/mi.js",
+	"./mk": "../../../../moment/locale/mk.js",
+	"./mk.js": "../../../../moment/locale/mk.js",
+	"./ml": "../../../../moment/locale/ml.js",
+	"./ml.js": "../../../../moment/locale/ml.js",
+	"./mn": "../../../../moment/locale/mn.js",
+	"./mn.js": "../../../../moment/locale/mn.js",
+	"./mr": "../../../../moment/locale/mr.js",
+	"./mr.js": "../../../../moment/locale/mr.js",
+	"./ms": "../../../../moment/locale/ms.js",
+	"./ms-my": "../../../../moment/locale/ms-my.js",
+	"./ms-my.js": "../../../../moment/locale/ms-my.js",
+	"./ms.js": "../../../../moment/locale/ms.js",
+	"./mt": "../../../../moment/locale/mt.js",
+	"./mt.js": "../../../../moment/locale/mt.js",
+	"./my": "../../../../moment/locale/my.js",
+	"./my.js": "../../../../moment/locale/my.js",
+	"./nb": "../../../../moment/locale/nb.js",
+	"./nb.js": "../../../../moment/locale/nb.js",
+	"./ne": "../../../../moment/locale/ne.js",
+	"./ne.js": "../../../../moment/locale/ne.js",
+	"./nl": "../../../../moment/locale/nl.js",
+	"./nl-be": "../../../../moment/locale/nl-be.js",
+	"./nl-be.js": "../../../../moment/locale/nl-be.js",
+	"./nl.js": "../../../../moment/locale/nl.js",
+	"./nn": "../../../../moment/locale/nn.js",
+	"./nn.js": "../../../../moment/locale/nn.js",
+	"./pa-in": "../../../../moment/locale/pa-in.js",
+	"./pa-in.js": "../../../../moment/locale/pa-in.js",
+	"./pl": "../../../../moment/locale/pl.js",
+	"./pl.js": "../../../../moment/locale/pl.js",
+	"./pt": "../../../../moment/locale/pt.js",
+	"./pt-br": "../../../../moment/locale/pt-br.js",
+	"./pt-br.js": "../../../../moment/locale/pt-br.js",
+	"./pt.js": "../../../../moment/locale/pt.js",
+	"./ro": "../../../../moment/locale/ro.js",
+	"./ro.js": "../../../../moment/locale/ro.js",
+	"./ru": "../../../../moment/locale/ru.js",
+	"./ru.js": "../../../../moment/locale/ru.js",
+	"./sd": "../../../../moment/locale/sd.js",
+	"./sd.js": "../../../../moment/locale/sd.js",
+	"./se": "../../../../moment/locale/se.js",
+	"./se.js": "../../../../moment/locale/se.js",
+	"./si": "../../../../moment/locale/si.js",
+	"./si.js": "../../../../moment/locale/si.js",
+	"./sk": "../../../../moment/locale/sk.js",
+	"./sk.js": "../../../../moment/locale/sk.js",
+	"./sl": "../../../../moment/locale/sl.js",
+	"./sl.js": "../../../../moment/locale/sl.js",
+	"./sq": "../../../../moment/locale/sq.js",
+	"./sq.js": "../../../../moment/locale/sq.js",
+	"./sr": "../../../../moment/locale/sr.js",
+	"./sr-cyrl": "../../../../moment/locale/sr-cyrl.js",
+	"./sr-cyrl.js": "../../../../moment/locale/sr-cyrl.js",
+	"./sr.js": "../../../../moment/locale/sr.js",
+	"./ss": "../../../../moment/locale/ss.js",
+	"./ss.js": "../../../../moment/locale/ss.js",
+	"./sv": "../../../../moment/locale/sv.js",
+	"./sv.js": "../../../../moment/locale/sv.js",
+	"./sw": "../../../../moment/locale/sw.js",
+	"./sw.js": "../../../../moment/locale/sw.js",
+	"./ta": "../../../../moment/locale/ta.js",
+	"./ta.js": "../../../../moment/locale/ta.js",
+	"./te": "../../../../moment/locale/te.js",
+	"./te.js": "../../../../moment/locale/te.js",
+	"./tet": "../../../../moment/locale/tet.js",
+	"./tet.js": "../../../../moment/locale/tet.js",
+	"./tg": "../../../../moment/locale/tg.js",
+	"./tg.js": "../../../../moment/locale/tg.js",
+	"./th": "../../../../moment/locale/th.js",
+	"./th.js": "../../../../moment/locale/th.js",
+	"./tl-ph": "../../../../moment/locale/tl-ph.js",
+	"./tl-ph.js": "../../../../moment/locale/tl-ph.js",
+	"./tlh": "../../../../moment/locale/tlh.js",
+	"./tlh.js": "../../../../moment/locale/tlh.js",
+	"./tr": "../../../../moment/locale/tr.js",
+	"./tr.js": "../../../../moment/locale/tr.js",
+	"./tzl": "../../../../moment/locale/tzl.js",
+	"./tzl.js": "../../../../moment/locale/tzl.js",
+	"./tzm": "../../../../moment/locale/tzm.js",
+	"./tzm-latn": "../../../../moment/locale/tzm-latn.js",
+	"./tzm-latn.js": "../../../../moment/locale/tzm-latn.js",
+	"./tzm.js": "../../../../moment/locale/tzm.js",
+	"./ug-cn": "../../../../moment/locale/ug-cn.js",
+	"./ug-cn.js": "../../../../moment/locale/ug-cn.js",
+	"./uk": "../../../../moment/locale/uk.js",
+	"./uk.js": "../../../../moment/locale/uk.js",
+	"./ur": "../../../../moment/locale/ur.js",
+	"./ur.js": "../../../../moment/locale/ur.js",
+	"./uz": "../../../../moment/locale/uz.js",
+	"./uz-latn": "../../../../moment/locale/uz-latn.js",
+	"./uz-latn.js": "../../../../moment/locale/uz-latn.js",
+	"./uz.js": "../../../../moment/locale/uz.js",
+	"./vi": "../../../../moment/locale/vi.js",
+	"./vi.js": "../../../../moment/locale/vi.js",
+	"./x-pseudo": "../../../../moment/locale/x-pseudo.js",
+	"./x-pseudo.js": "../../../../moment/locale/x-pseudo.js",
+	"./yo": "../../../../moment/locale/yo.js",
+	"./yo.js": "../../../../moment/locale/yo.js",
+	"./zh-cn": "../../../../moment/locale/zh-cn.js",
+	"./zh-cn.js": "../../../../moment/locale/zh-cn.js",
+	"./zh-hk": "../../../../moment/locale/zh-hk.js",
+	"./zh-hk.js": "../../../../moment/locale/zh-hk.js",
+	"./zh-tw": "../../../../moment/locale/zh-tw.js",
+	"./zh-tw.js": "../../../../moment/locale/zh-tw.js"
+};
+function webpackContext(req) {
+	return __webpack_require__(webpackContextResolve(req));
+};
+function webpackContextResolve(req) {
+	var id = map[req];
+	if(!(id + 1)) // check for number or string
+		throw new Error("Cannot find module '" + req + "'.");
+	return id;
+};
+webpackContext.keys = function webpackContextKeys() {
+	return Object.keys(map);
+};
+webpackContext.resolve = webpackContextResolve;
+module.exports = webpackContext;
+webpackContext.id = "../../../../moment/locale recursive ^\\.\\/.*$";
+
+/***/ }),
+
+/***/ 0:
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__("../../../../../src/main.ts");
+
+
+/***/ })
+
+},[0]);
+//# sourceMappingURL=main.bundle.js.map
